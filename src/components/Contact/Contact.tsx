@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   const handleWhatsApp = () => {
-    const phoneNumber = '1234567890'; // Replace with actual number
+    const phoneNumber = '5491139131406';
     const message = encodeURIComponent('Hola, me gustaría información sobre sus servicios');
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };

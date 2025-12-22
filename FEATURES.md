@@ -223,7 +223,7 @@ Complete list of implemented features in the IT Services Portfolio website.
 ## 📋 Project Structure
 
 ```
-it-portfolio/
+frangipani-it/
 ├── src/
 │   ├── app/
 │   │   └── [locale]/

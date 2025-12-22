@@ -18,7 +18,7 @@ vercel
   - **Set up and deploy?** → Yes
   - **Which scope?** → Elige tu cuenta
   - **Link to existing project?** → No
-  - **What's your project's name?** → it-portfolio (o el nombre que quieras)
+  - **What's your project's name?** → frangipani-it (o el nombre que quieras)
   - **In which directory is your code located?** → ./ (presiona Enter)
   - **Want to override the settings?** → No (presiona Enter)
 
