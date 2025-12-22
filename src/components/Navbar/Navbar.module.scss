@@ -98,9 +98,151 @@
     }
   }
 
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    cursor: pointer;
+    z-index: 1001;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: var(--text-primary);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+
+      &.open:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+
+      &.open:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+
+    &:hover span {
+      background: var(--accent-primary);
+    }
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .mobileMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    border-left: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 5rem 2rem 2rem;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+
+    &.open {
+      right: 0;
+    }
+
+    .mobileNavLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 2rem;
+
+      li {
+        border-bottom: 1px solid var(--border-color);
+
+        button {
+          width: 100%;
+          text-align: left;
+          background: none;
+          color: var(--text-primary);
+          font-size: 1.1rem;
+          font-weight: 600;
+          padding: 1.2rem 0;
+          transition: all 0.3s ease;
+
+          &:hover {
+            color: var(--accent-primary);
+            padding-left: 1rem;
+          }
+        }
+      }
+    }
+
+    .mobileActions {
+      display: flex;
+      gap: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+
+      button {
+        flex: 1;
+        padding: 0.8rem 1rem;
+        border-radius: 8px;
+        background: var(--bg-card);
+        color: var(--text-primary);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+
+        &:hover {
+          background: var(--accent-primary);
+          border-color: var(--accent-primary);
+          color: white;
+        }
+      }
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
   @media (max-width: 768px) {
     .navLinks {
       display: none;
+    }
+
+    .actions button:not(.hamburger) {
+      display: none;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .overlay {
+      display: block;
+    }
+
+    .mobileMenu {
+      display: block;
     }
 
     .container {

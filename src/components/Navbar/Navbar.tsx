@@ -14,6 +14,7 @@ export default function Navbar({ locale }: NavbarProps) {
   const { theme, toggleTheme } = useTheme();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +22,7 @@ export default function Navbar({ locale }: NavbarProps) {
       
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
+        setIsMobileMenuOpen(false); // Cerrar menú al hacer scroll
       } else {
         setIsVisible(true);
       }
@@ -36,6 +38,7 @@ export default function Navbar({ locale }: NavbarProps) {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      setIsMobileMenuOpen(false); // Cerrar menú al navegar
     }
   };
 
@@ -61,6 +64,42 @@ export default function Navbar({ locale }: NavbarProps) {
         </ul>
 
         <div className={styles.actions}>
+          <button onClick={switchLocale} className={styles.langBtn}>
+            {locale === 'es' ? 'ES' : 'EN'}
+          </button>
+          <button onClick={toggleTheme} className={styles.themeBtn}>
+            {theme === 'dark' ? '🌙' : '☀️'}
+          </button>
+          <button 
+            className={styles.hamburger}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Menu"
+          >
+            <span className={isMobileMenuOpen ? styles.open : ''}></span>
+            <span className={isMobileMenuOpen ? styles.open : ''}></span>
+            <span className={isMobileMenuOpen ? styles.open : ''}></span>
+          </button>
+        </div>
+      </div>
+
+      {/* Overlay */}
+      {isMobileMenuOpen && (
+        <div 
+          className={styles.overlay} 
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
+
+      {/* Mobile Menu */}
+      <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
+        <ul className={styles.mobileNavLinks}>
+          <li><button onClick={() => scrollToSection('home')}>{t('home')}</button></li>
+          <li><button onClick={() => scrollToSection('about')}>{t('about')}</button></li>
+          <li><button onClick={() => scrollToSection('services')}>{t('services')}</button></li>
+          <li><button onClick={() => scrollToSection('portfolio')}>{t('portfolio')}</button></li>
+          <li><button onClick={() => scrollToSection('contact')}>{t('contact')}</button></li>
+        </ul>
+        <div className={styles.mobileActions}>
           <button onClick={switchLocale} className={styles.langBtn}>
             {locale === 'es' ? 'ES' : 'EN'}
           </button>
