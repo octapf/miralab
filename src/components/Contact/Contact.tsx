@@ -41,11 +41,35 @@ export default function Contact() {
         </motion.div>
 
         <div className={styles.content}>
-          <motion.form
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className={styles.whatsappSection}
+          >
+            <div className={styles.whatsappCard}>
+              <div className={styles.whatsappIcon}>📱</div>
+              <h3 className={styles.whatsappTitle}>WhatsApp</h3>
+              <p className={styles.whatsappDescription}>
+                ¿Prefieres chatear? Contáctanos directamente por WhatsApp
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleWhatsApp}
+                className={styles.whatsappBtn}
+              >
+                {t('whatsapp')}
+              </motion.button>
+            </div>
+          </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
             onSubmit={handleSubmit}
             className={styles.form}
           >
@@ -91,30 +115,6 @@ export default function Contact() {
               {t('form.send')}
             </motion.button>
           </motion.form>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className={styles.whatsappSection}
-          >
-            <div className={styles.whatsappCard}>
-              <div className={styles.whatsappIcon}>📱</div>
-              <h3 className={styles.whatsappTitle}>WhatsApp</h3>
-              <p className={styles.whatsappDescription}>
-                ¿Prefieres chatear? Contáctanos directamente por WhatsApp
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleWhatsApp}
-                className={styles.whatsappBtn}
-              >
-                {t('whatsapp')}
-              </motion.button>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

@@ -75,6 +75,69 @@
     gap: 1rem;
     align-items: center;
 
+    .langDropdown {
+      position: relative;
+
+      .langBtn {
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        background: var(--bg-card);
+        color: var(--text-primary);
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        cursor: pointer;
+
+        &:hover {
+          background: var(--accent-primary);
+          border-color: var(--accent-primary);
+          color: white;
+          transform: translateY(-2px);
+        }
+      }
+
+      .langDropdownMenu {
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        right: 0;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        min-width: 150px;
+        z-index: 1001;
+
+        button {
+          display: block;
+          width: 100%;
+          padding: 0.8rem 1.2rem;
+          text-align: left;
+          background: var(--bg-card);
+          color: var(--text-primary);
+          border: none;
+          border-bottom: 1px solid var(--border-color);
+          transition: all 0.3s ease;
+          font-weight: 500;
+
+          &:last-child {
+            border-bottom: none;
+          }
+
+          &:hover {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+            transform: none;
+          }
+
+          &.active {
+            background: var(--accent-primary);
+            color: white;
+          }
+        }
+      }
+    }
+
     button {
       padding: 0.5rem 1rem;
       border-radius: 8px;
@@ -195,6 +258,68 @@
       gap: 1rem;
       padding-top: 1rem;
       border-top: 1px solid var(--border-color);
+
+      .langDropdown {
+        position: relative;
+        flex: 1;
+
+        .langBtn {
+          width: 100%;
+          padding: 0.8rem 1rem;
+          border-radius: 8px;
+          background: var(--bg-card);
+          color: var(--text-primary);
+          font-weight: 600;
+          transition: all 0.3s ease;
+          border: 1px solid var(--border-color);
+
+          &:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+          }
+        }
+
+        .langDropdownMenu {
+          position: absolute;
+          bottom: calc(100% + 0.5rem);
+          left: 0;
+          right: 0;
+          background: var(--bg-card);
+          border: 1px solid var(--border-color);
+          border-radius: 8px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+          overflow: hidden;
+          z-index: 1001;
+
+          button {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1.2rem;
+            text-align: left;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: none;
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            font-weight: 500;
+
+            &:last-child {
+              border-bottom: none;
+            }
+
+            &:hover {
+              background: var(--bg-secondary);
+              color: var(--accent-primary);
+            }
+
+            &.active {
+              background: var(--accent-primary);
+              color: white;
+            }
+          }
+        }
+      }
 
       button {
         flex: 1;

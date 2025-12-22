@@ -15,6 +15,7 @@ export default function Navbar({ locale }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,21 +43,27 @@ export default function Navbar({ locale }: NavbarProps) {
     }
   };
 
-  const switchLocale = () => {
-    const locales = ['es', 'en', 'it'];
-    const currentIndex = locales.indexOf(locale);
-    const nextIndex = (currentIndex + 1) % locales.length;
-    const newLocale = locales[nextIndex];
+  const changeLocale = (newLocale: string) => {
     window.location.href = `/${newLocale}`;
+    setIsLangDropdownOpen(false);
   };
 
-  const getLanguageFlag = () => {
+  const getLanguageFlag = (lang: string) => {
     const flags: { [key: string]: string } = {
       'es': '🇦🇷',
       'en': '🇬🇧',
       'it': '🇮🇹'
     };
-    return flags[locale] || '🇦🇷';
+    return flags[lang] || '🇦🇷';
+  };
+
+  const getLanguageName = (lang: string) => {
+    const names: { [key: string]: string } = {
+      'es': 'Español',
+      'en': 'English',
+      'it': 'Italiano'
+    };
+    return names[lang] || 'Español';
   };
 
   return (
@@ -76,9 +83,27 @@ export default function Navbar({ locale }: NavbarProps) {
         </ul>
 
         <div className={styles.actions}>
-          <button onClick={switchLocale} className={styles.langBtn}>
-            {getLanguageFlag()}
-          </button>
+          <div className={styles.langDropdown}>
+            <button 
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
+              className={styles.langBtn}
+            >
+              {getLanguageFlag(locale)} {locale.toUpperCase()}
+            </button>
+            {isLangDropdownOpen && (
+              <div className={styles.langDropdownMenu}>
+                <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
+                  {getLanguageFlag('es')} Español
+                </button>
+                <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
+                  {getLanguageFlag('en')} English
+                </button>
+                <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
+                  {getLanguageFlag('it')} Italiano
+                </button>
+              </div>
+            )}
+          </div>
           <button onClick={toggleTheme} className={styles.themeBtn}>
             {theme === 'dark' ? '🌙' : '☀️'}
           </button>
@@ -112,9 +137,27 @@ export default function Navbar({ locale }: NavbarProps) {
           <li><button onClick={() => scrollToSection('contact')}>{t('contact')}</button></li>
         </ul>
         <div className={styles.mobileActions}>
-          <button onClick={switchLocale} className={styles.langBtn}>
-            {getLanguageFlag()}
-          </button>
+          <div className={styles.langDropdown}>
+            <button 
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
+              className={styles.langBtn}
+            >
+              {getLanguageFlag(locale)} {locale.toUpperCase()}
+            </button>
+            {isLangDropdownOpen && (
+              <div className={styles.langDropdownMenu}>
+                <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
+                  {getLanguageFlag('es')} Español
+                </button>
+                <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
+                  {getLanguageFlag('en')} English
+                </button>
+                <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
+                  {getLanguageFlag('it')} Italiano
+                </button>
+              </div>
+            )}
+          </div>
           <button onClick={toggleTheme} className={styles.themeBtn}>
             {theme === 'dark' ? '🌙' : '☀️'}
           </button>
