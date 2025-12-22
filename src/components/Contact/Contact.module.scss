@@ -1,0 +1,192 @@
+.contact {
+  background: var(--bg-secondary);
+
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    .title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .form {
+    background: var(--bg-card);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+
+    .formGroup {
+      margin-bottom: 2rem;
+
+      label {
+        display: block;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 0.8rem;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 10px;
+        color: var(--text-primary);
+        font-size: 1rem;
+        transition: all 0.3s ease;
+
+        &:focus {
+          outline: none;
+          border-color: var(--accent-primary);
+          box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        &::placeholder {
+          color: var(--text-secondary);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+    }
+
+    .submitBtn {
+      width: 100%;
+      padding: 1.2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+
+      &:hover {
+        box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+      }
+    }
+  }
+
+  .whatsappSection {
+    .whatsappCard {
+      background: var(--bg-card);
+      padding: 3rem 2rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      text-align: center;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .whatsappIcon {
+        font-size: 5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .whatsappTitle {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+      }
+
+      .whatsappDescription {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .whatsappBtn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: #25D366;
+        color: white;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+
+        &:hover {
+          background: #20BD5A;
+          box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+    }
+
+    .form {
+      padding: 2rem;
+
+      .formGroup {
+        margin-bottom: 1.5rem;
+
+        label {
+          font-size: 0.95rem;
+        }
+
+        input,
+        textarea {
+          padding: 0.9rem 1.2rem;
+          font-size: 0.95rem;
+        }
+      }
+    }
+
+    .whatsappSection .whatsappCard {
+      padding: 2rem 1.5rem;
+
+      .whatsappIcon {
+        font-size: 4rem;
+      }
+
+      .whatsappTitle {
+        font-size: 1.7rem;
+      }
+
+      .whatsappDescription {
+        font-size: 1rem;
+      }
+    }
+  }
+}

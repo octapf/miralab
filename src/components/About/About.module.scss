@@ -1,0 +1,230 @@
+.about {
+  background: var(--bg-primary);
+
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+
+    .title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+    }
+  }
+
+  .description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem;
+
+    p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+
+    .statCard {
+      background: var(--bg-card);
+      padding: 2.5rem 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+
+      &:hover {
+        transform: translateY(-10px);
+        border-color: var(--accent-primary);
+        box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+      }
+
+      .statValue {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+      }
+
+      .statLabel {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-bottom: 5rem;
+
+    .card {
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+
+      &:hover {
+        border-color: var(--accent-primary);
+        box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+      }
+
+      .cardIcon {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cardTitle {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+      }
+
+      .cardText {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
+    }
+  }
+
+  .valuesSection {
+    .valuesTitle {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-align: center;
+      color: var(--text-primary);
+      margin-bottom: 3rem;
+    }
+
+    .valuesGrid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+
+      .valueCard {
+        background: var(--bg-card);
+        padding: 2rem 1.5rem;
+        border-radius: 15px;
+        text-align: center;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+
+        &:hover {
+          border-color: var(--accent-primary);
+          box-shadow: 0 15px 40px rgba(139, 92, 246, 0.2);
+        }
+
+        .valueIcon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+
+        .valueTitle {
+          font-size: 1.3rem;
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 0.8rem;
+        }
+
+        .valueDescription {
+          font-size: 0.95rem;
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 968px) {
+    .stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .content {
+      grid-template-columns: 1fr;
+    }
+
+    .valuesSection .valuesGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+    }
+
+    .description p {
+      font-size: 1rem;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      .statCard {
+        padding: 2rem 1.5rem;
+
+        .statValue {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .content .card {
+      padding: 2rem;
+
+      .cardIcon {
+        font-size: 3rem;
+      }
+
+      .cardTitle {
+        font-size: 1.5rem;
+      }
+
+      .cardText {
+        font-size: 1rem;
+      }
+    }
+
+    .valuesSection {
+      .valuesTitle {
+        font-size: 2rem;
+      }
+
+      .valuesGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+
+        .valueCard {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Experts in innovative technology solutions",
+    "description": "We are a passionate team of professionals dedicated to transforming ideas into exceptional digital solutions. With years of experience in the technology sector, we help businesses of all sizes achieve their goals through innovation and technical excellence.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "Empower businesses with cutting-edge technology, creating customized solutions that drive growth and digital transformation."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be recognized leaders in technological innovation, setting new standards of quality and excellence in every project we undertake."
+    },
+    "values": {
+      "title": "Our Values",
+      "innovation": "Innovation",
+      "innovationDesc": "We constantly seek new ways to solve problems",
+      "quality": "Quality",
+      "qualityDesc": "Committed to excellence in every line of code",
+      "collaboration": "Collaboration",
+      "collaborationDesc": "We work as a team with our clients for mutual success",
+      "integrity": "Integrity",
+      "integrityDesc": "Transparency and honesty in all our relationships"
+    },
+    "stats": {
+      "years": "Years of Experience",
+      "projects": "Completed Projects",
+      "clients": "Satisfied Clients",
+      "team": "Professionals"
+    }
+  },
+  "hero": {
+    "title": "Innovative IT Solutions",
+    "subtitle": "We transform your ideas into digital reality",
+    "description": "Web development, mobile apps, and cutting-edge technology consulting",
+    "cta": "Start Project"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive solutions for your digital business",
+    "webDev": {
+      "title": "Web Development",
+      "description": "We create modern, fast, and responsive websites using the latest technologies. From landing pages to complex web applications."
+    },
+    "mobileDev": {
+      "title": "Mobile Apps",
+      "description": "We develop native and cross-platform apps for iOS and Android with exceptional user experiences and optimal performance."
+    },
+    "consulting": {
+      "title": "IT Consulting",
+      "description": "Strategic technology consulting, software architecture, process optimization, and digital transformation for your business."
+    }
+  },
+  "portfolio": {
+    "title": "Featured Projects",
+    "subtitle": "Explore our latest work",
+    "viewProject": "View Project",
+    "techStack": "Tech Stack"
+  },
+  "contact": {
+    "title": "Ready to start?",
+    "subtitle": "Let's talk about your next project",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "whatsapp": "Contact via WhatsApp"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

@@ -1,0 +1,114 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--bg-secondary);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    gap: 0.3rem;
+
+    .logoText {
+      color: var(--text-primary);
+    }
+
+    .logoAccent {
+      color: var(--accent-primary);
+    }
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 2rem;
+
+    li button {
+      background: none;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-primary);
+        transition: width 0.3s ease;
+      }
+
+      &:hover {
+        color: var(--accent-primary);
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    button {
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+
+      &:hover {
+        background: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+    }
+
+    .themeBtn {
+      font-size: 1.2rem;
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navLinks {
+      display: none;
+    }
+
+    .container {
+      padding: 1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+    }
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "contact": "Contacto"
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "Expertos en soluciones tecnológicas innovadoras",
+    "description": "Somos un equipo apasionado de profesionales dedicados a transformar ideas en soluciones digitales excepcionales. Con años de experiencia en el sector tecnológico, ayudamos a empresas de todos los tamaños a alcanzar sus objetivos mediante la innovación y la excelencia técnica.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Empoderar a las empresas con tecnología de vanguardia, creando soluciones personalizadas que impulsen el crecimiento y la transformación digital."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Ser líderes reconocidos en innovación tecnológica, estableciendo nuevos estándares de calidad y excelencia en cada proyecto que emprendemos."
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "innovation": "Innovación",
+      "innovationDesc": "Buscamos constantemente nuevas formas de resolver problemas",
+      "quality": "Calidad",
+      "qualityDesc": "Comprometidos con la excelencia en cada línea de código",
+      "collaboration": "Colaboración",
+      "collaborationDesc": "Trabajamos en equipo con nuestros clientes para el éxito mutuo",
+      "integrity": "Integridad",
+      "integrityDesc": "Transparencia y honestidad en todas nuestras relaciones"
+    },
+    "stats": {
+      "years": "Años de Experiencia",
+      "projects": "Proyectos Completados",
+      "clients": "Clientes Satisfechos",
+      "team": "Profesionales"
+    }
+  },
+  "hero": {
+    "title": "Soluciones IT Innovadoras",
+    "subtitle": "Transformamos tus ideas en realidad digital",
+    "description": "Desarrollo web, aplicaciones móviles y consultoría tecnológica de vanguardia",
+    "cta": "Comenzar Proyecto"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones integrales para tu negocio digital",
+    "webDev": {
+      "title": "Desarrollo Web",
+      "description": "Creamos sitios web modernos, rápidos y responsivos utilizando las últimas tecnologías. Desde landing pages hasta aplicaciones web complejas."
+    },
+    "mobileDev": {
+      "title": "Aplicaciones Móviles",
+      "description": "Desarrollamos apps nativas y multiplataforma para iOS y Android con experiencias de usuario excepcionales y rendimiento óptimo."
+    },
+    "consulting": {
+      "title": "Consultoría IT",
+      "description": "Asesoramiento estratégico en tecnología, arquitectura de software, optimización de procesos y transformación digital para tu empresa."
+    }
+  },
+  "portfolio": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Explora nuestros trabajos más recientes",
+    "viewProject": "Ver Proyecto",
+    "techStack": "Tecnologías"
+  },
+  "contact": {
+    "title": "¿Listo para empezar?",
+    "subtitle": "Conversemos sobre tu próximo proyecto",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "whatsapp": "Contactar por WhatsApp"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
+  }
+}
