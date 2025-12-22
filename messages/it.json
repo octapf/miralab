@@ -1,0 +1,81 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "Chi Siamo",
+    "services": "Servizi",
+    "portfolio": "Portfolio",
+    "contact": "Contatto"
+  },
+  "hero": {
+    "title": "Soluzioni IT Innovative",
+    "subtitle": "Trasformiamo le tue idee in realtà digitale",
+    "description": "Sviluppo web, applicazioni mobili e consulenza tecnologica all'avanguardia",
+    "cta": "Inizia Progetto"
+  },
+  "about": {
+    "title": "Chi Siamo",
+    "subtitle": "Esperti in soluzioni tecnologiche innovative",
+    "description": "Siamo un team appassionato di professionisti dedicati a trasformare idee in soluzioni digitali eccezionali. Con anni di esperienza nel settore tecnologico, aiutiamo aziende di tutte le dimensioni a raggiungere i loro obiettivi attraverso l'innovazione e l'eccellenza tecnica.",
+    "mission": {
+      "title": "La Nostra Missione",
+      "description": "Potenziare le aziende con tecnologia all'avanguardia, creando soluzioni personalizzate che guidano la crescita e la trasformazione digitale."
+    },
+    "vision": {
+      "title": "La Nostra Visione",
+      "description": "Essere leader riconosciuti nell'innovazione tecnologica, stabilendo nuovi standard di qualità ed eccellenza in ogni progetto che intraprendiamo."
+    },
+    "values": {
+      "title": "I Nostri Valori",
+      "innovation": "Innovazione",
+      "innovationDesc": "Cerchiamo costantemente nuovi modi per risolvere problemi",
+      "quality": "Qualità",
+      "qualityDesc": "Impegnati nell'eccellenza in ogni riga di codice",
+      "collaboration": "Collaborazione",
+      "collaborationDesc": "Lavoriamo in team con i nostri clienti per il successo reciproco",
+      "integrity": "Integrità",
+      "integrityDesc": "Trasparenza e onestà in tutte le nostre relazioni"
+    },
+    "stats": {
+      "years": "Anni di Esperienza",
+      "projects": "Progetti Completati",
+      "clients": "Clienti Soddisfatti",
+      "team": "Professionisti"
+    }
+  },
+  "services": {
+    "title": "I Nostri Servizi",
+    "subtitle": "Soluzioni complete per il tuo business digitale",
+    "webDev": {
+      "title": "Sviluppo Web",
+      "description": "Creiamo siti web moderni, veloci e responsive utilizzando le ultime tecnologie. Dalle landing page alle applicazioni web complesse."
+    },
+    "mobileDev": {
+      "title": "Applicazioni Mobili",
+      "description": "Sviluppiamo app native e cross-platform per iOS e Android con esperienze utente eccezionali e prestazioni ottimali."
+    },
+    "consulting": {
+      "title": "Consulenza IT",
+      "description": "Consulenza strategica in tecnologia, architettura software, ottimizzazione dei processi e trasformazione digitale per la tua azienda."
+    }
+  },
+  "portfolio": {
+    "title": "Progetti In Evidenza",
+    "subtitle": "Esplora i nostri lavori più recenti",
+    "viewProject": "Vedi Progetto",
+    "techStack": "Tecnologie"
+  },
+  "contact": {
+    "title": "Pronto per iniziare?",
+    "subtitle": "Parliamo del tuo prossimo progetto",
+    "form": {
+      "name": "Nome",
+      "email": "Email",
+      "message": "Messaggio",
+      "send": "Invia Messaggio"
+    },
+    "whatsapp": "Contatta via WhatsApp"
+  },
+  "footer": {
+    "rights": "Tutti i diritti riservati"
+  }
+}

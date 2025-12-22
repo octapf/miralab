@@ -43,8 +43,20 @@ export default function Navbar({ locale }: NavbarProps) {
   };
 
   const switchLocale = () => {
-    const newLocale = locale === 'es' ? 'en' : 'es';
+    const locales = ['es', 'en', 'it'];
+    const currentIndex = locales.indexOf(locale);
+    const nextIndex = (currentIndex + 1) % locales.length;
+    const newLocale = locales[nextIndex];
     window.location.href = `/${newLocale}`;
+  };
+
+  const getLanguageFlag = () => {
+    const flags: { [key: string]: string } = {
+      'es': '🇦🇷',
+      'en': '🇬🇧',
+      'it': '🇮🇹'
+    };
+    return flags[locale] || '🇦🇷';
   };
 
   return (
@@ -65,7 +77,7 @@ export default function Navbar({ locale }: NavbarProps) {
 
         <div className={styles.actions}>
           <button onClick={switchLocale} className={styles.langBtn}>
-            {locale === 'es' ? 'ES' : 'EN'}
+            {getLanguageFlag()}
           </button>
           <button onClick={toggleTheme} className={styles.themeBtn}>
             {theme === 'dark' ? '🌙' : '☀️'}
@@ -101,7 +113,7 @@ export default function Navbar({ locale }: NavbarProps) {
         </ul>
         <div className={styles.mobileActions}>
           <button onClick={switchLocale} className={styles.langBtn}>
-            {locale === 'es' ? 'ES' : 'EN'}
+            {getLanguageFlag()}
           </button>
           <button onClick={toggleTheme} className={styles.themeBtn}>
             {theme === 'dark' ? '🌙' : '☀️'}

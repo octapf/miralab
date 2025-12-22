@@ -6,7 +6,7 @@ import Portfolio from '@/components/Portfolio/Portfolio';
 import Contact from '@/components/Contact/Contact';
 
 export function generateStaticParams() {
-  return [{ locale: 'es' }, { locale: 'en' }];
+  return [{ locale: 'es' }, { locale: 'en' }, { locale: 'it' }];
 }
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
@@ -16,9 +16,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Navbar locale={locale} />
       <Hero />
       <About />
+      <Contact />
       <Services />
       <Portfolio />
-      <Contact />
       
       <footer style={{
         textAlign: 'center',
