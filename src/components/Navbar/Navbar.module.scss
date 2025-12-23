@@ -363,7 +363,11 @@
       display: none;
     }
 
-    .actions button:not(.hamburger) {
+    .actions .langDropdown {
+      display: none;
+    }
+
+    .actions .themeBtn {
       display: none;
     }
 

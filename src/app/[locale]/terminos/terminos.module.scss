@@ -14,6 +14,9 @@
   border-radius: 12px;
   padding: 3rem;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
+  word-wrap: break-word;
+  display: block;
 }
 
 .title {
@@ -22,6 +25,8 @@
   color: var(--accent-primary);
   margin-bottom: 0.5rem;
   text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .subtitle {
@@ -29,16 +34,22 @@
   color: var(--text-secondary);
   margin-bottom: 2rem;
   text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .section {
   margin: 2rem 0;
+  display: block;
+  width: 100%;
   
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1rem;
+    display: block;
+    width: 100%;
   }
   
   p {
@@ -46,7 +57,10 @@
     line-height: 1.8;
     color: var(--text-secondary);
     margin-bottom: 1rem;
-    text-align: justify;
+    text-align: left;
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -65,17 +79,54 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 6rem 1rem 2rem;
+  }
+  
   .content {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 8px;
+    display: block;
   }
   
   .title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    width: 100%;
   }
   
   .section {
+    margin: 1.5rem 0;
+    display: block;
+    width: 100%;
+    
+    h2 {
+      font-size: 1.25rem;
+      display: block;
+      width: 100%;
+    }
+    
     p {
       text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      width: 100%;
+      max-width: 100%;
+      display: block;
     }
+  }
+  
+  .backLink {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    display: block;
   }
 }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/Logo/Logo';
 import styles from './Navbar.module.scss';
@@ -13,6 +14,8 @@ interface NavbarProps {
 export default function Navbar({ locale }: NavbarProps) {
   const t = useTranslations('nav');
   const { theme, toggleTheme } = useTheme();
+  const router = useRouter();
+  const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,17 +48,20 @@ export default function Navbar({ locale }: NavbarProps) {
   };
 
   const changeLocale = (newLocale: string) => {
-    window.location.href = `/${newLocale}`;
+    // Remover el prefijo de locale del pathname actual
+    const pathWithoutLocale = pathname.replace(/^\/[a-z]{2}/, '') || '/';
+    const newPath = `/${newLocale}${pathWithoutLocale}`;
     setIsLangDropdownOpen(false);
+    router.push(newPath);
   };
 
-  const getLanguageFlag = (lang: string) => {
-    const flags: { [key: string]: string } = {
-      'es': '🇦🇷',
-      'en': '�🇸',
-      'it': '🇮🇹'
+  const getLanguageDisplay = (lang: string) => {
+    const displays: { [key: string]: string } = {
+      'es': 'AR',
+      'en': 'EN',
+      'it': 'IT'
     };
-    return flags[lang] || '🇦🇷';
+    return displays[lang] || 'AR';
   };
 
   const getLanguageName = (lang: string) => {
@@ -88,18 +94,18 @@ export default function Navbar({ locale }: NavbarProps) {
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
               className={styles.langBtn}
             >
-              {getLanguageFlag(locale)}
+              {getLanguageDisplay(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
                 <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
-                  {getLanguageFlag('es')} Español
+                  {getLanguageDisplay('es')} Español
                 </button>
                 <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
-                  {getLanguageFlag('en')} English
+                  {getLanguageDisplay('en')} English
                 </button>
                 <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
-                  {getLanguageFlag('it')} Italiano
+                  {getLanguageDisplay('it')} Italiano
                 </button>
               </div>
             )}
@@ -142,18 +148,18 @@ export default function Navbar({ locale }: NavbarProps) {
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
               className={styles.langBtn}
             >
-              {getLanguageFlag(locale)}
+              {getLanguageDisplay(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
                 <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
-                  {getLanguageFlag('es')} Español
+                  {getLanguageDisplay('es')} Español
                 </button>
                 <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
-                  {getLanguageFlag('en')} English
+                  {getLanguageDisplay('en')} English
                 </button>
                 <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
-                  {getLanguageFlag('it')} Italiano
+                  {getLanguageDisplay('it')} Italiano
                 </button>
               </div>
             )}
