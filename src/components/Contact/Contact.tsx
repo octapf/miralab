@@ -12,12 +12,39 @@ export default function Contact() {
     email: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for form submission
-    console.log('Form submitted:', formData);
-    alert('Formulario enviado (placeholder)');
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+        alert('¡Mensaje enviado correctamente! Te responderemos pronto.');
+      } else {
+        setSubmitStatus('error');
+        alert(data.error || 'Error al enviar el mensaje. Intenta nuevamente.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      alert('Error de conexión. Por favor intenta nuevamente.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -108,11 +135,12 @@ export default function Contact() {
 
             <motion.button
               type="submit"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+              whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
               className={styles.submitBtn}
+              disabled={isSubmitting}
             >
-              {t('form.send')}
+              {isSubmitting ? 'Enviando...' : t('form.send')}
             </motion.button>
           </motion.form>
         </div>

@@ -1,0 +1,40 @@
+.floatingBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  z-index: 999;
+  border: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+    background: #20BD5A;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 56px;
+    height: 56px;
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
