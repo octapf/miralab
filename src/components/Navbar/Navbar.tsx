@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from '@/contexts/ThemeContext';
+import Logo from '@/components/Logo/Logo';
 import styles from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -70,8 +71,7 @@ export default function Navbar({ locale }: NavbarProps) {
     <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <span className={styles.logoText}>MIRA</span>
-          <span className={styles.logoAccent}>LAB</span>
+          <Logo theme={theme} width={130} height={35} />
         </div>
 
         <ul className={styles.navLinks}>
