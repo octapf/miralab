@@ -4,8 +4,15 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import '@/styles/globals.scss';
 
 export const metadata = {
-  title: 'Frangipani IT - Servicios IT Profesionales',
-  description: 'Desarrollo web, aplicaciones móviles y consultoría IT',
+  title: 'Miralab - Innovación Digital & Desarrollo Web',
+  description: 'Transformamos tus ideas en realidad digital. Desarrollo web, aplicaciones móviles y consultoría IT de vanguardia.',
+  keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, Miralab',
+  authors: [{ name: 'Miralab' }],
+  openGraph: {
+    title: 'Miralab - Innovación Digital',
+    description: 'Transformamos tus ideas en realidad digital',
+    type: 'website',
+  },
 };
 
 export default async function RootLayout({
