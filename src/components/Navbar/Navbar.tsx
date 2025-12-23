@@ -88,7 +88,7 @@ export default function Navbar({ locale }: NavbarProps) {
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
               className={styles.langBtn}
             >
-              {getLanguageFlag(locale)} {locale.toUpperCase()}
+              {getLanguageFlag(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
@@ -142,7 +142,7 @@ export default function Navbar({ locale }: NavbarProps) {
               onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
               className={styles.langBtn}
             >
-              {getLanguageFlag(locale)} {locale.toUpperCase()}
+              {getLanguageFlag(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
