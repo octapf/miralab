@@ -5,6 +5,8 @@ import Services from '@/components/Services/Services';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import Contact from '@/components/Contact/Contact';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp/FloatingWhatsApp';
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
 
 export function generateStaticParams() {
   return [{ locale: 'es' }, { locale: 'en' }, { locale: 'it' }];
@@ -12,6 +14,8 @@ export function generateStaticParams() {
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+  const t = useTranslations('footer');
+  
   return (
     <main>
       <Navbar locale={locale} />
@@ -30,7 +34,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         borderTop: '1px solid var(--border-color)',
         color: 'var(--text-secondary)'
       }}>
-        <p>© 2025 MIRALAB. Todos los derechos reservados.</p>
+        <p>{t('rights')}</p>
+        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t('trademark')}</p>
+        <Link href={`/${locale}/terminos`} style={{ color: 'var(--accent-primary)', textDecoration: 'underline', fontSize: '0.9rem', marginTop: '0.5rem', display: 'inline-block' }}>
+          {t('terms')}
+        </Link>
       </footer>
     </main>
   );

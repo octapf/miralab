@@ -76,6 +76,16 @@
     "whatsapp": "Contactar por WhatsApp"
   },
   "footer": {
-    "rights": "© 2025 MIRALAB. Todos los derechos reservados"
+    "rights": "© 2025 MIRALAB | Desarrollado por Octavio Frangipani. Todos los derechos reservados.",
+    "trademark": "Marca en proceso de registro ante el INPI.",
+    "terms": "Términos y Condiciones"
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "subtitle": "Aviso Legal",
+    "section1Title": "Propiedad Intelectual y Marca Comercial",
+    "section1Content": "Los servicios prestados bajo el nombre MIRALAB, así como el contenido, diseño visual, código fuente y logotipos presentes en miralab.ar, son propiedad exclusiva de Octavio Patricio Frangipani.",
+    "section2Content": "Se hace saber que la marca MIRALAB se encuentra actualmente en proceso de registro ante el Instituto Nacional de la Propiedad Industrial (INPI) de la República Argentina bajo la Clase 42 (Servicios de programación, software y ciberseguridad). Queda estrictamente prohibido el uso no autorizado de este signo distintivo o la reproducción de los contenidos de este sitio con fines comerciales por parte de terceros.",
+    "backHome": "Volver al inicio"
   }
 }

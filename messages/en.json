@@ -76,6 +76,16 @@
     "whatsapp": "Contact via WhatsApp"
   },
   "footer": {
-    "rights": "© 2025 MIRALAB. All rights reserved"
+    "rights": "© 2025 MIRALAB | Developed by Octavio Frangipani. All rights reserved.",
+    "trademark": "Trademark registration in progress with INPI.",
+    "terms": "Terms and Conditions"
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "subtitle": "Legal Notice",
+    "section1Title": "Intellectual Property and Trademark",
+    "section1Content": "The services provided under the name MIRALAB, as well as the content, visual design, source code, and logos present on miralab.ar, are the exclusive property of Octavio Patricio Frangipani.",
+    "section2Content": "Please be advised that the MIRALAB trademark is currently in the process of registration with the National Institute of Industrial Property (INPI) of the Argentine Republic under Class 42 (Programming, software, and cybersecurity services). Unauthorized use of this distinctive sign or reproduction of the contents of this site for commercial purposes by third parties is strictly prohibited.",
+    "backHome": "Back to home"
   }
 }
