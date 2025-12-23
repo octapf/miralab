@@ -70,8 +70,8 @@ export default function Navbar({ locale }: NavbarProps) {
     <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <span className={styles.logoText}>Mira</span>
-          <span className={styles.logoAccent}>Lab</span>
+          <span className={styles.logoText}>MIRA</span>
+          <span className={styles.logoAccent}>LAB</span>
         </div>
 
         <ul className={styles.navLinks}>

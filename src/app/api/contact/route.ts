@@ -17,14 +17,14 @@ export async function POST(request: Request) {
 
     // Enviar email
     const { data, error } = await resend.emails.send({
-      from: 'Miralab Website <onboarding@resend.dev>', // Cambiarás esto cuando verifiques tu dominio
+      from: 'MIRALAB Website <onboarding@resend.dev>', // Cambiarás esto cuando verifiques tu dominio
       to: ['frangipani.octavio@gmail.com'],
       replyTo: email,
-      subject: `Nuevo contacto de ${name} - Miralab`,
+      subject: `Nuevo contacto de ${name} - MIRALAB`,
       html: `
         <div style="font-family: Arial, sans-serif; padding: 20px; background-color: #f5f5f5;">
           <div style="max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <h2 style="color: #8B5CF6; margin-bottom: 20px;">Nuevo mensaje desde Miralab</h2>
+            <h2 style="color: #8B5CF6; margin-bottom: 20px;">Nuevo mensaje desde MIRALAB</h2>
             
             <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
               <p style="margin: 0 0 10px 0;"><strong>Nombre:</strong> ${name}</p>
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
             <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 30px 0;" />
             
             <p style="color: #6b7280; font-size: 14px; text-align: center; margin: 0;">
-              Este mensaje fue enviado desde el formulario de contacto de <strong>Miralab</strong>
+              Este mensaje fue enviado desde el formulario de contacto de <strong>MIRALAB</strong>
             </p>
           </div>
         </div>

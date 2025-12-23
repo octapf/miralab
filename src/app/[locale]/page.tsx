@@ -30,7 +30,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         borderTop: '1px solid var(--border-color)',
         color: 'var(--text-secondary)'
       }}>
-        <p>© 2025 Miralab. Todos los derechos reservados.</p>
+        <p>© 2025 MIRALAB. Todos los derechos reservados.</p>
       </footer>
     </main>
   );

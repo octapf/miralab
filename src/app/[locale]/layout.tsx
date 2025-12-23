@@ -4,12 +4,12 @@ import { ThemeProvider } from '@/contexts/ThemeContext';
 import '@/styles/globals.scss';
 
 export const metadata = {
-  title: 'Miralab - Innovación Digital & Desarrollo Web',
+  title: 'MIRALAB - Innovación Digital & Desarrollo Web',
   description: 'Transformamos tus ideas en realidad digital. Desarrollo web, aplicaciones móviles y consultoría IT de vanguardia.',
-  keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, Miralab',
-  authors: [{ name: 'Miralab' }],
+  keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, MIRALAB',
+  authors: [{ name: 'MIRALAB' }],
   openGraph: {
-    title: 'Miralab - Innovación Digital',
+    title: 'MIRALAB - Innovación Digital',
     description: 'Transformamos tus ideas en realidad digital',
     type: 'website',
   },
