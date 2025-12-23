@@ -52,7 +52,7 @@ export default function Navbar({ locale }: NavbarProps) {
   const getLanguageFlag = (lang: string) => {
     const flags: { [key: string]: string } = {
       'es': '🇦🇷',
-      'en': '🇬🇧',
+      'en': '�🇸',
       'it': '🇮🇹'
     };
     return flags[lang] || '🇦🇷';
