@@ -37,7 +37,7 @@
     }
   },
   "hero": {
-    "title": "Innovative IT Solutions",
+    "title": "Miralab - Digital Innovation",
     "subtitle": "We transform your ideas into digital reality",
     "description": "Web development, mobile apps, and cutting-edge technology consulting",
     "cta": "Start Project"
@@ -76,6 +76,6 @@
     "whatsapp": "Contact via WhatsApp"
   },
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "© 2025 Miralab. All rights reserved"
   }
 }
