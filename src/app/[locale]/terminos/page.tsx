@@ -1,13 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import styles from './terminos.module.scss';
 
-export default function TerminosPage({ params }: { params: Promise<{ locale: string }> }) {
-  return <TerminosContent />;
-}
-
-function TerminosContent() {
-  const t = useTranslations('terms');
+export default async function TerminosPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations('terms');
   
   return (
     <div className={styles.container}>
@@ -21,7 +18,7 @@ function TerminosContent() {
           <p>{t('section2Content')}</p>
         </section>
         
-        <Link href="/" className={styles.backLink}>
+        <Link href={`/${locale}`} className={styles.backLink}>
           ← {t('backHome')}
         </Link>
       </div>

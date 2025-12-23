@@ -5,7 +5,7 @@ import Services from '@/components/Services/Services';
 import Portfolio from '@/components/Portfolio/Portfolio';
 import Contact from '@/components/Contact/Contact';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp/FloatingWhatsApp';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
 export function generateStaticParams() {
@@ -14,7 +14,7 @@ export function generateStaticParams() {
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  const t = useTranslations('footer');
+  const t = await getTranslations('footer');
   
   return (
     <main>
