@@ -108,6 +108,64 @@
         box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
       }
     }
+
+    .successMessage {
+      text-align: center;
+      padding: 2rem;
+
+      .successIcon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #10b981, #059669);
+        color: white;
+        font-size: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+      }
+
+      .newQueryBtn {
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+        color: white;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+
+        &:hover {
+          box-shadow: 0 15px 40px rgba(139, 92, 246, 0.5);
+        }
+      }
+    }
+
+    .errorMessage {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 0.95rem;
+    }
   }
 
   .whatsappSection {

@@ -34,17 +34,18 @@ export default function Contact() {
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', message: '' });
-        alert('¡Mensaje enviado correctamente! Te responderemos pronto.');
       } else {
         setSubmitStatus('error');
-        alert(data.error || 'Error al enviar el mensaje. Intenta nuevamente.');
       }
     } catch (error) {
       setSubmitStatus('error');
-      alert('Error de conexión. Por favor intenta nuevamente.');
     } finally {
       setIsSubmitting(false);
     }
+  };
+
+  const handleNewQuery = () => {
+    setSubmitStatus('idle');
   };
 
   const handleWhatsApp = () => {
@@ -105,50 +106,75 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className={styles.form}
           >
-            <h3 className={styles.formTitle}>Escribinos un mail a <strong className={styles.email}>hola@miralab.ar</strong> con cualquier consulta que tengas</h3>
-            
-            <div className={styles.formGroup}>
-              <label htmlFor="name">{t('form.name')}</label>
-              <input
-                type="text"
-                id="name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                required
-              />
-            </div>
+            {submitStatus === 'success' ? (
+              <div className={styles.successMessage}>
+                <div className={styles.successIcon}>✓</div>
+                <h3>¡Mensaje enviado correctamente!</h3>
+                <p>Te responderemos pronto a tu consulta.</p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={handleNewQuery}
+                  className={styles.newQueryBtn}
+                  type="button"
+                >
+                  Nueva consulta
+                </motion.button>
+              </div>
+            ) : (
+              <>
+                <h3 className={styles.formTitle}>Escribinos un mail a <strong className={styles.email}>hola@miralab.ar</strong> con cualquier consulta que tengas</h3>
+                
+                <div className={styles.formGroup}>
+                  <label htmlFor="name">{t('form.name')}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    required
+                  />
+                </div>
 
-            <div className={styles.formGroup}>
-              <label htmlFor="email">{t('form.email')}</label>
-              <input
-                type="email"
-                id="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-              />
-            </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="email">{t('form.email')}</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required
+                  />
+                </div>
 
-            <div className={styles.formGroup}>
-              <label htmlFor="message">{t('form.message')}</label>
-              <textarea
-                id="message"
-                rows={5}
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-              />
-            </div>
+                <div className={styles.formGroup}>
+                  <label htmlFor="message">{t('form.message')}</label>
+                  <textarea
+                    id="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required
+                  />
+                </div>
 
-            <motion.button
-              type="submit"
-              whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
-              whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-              className={styles.submitBtn}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Enviando...' : t('form.send')}
-            </motion.button>
+                {submitStatus === 'error' && (
+                  <div className={styles.errorMessage}>
+                    Error al enviar el mensaje. Por favor intenta nuevamente.
+                  </div>
+                )}
+
+                <motion.button
+                  type="submit"
+                  whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                  className={styles.submitBtn}
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Enviando...' : t('form.send')}
+                </motion.button>
+              </>
+            )}
           </motion.form>
         </div>
       </div>
