@@ -97,7 +97,7 @@ git push
 
 ### Emails:
 1. Envía un mensaje de prueba desde el formulario
-2. Revisa `frangipani.octavio@gmail.com`
+2. Revisa `hola@miralab.ar`
 3. Verifica en Resend Dashboard → **Logs**
 
 ### Analytics:

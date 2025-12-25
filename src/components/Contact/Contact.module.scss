@@ -31,6 +31,24 @@
     border-radius: 20px;
     border: 1px solid var(--border-color);
 
+    .formTitle {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 2rem;
+      text-align: center;
+
+      a {
+        color: var(--accent-primary);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: var(--accent-secondary);
+        }
+      }
+    }
+
     .formGroup {
       margin-bottom: 2rem;
 

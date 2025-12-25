@@ -105,6 +105,8 @@ export default function Contact() {
             onSubmit={handleSubmit}
             className={styles.form}
           >
+            <h3 className={styles.formTitle}>Escribinos un mail a hola@miralab.ar con cualquier consulta que tengas</h3>
+            
             <div className={styles.formGroup}>
               <label htmlFor="name">{t('form.name')}</label>
               <input

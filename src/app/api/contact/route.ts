@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     // Enviar email
     const { data, error } = await resend.emails.send({
       from: 'MIRALAB Website <onboarding@resend.dev>', // Cambiarás esto cuando verifiques tu dominio
-      to: ['frangipani.octavio@gmail.com'],
+      to: ['hola@miralab.ar'],
       replyTo: email,
       subject: `Nuevo contacto de ${name} - MIRALAB`,
       html: `
