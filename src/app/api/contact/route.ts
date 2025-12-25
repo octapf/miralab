@@ -1,7 +1,5 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
@@ -15,10 +13,21 @@ export async function POST(request: Request) {
       );
     }
 
-    // Enviar email
-    const { data, error } = await resend.emails.send({
-      from: 'MIRALAB Website <onboarding@resend.dev>',
-      to: ['hola@miralab.ar'],
+    // Configurar transporter de Zoho
+    const transporter = nodemailer.createTransport({
+      host: 'smtppro.zoho.com',
+      port: 465,
+      secure: true, // SSL
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // Configurar email
+    const mailOptions = {
+      from: `"MIRALAB Website" <${process.env.EMAIL_USER}>`,
+      to: 'hola@miralab.ar',
       replyTo: email,
       subject: `Nuevo contacto de ${name} - MIRALAB`,
       html: `
@@ -44,24 +53,19 @@ export async function POST(request: Request) {
           </div>
         </div>
       `,
-    });
+    };
 
-    if (error) {
-      console.error('Error de Resend:', error);
-      return NextResponse.json(
-        { error: 'Error al enviar el email' },
-        { status: 500 }
-      );
-    }
+    // Enviar email
+    await transporter.sendMail(mailOptions);
 
     return NextResponse.json(
-      { success: true, message: 'Email enviado correctamente', data },
+      { success: true, message: 'Email enviado correctamente' },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Error general:', error);
+    console.error('Error al enviar email:', error);
     return NextResponse.json(
-      { error: 'Error del servidor' },
+      { error: 'Error al enviar el email' },
       { status: 500 }
     );
   }
