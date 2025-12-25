@@ -32,11 +32,12 @@
     border: 1px solid var(--border-color);
 
     .formTitle {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--text-primary);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--text-secondary);
       margin-bottom: 2rem;
       text-align: center;
+      line-height: 1.6;
 
       a {
         color: var(--accent-primary);
