@@ -39,6 +39,10 @@
       text-align: center;
       line-height: 1.6;
 
+      .email {
+        color: white;
+      }
+
       a {
         color: var(--accent-primary);
         text-decoration: none;
