@@ -2,22 +2,13 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import '@/styles/globals.scss';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'MIRALAB - Innovación Digital & Desarrollo Web',
   description: 'Transformamos tus ideas en realidad digital. Desarrollo web, aplicaciones móviles y consultoría IT de vanguardia.',
   keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, MIRALAB',
   authors: [{ name: 'MIRALAB' }],
-  icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
   openGraph: {
     title: 'MIRALAB - Innovación Digital',
     description: 'Transformamos tus ideas en realidad digital',
