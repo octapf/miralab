@@ -11,15 +11,52 @@ output_dir = "public"
 # Asegurarse de que el directorio de salida existe
 os.makedirs(output_dir, exist_ok=True)
 
+
+def remove_near_white_background(img: Image.Image, cutoff: int = 245, feather: int = 12) -> Image.Image:
+    """Convierte el fondo (blanco/casi blanco) en transparente.
+
+    - cutoff: a partir de este valor (0-255) se considera "casi blanco".
+    - feather: rango para suavizar bordes (anti-alias) hacia transparencia.
+    """
+
+    rgba = img.convert('RGBA')
+    pixels = list(rgba.getdata())
+    new_pixels = []
+
+    start = max(0, cutoff - feather)
+    span = max(1, cutoff - start)
+
+    for r, g, b, a in pixels:
+        # si ya es transparente, conservar
+        if a == 0:
+            new_pixels.append((r, g, b, 0))
+            continue
+
+        # "cercanía al blanco" usando el mínimo canal (más conservador)
+        m = min(r, g, b)
+        if m >= cutoff:
+            # blanco/casi blanco -> transparente
+            new_pixels.append((r, g, b, 0))
+        elif m >= start:
+            # zona de transición: se vuelve parcialmente transparente
+            # m == start => alpha original; m == cutoff => alpha 0
+            t = (cutoff - m) / span
+            new_a = int(a * t)
+            new_pixels.append((r, g, b, new_a))
+        else:
+            new_pixels.append((r, g, b, a))
+
+    rgba.putdata(new_pixels)
+    return rgba
+
 def create_favicon(input_path, output_dir):
     """Genera todos los tamaños de favicon necesarios"""
     
     # Abrir la imagen original
     img = Image.open(input_path)
     
-    # Convertir a RGBA si no lo está (para manejar transparencia)
-    if img.mode != 'RGBA':
-        img = img.convert('RGBA')
+    # Convertir a RGBA y limpiar fondo blanco a transparente
+    img = remove_near_white_background(img)
     
     # Generar favicon-16x16.png
     favicon_16 = img.resize((16, 16), Image.Resampling.LANCZOS)
@@ -37,12 +74,9 @@ def create_favicon(input_path, output_dir):
     print("✓ apple-touch-icon.png creado")
     
     # Generar favicon.ico (con múltiples tamaños: 16, 32, 48)
-    favicon_16_ico = img.resize((16, 16), Image.Resampling.LANCZOS)
-    favicon_32_ico = img.resize((32, 32), Image.Resampling.LANCZOS)
-    favicon_48_ico = img.resize((48, 48), Image.Resampling.LANCZOS)
-    
-    favicon_16_ico.save(
-        os.path.join(output_dir, "favicon.ico"),
+    favicon_ico_path = os.path.join(output_dir, "favicon.ico")
+    img.save(
+        favicon_ico_path,
         format='ICO',
         sizes=[(16, 16), (32, 32), (48, 48)]
     )
