@@ -49,6 +49,44 @@ def remove_near_white_background(img: Image.Image, cutoff: int = 245, feather: i
     rgba.putdata(new_pixels)
     return rgba
 
+
+def crop_to_visible(img: Image.Image, alpha_threshold: int = 8) -> Image.Image:
+    """Recorta el bounding-box del contenido visible (según alpha)."""
+
+    rgba = img.convert('RGBA')
+    alpha = rgba.split()[3]
+    # binarizar: todo pixel con alpha > threshold se considera contenido
+    mask = alpha.point(lambda p: 255 if p > alpha_threshold else 0)
+    bbox = mask.getbbox()
+    if not bbox:
+        return rgba
+    return rgba.crop(bbox)
+
+
+def fit_to_square(img: Image.Image, size: int, padding_ratio: float = 0.04) -> Image.Image:
+    """Encaja la imagen en un canvas cuadrado de 'size' maximizando el área visible.
+
+    padding_ratio: fracción del lado reservada como padding total (0..0.2 aprox).
+    """
+
+    rgba = img.convert('RGBA')
+    # recortar márgenes transparentes para maximizar el contenido
+    cropped = crop_to_visible(rgba)
+
+    # crear canvas cuadrado del lado mayor del recorte
+    w, h = cropped.size
+    side = max(w, h)
+    square = Image.new('RGBA', (side, side), (0, 0, 0, 0))
+    square.paste(cropped, ((side - w) // 2, (side - h) // 2), cropped)
+
+    # aplicar padding (dejando un margen mínimo para que no se “coma” el borde)
+    pad = int(round(size * padding_ratio))
+    target = max(1, size - 2 * pad)
+    square_resized = square.resize((target, target), Image.Resampling.LANCZOS)
+    out = Image.new('RGBA', (size, size), (0, 0, 0, 0))
+    out.paste(square_resized, (pad, pad), square_resized)
+    return out
+
 def create_favicon(input_path, output_dir):
     """Genera todos los tamaños de favicon necesarios"""
     
@@ -58,24 +96,25 @@ def create_favicon(input_path, output_dir):
     # Convertir a RGBA y limpiar fondo blanco a transparente
     img = remove_near_white_background(img)
     
-    # Generar favicon-16x16.png
-    favicon_16 = img.resize((16, 16), Image.Resampling.LANCZOS)
+    # Generar favicon-16x16.png (maximiza área visible)
+    favicon_16 = fit_to_square(img, 16)
     favicon_16.save(os.path.join(output_dir, "favicon-16x16.png"), "PNG")
     print("✓ favicon-16x16.png creado")
     
     # Generar favicon-32x32.png
-    favicon_32 = img.resize((32, 32), Image.Resampling.LANCZOS)
+    favicon_32 = fit_to_square(img, 32)
     favicon_32.save(os.path.join(output_dir, "favicon-32x32.png"), "PNG")
     print("✓ favicon-32x32.png creado")
     
     # Generar apple-touch-icon.png (180x180)
-    apple_icon = img.resize((180, 180), Image.Resampling.LANCZOS)
+    apple_icon = fit_to_square(img, 180, padding_ratio=0.06)
     apple_icon.save(os.path.join(output_dir, "apple-touch-icon.png"), "PNG")
     print("✓ apple-touch-icon.png creado")
     
     # Generar favicon.ico (con múltiples tamaños: 16, 32, 48)
     favicon_ico_path = os.path.join(output_dir, "favicon.ico")
-    img.save(
+    ico_base = fit_to_square(img, 48)
+    ico_base.save(
         favicon_ico_path,
         format='ICO',
         sizes=[(16, 16), (32, 32), (48, 48)]
