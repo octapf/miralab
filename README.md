@@ -34,6 +34,20 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 
 The default language is Spanish. Access English version at [http://localhost:3000/en](http://localhost:3000/en).
 
+## WhatsApp webhook (local + ngrok)
+
+Guía paso a paso para probar el bot localmente (sin Vercel):
+
+- [WHATSAPP-LOCAL-NGROK.md](WHATSAPP-LOCAL-NGROK.md)
+
+Plan B (Twilio WhatsApp Sandbox):
+
+- [TWILIO-WHATSAPP.md](TWILIO-WHATSAPP.md)
+
+Script helper (Windows):
+
+- [start-whatsapp-local.ps1](start-whatsapp-local.ps1)
+
 ### Build
 
 ```bash

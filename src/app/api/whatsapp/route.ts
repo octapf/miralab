@@ -13,6 +13,11 @@ type WhatsAppWebhook = {
           timestamp?: string;
           type?: string;
           text?: { body?: string };
+          interactive?: {
+            type?: 'button_reply' | 'list_reply';
+            button_reply?: { id?: string; title?: string };
+            list_reply?: { id?: string; title?: string; description?: string };
+          };
         }>;
       };
     }>;
@@ -25,12 +30,29 @@ function getEnv(name: string): string {
   return value;
 }
 
+function getEnvOptional(name: string): string | undefined {
+  const value = process.env[name];
+  return value && value.trim() ? value : undefined;
+}
+
 function extractInboundText(payload: WhatsAppWebhook): { from: string; text: string } | null {
   const message = payload.entry?.[0]?.changes?.[0]?.value?.messages?.[0];
   const from = message?.from?.trim();
+
+  // Text message
   const text = message?.text?.body?.trim();
-  if (!from || !text) return null;
-  return { from, text };
+  if (from && text) return { from, text };
+
+  // Interactive replies (button/list)
+  const buttonId = message?.interactive?.button_reply?.id?.trim();
+  const buttonTitle = message?.interactive?.button_reply?.title?.trim();
+  if (from && (buttonId || buttonTitle)) return { from, text: buttonId || buttonTitle || '' };
+
+  const listId = message?.interactive?.list_reply?.id?.trim();
+  const listTitle = message?.interactive?.list_reply?.title?.trim();
+  if (from && (listId || listTitle)) return { from, text: listId || listTitle || '' };
+
+  return null;
 }
 
 async function sendWhatsAppMessage(params: {
@@ -63,8 +85,17 @@ async function sendWhatsAppMessage(params: {
             };
       };
 }) {
-  const token = getEnv('WHATSAPP_ACCESS_TOKEN');
-  const phoneNumberId = getEnv('WHATSAPP_PHONE_NUMBER_ID');
+  const dryRun = (process.env.WHATSAPP_DRY_RUN || '').toLowerCase() === '1';
+  const token = getEnvOptional('WHATSAPP_ACCESS_TOKEN');
+  const phoneNumberId = getEnvOptional('WHATSAPP_PHONE_NUMBER_ID');
+
+  if (dryRun || !token || !phoneNumberId) {
+    console.warn(
+      '[whatsapp] DRY_RUN / missing env vars; skipping send. ' +
+        `Need WHATSAPP_ACCESS_TOKEN + WHATSAPP_PHONE_NUMBER_ID. To=${params.to}`
+    );
+    return;
+  }
 
   const res = await fetch(`${GRAPH_API_BASE}/${phoneNumberId}/messages`, {
     method: 'POST',

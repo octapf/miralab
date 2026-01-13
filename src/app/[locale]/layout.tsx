@@ -1,6 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { ThemeProvider } from '@/contexts/ThemeContext';
+import Background from '@/components/Background/Background';
 import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 
@@ -76,6 +77,7 @@ export default async function RootLayout({
       <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
+            <Background />
             {children}
           </ThemeProvider>
         </NextIntlClientProvider>

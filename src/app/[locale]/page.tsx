@@ -21,9 +21,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Navbar locale={locale} />
       <Hero />
       <About />
-      <Contact />
       <Services />
-      <Portfolio />
+      <Contact />
       
       <FloatingWhatsApp />
       

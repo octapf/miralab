@@ -7,7 +7,9 @@ import styles from './Services.module.scss';
 const serviceIcons = {
   webDev: '💻',
   mobileDev: '📱',
-  consulting: '🎯'
+  consulting: '🎯',
+  digitalTrans: '⚡',
+  aiSolutions: '🤖'
 };
 
 export default function Services() {
@@ -27,10 +29,22 @@ export default function Services() {
       description: t('mobileDev.description')
     },
     {
+      key: 'aiSolutions',
+      icon: serviceIcons.aiSolutions,
+      title: t('aiSolutions.title'),
+      description: t('aiSolutions.description')
+    },
+    {
       key: 'consulting',
       icon: serviceIcons.consulting,
       title: t('consulting.title'),
       description: t('consulting.description')
+    },
+    {
+      key: 'digitalTrans',
+      icon: serviceIcons.digitalTrans,
+      title: t('digitalTrans.title'),
+      description: t('digitalTrans.description')
     }
   ];
 

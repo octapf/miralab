@@ -8,32 +8,32 @@
   },
   "about": {
     "title": "About Us",
-    "subtitle": "Experts in innovative technology solutions",
-    "description": "We are a passionate team of professionals dedicated to transforming ideas into exceptional digital solutions. With years of experience in the technology sector, we help businesses of all sizes achieve their goals through innovation and technical excellence.",
+    "subtitle": "Driving Innovation with AI & Modern Technology",
+    "description": "We are a dynamic team dedicated to transforming ideas into high-impact digital products. We specialize in integrating Artificial Intelligence to empower businesses, focusing on building scalable, efficient, and user-centric solutions. Our agile approach ensures we use the latest tech stacks to give you a real competitive edge.",
     "mission": {
       "title": "Our Mission",
-      "description": "Empower businesses with cutting-edge technology, creating customized solutions that drive growth and digital transformation."
+      "description": "To empower businesses with cutting-edge technology, providing personalized dedication to every project we undertake."
     },
     "vision": {
       "title": "Our Vision",
-      "description": "To be recognized leaders in technological innovation, setting new standards of quality and excellence in every project we undertake."
+      "description": "To set new standards in digital quality, prioritizing clean code and exceptional user experiences over mass production."
     },
     "values": {
       "title": "Our Values",
-      "innovation": "Innovation",
-      "innovationDesc": "We constantly seek new ways to solve problems",
-      "quality": "Quality",
-      "qualityDesc": "Committed to excellence in every line of code",
-      "collaboration": "Collaboration",
-      "collaborationDesc": "We work as a team with our clients for mutual success",
-      "integrity": "Integrity",
-      "integrityDesc": "Transparency and honesty in all our relationships"
+      "innovation": "Modern Stack",
+      "innovationDesc": "We leverage the latest frameworks for speed and reliability",
+      "quality": "Craftsmanship",
+      "qualityDesc": "We treat every line of code with obsessive attention to detail",
+      "collaboration": "Direct Partnership",
+      "collaborationDesc": "We work side-by-side with you, without intermediaries",
+      "integrity": "Transparency",
+      "integrityDesc": "Clear communication and honest timelines, always"
     },
     "stats": {
-      "years": "Years of Experience",
-      "projects": "Completed Projects",
-      "clients": "Satisfied Clients",
-      "team": "Professionals"
+      "years": "Commitment",
+      "projects": "Dedication",
+      "clients": "Tech Stack",
+      "team": "Focus"
     }
   },
   "hero": {
@@ -47,15 +47,23 @@
     "subtitle": "Comprehensive solutions for your digital business",
     "webDev": {
       "title": "Web Development",
-      "description": "We create modern, fast, and responsive websites using the latest technologies. From landing pages to complex web applications."
+      "description": "Creation of modern, responsive websites and complex web applications using the latest tech stacks."
     },
     "mobileDev": {
       "title": "Mobile Apps",
-      "description": "We develop native and cross-platform apps for iOS and Android with exceptional user experiences and optimal performance."
+      "description": "Development of native and cross-platform applications for iOS and Android with a focus on UX/UI."
     },
     "consulting": {
-      "title": "IT Consulting",
-      "description": "Strategic technology consulting, software architecture, process optimization, and digital transformation for your business."
+      "title": "IT Consultancy",
+      "description": "Strategic advice on software architecture, technology selection, and digital growth."
+    },
+    "digitalTrans": {
+      "title": "Digital Transformation",
+      "description": "Helping traditional businesses integrate technology to optimize internal processes."
+    },
+    "aiSolutions": {
+      "title": "AI Solutions",
+      "description": "Implementation of intelligent chatbots, process automation, and data analysis using advanced language models."
     }
   },
   "portfolio": {

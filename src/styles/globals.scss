@@ -7,14 +7,14 @@
 }
 
 [data-theme='dark'] {
-  --bg-primary: var(--color-black);
-  --bg-secondary: #111111;
-  --bg-card: #1a1a1a;
+  --bg-primary: #030014;
+  --bg-secondary: #0a0a2a;
+  --bg-card: rgba(30, 30, 60, 0.5);
   --text-primary: var(--color-white);
   --text-secondary: #b3b3b3;
   --accent-primary: var(--color-violet);
   --accent-secondary: var(--color-purple);
-  --border-color: #333333;
+  --border-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme='light'] {
@@ -44,10 +44,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-primary);
+  background-color: #020010;
+  /* El fondo ahora se maneja en el componente Background.tsx para efecto parallax */
   color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 a {

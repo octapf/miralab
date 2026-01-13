@@ -84,7 +84,6 @@ export default function Navbar({ locale }: NavbarProps) {
           <li><button onClick={() => scrollToSection('home')}>{t('home')}</button></li>
           <li><button onClick={() => scrollToSection('about')}>{t('about')}</button></li>
           <li><button onClick={() => scrollToSection('services')}>{t('services')}</button></li>
-          <li><button onClick={() => scrollToSection('portfolio')}>{t('portfolio')}</button></li>
           <li><button onClick={() => scrollToSection('contact')}>{t('contact')}</button></li>
         </ul>
 

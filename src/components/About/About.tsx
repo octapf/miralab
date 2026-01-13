@@ -8,10 +8,10 @@ export default function About() {
   const t = useTranslations('about');
 
   const stats = [
-    { value: '10+', label: t('stats.years') },
-    { value: '150+', label: t('stats.projects') },
-    { value: '100+', label: t('stats.clients') },
-    { value: '25+', label: t('stats.team') }
+    { value: '100%', label: t('stats.years') },
+    { value: '1 a 1', label: t('stats.projects') },
+    { value: '+10', label: t('stats.clients') },
+    { value: 'Ágil', label: t('stats.team') }
   ];
 
   const values = [
