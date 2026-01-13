@@ -40,4 +40,14 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# ngrok
+.ngrok-logs/
+.ngrok-authtoken.txt
+
+# playwright
+.pw-profile/
+
+# temporary files
+tmp-*.png
+
 .vercel
