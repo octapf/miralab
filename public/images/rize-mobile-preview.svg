@@ -1,0 +1,51 @@
+<svg width="390" height="844" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rize app preview">
+  <style>
+    .ui { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  </style>
+  <defs>
+    <clipPath id="screenClipRize">
+      <rect x="13" y="10" width="364" height="824" rx="42" />
+    </clipPath>
+  </defs>
+  <rect width="390" height="844" rx="52" fill="#07080f" />
+  <rect x="11" y="8" width="368" height="828" rx="44" fill="none" stroke="#3b3f50" stroke-width="2" />
+  <rect x="13" y="10" width="364" height="824" rx="42" fill="#0d1021" />
+  <g clip-path="url(#screenClipRize)">
+  <rect x="133" y="21" width="124" height="30" rx="15" fill="#050505" />
+
+  <text class="ui" x="35" y="64" fill="#fff" font-size="20" font-weight="600">9:41</text>
+  <rect x="300" y="51" width="6" height="12" rx="2" fill="#fff" />
+  <rect x="309" y="54" width="6" height="9" rx="2" fill="#fff" />
+  <rect x="318" y="57" width="6" height="6" rx="2" fill="#fff" opacity="0.6" />
+  <path d="M330 55 Q337 48 344 55" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <path d="M333 60 Q337 56 341 60" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" />
+  <circle cx="337" cy="64" r="2.2" fill="#fff" />
+  <rect x="352" y="51" width="28" height="14" rx="3.5" fill="none" stroke="#fff" stroke-width="2" />
+  <rect x="354.5" y="53.5" width="21" height="9" rx="2" fill="#fff" />
+
+  <text class="ui" x="35" y="136" fill="#8B5CF6" font-size="42" font-weight="800">Rize</text>
+  <text class="ui" x="35" y="170" fill="#A3A3A3" font-size="21">Calisthenics planner</text>
+
+  <rect x="35" y="188" width="320" height="140" rx="16" fill="#1b1f36" />
+  <text class="ui" x="53" y="228" fill="#A78BFA" font-size="21" font-weight="700">Pull Day</text>
+  <text class="ui" x="53" y="260" fill="#E5E7EB" font-size="18">Thu, Mar 12</text>
+  <text class="ui" x="53" y="288" fill="#C4C7CC" font-size="18">6 exercises · 45 min</text>
+  <text class="ui" x="53" y="316" fill="#22D3EE" font-size="18" font-weight="600">8/10 sessions done</text>
+
+  <rect x="35" y="344" width="320" height="140" rx="16" fill="#1b1f36" />
+  <text class="ui" x="53" y="384" fill="#A78BFA" font-size="21" font-weight="700">Core &amp; Mobility</text>
+  <text class="ui" x="53" y="416" fill="#E5E7EB" font-size="18">Fri, Mar 13</text>
+  <text class="ui" x="53" y="444" fill="#C4C7CC" font-size="18">4 exercises · 30 min</text>
+  <text class="ui" x="53" y="472" fill="#22D3EE" font-size="18" font-weight="600">5/10 sessions done</text>
+
+  <rect x="198" y="524" width="157" height="52" rx="26" fill="#8B5CF6" />
+  <text class="ui" x="219" y="557" fill="#ffffff" font-size="18" font-weight="700">+ New Routine</text>
+
+  <rect x="13" y="756" width="364" height="78" fill="#141729" />
+  <rect x="13" y="756" width="364" height="1" fill="#2b3048" />
+  <text class="ui" x="67" y="800" fill="#8B5CF6" font-size="14" font-weight="600">Today</text>
+  <text class="ui" x="154" y="800" fill="#7A7D84" font-size="14">Routines</text>
+  <text class="ui" x="276" y="800" fill="#7A7D84" font-size="14">Profile</text>
+  <rect x="149" y="820" width="92" height="4" rx="2" fill="#F4F4F5" opacity="0.28" />
+  </g>
+</svg>

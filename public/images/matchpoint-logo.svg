@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Matchpoint icon</title>
+  <desc id="desc">Clean volleyball icon for Matchpoint</desc>
+  <g fill="none" stroke="#F59E0B" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="128" cy="128" r="86" stroke-width="14" />
+    <path d="M58 108 C92 70 164 70 198 108" stroke-width="10" />
+    <path d="M58 148 C92 186 164 186 198 148" stroke-width="10" />
+    <path d="M110 44 C142 90 142 166 110 212" stroke-width="10" />
+    <path d="M146 44 C114 90 114 166 146 212" stroke-width="10" />
+  </g>
+</svg>

@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import Services from '@/components/Services/Services';
+import Portfolio from '@/components/Portfolio/Portfolio';
 import Contact from '@/components/Contact/Contact';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp/FloatingWhatsApp';
 import { getTranslations } from 'next-intl/server';
@@ -21,6 +22,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <Hero />
       <About />
       <Services />
+      <Portfolio />
       <Contact />
 
       <FloatingWhatsApp />
@@ -35,7 +37,6 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         }}
       >
         <p>{t('rights')}</p>
-        <p style={{ fontSize: '0.9rem', marginTop: '0.5rem' }}>{t('trademark')}</p>
         <Link
           href={`/${locale}/terminos`}
           style={{

@@ -23,6 +23,31 @@
     padding-bottom: 4rem;
   }
 
+  .projectsGrid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(280px, 420px));
+    justify-content: center;
+    gap: 1.8rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(300px, 480px));
+    }
+  }
+
+  .swiperContainer :global(.swiper) {
+    padding-top: 12px;
+    padding-bottom: 6px;
+  }
+
+  .swiperContainer :global(.swiper-wrapper) {
+    align-items: stretch;
+  }
+
+  .swiperContainer :global(.swiper-slide) {
+    height: auto;
+    display: flex;
+  }
+
   .swiperContainer :global(.swiper-button-next),
   .swiperContainer :global(.swiper-button-prev) {
     color: var(--accent-primary);
@@ -49,51 +74,49 @@
   }
 
   .card {
-    background: var(--bg-card);
+    background: linear-gradient(
+      140deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(8px);
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
-      border-color: var(--accent-primary);
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 26px 70px rgba(124, 58, 237, 0.24);
+      border-color: rgba(167, 139, 250, 0.7);
     }
 
     .imageContainer {
       width: 100%;
       height: 200px;
       overflow: hidden;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.95), rgba(56, 189, 248, 0.85));
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
 
-      .imagePlaceholder {
+      .projectImage {
         width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(168, 85, 247, 0.8));
-        
-        .imageIcon {
-          font-size: 4rem;
-          opacity: 0.8;
-          filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
-        }
-
-        &::after {
-          content: 'Image Preview';
-          color: rgba(255, 255, 255, 0.6);
-          font-size: 0.9rem;
-          font-weight: 600;
-          letter-spacing: 1px;
-        }
+        object-fit: contain;
+        object-position: center;
       }
     }
 
@@ -120,6 +143,7 @@
 
       .techStack {
         margin-bottom: 1.5rem;
+        min-height: 4.4rem;
 
         .techLabel {
           font-size: 0.9rem;
@@ -150,14 +174,28 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        color: var(--accent-primary);
+        color: #e9ddff;
+        background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(59, 130, 246, 0.2));
+        border: 1px solid rgba(167, 139, 250, 0.55);
+        border-radius: 999px;
+        padding: 0.55rem 1rem;
         font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        transition: gap 0.25s ease, color 0.25s ease, border-color 0.25s ease,
+          background 0.25s ease;
+        margin-top: auto;
+
+        .githubIcon {
+          width: 1rem;
+          height: 1rem;
+          flex-shrink: 0;
+        }
 
         &:hover {
-          gap: 1rem;
-          color: var(--accent-secondary);
+          gap: 0.75rem;
+          color: #fff;
+          border-color: rgba(196, 181, 253, 0.9);
+          background: linear-gradient(135deg, rgba(139, 92, 246, 0.42), rgba(59, 130, 246, 0.33));
         }
       }
     }
@@ -177,16 +215,6 @@
     .card {
       .imageContainer {
         height: 180px;
-
-        .imagePlaceholder {
-          .imageIcon {
-            font-size: 3rem;
-          }
-
-          &::after {
-            font-size: 0.8rem;
-          }
-        }
       }
 
       .content {

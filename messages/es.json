@@ -4,11 +4,12 @@
     "about": "Nosotros",
     "services": "Servicios",
     "portfolio": "Portafolio",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "menu": "Menú"
   },
   "about": {
-    "title": "Sobre Nosotros",
-    "subtitle": "Impulsando la innovación con IA y tecnología moderna",
+    "title": "Ingeniería digital avanzada",
+    "subtitle": "Desarrollo web, aplicaciones móviles y consultoría tecnológica de vanguardia",
     "description": "Somos un equipo dinámico dedicado a transformar ideas en productos digitales de alto impacto. Nos especializamos en la integración de Inteligencia Artificial para potenciar negocios, enfocándonos en construir soluciones escalables, eficientes y centradas en el usuario. Nuestro enfoque ágil nos permite utilizar las últimas tecnologías para darte una ventaja competitiva real.",
     "mission": {
       "title": "Nuestra Misión",
@@ -40,7 +41,10 @@
     "title": "Ingeniería digital avanzada",
     "subtitle": "",
     "description": "Desarrollo web, aplicaciones móviles y consultoría tecnológica de vanguardia",
-    "cta": "Comenzar Proyecto"
+    "cta": "Comenzar Proyecto",
+    "showcaseBadge": "Showcase",
+    "showcaseTitle": "Proyectos reales construidos por MIRALAB",
+    "showcaseCta": "Ver en GitHub"
   },
   "services": {
     "title": "Nuestros Servicios",
@@ -70,7 +74,21 @@
     "title": "Proyectos Destacados",
     "subtitle": "Explora nuestros trabajos más recientes",
     "viewProject": "Ver Proyecto",
-    "techStack": "Tecnologías"
+    "techStack": "Tecnologías",
+    "projects": {
+      "rize": {
+        "title": "Rize",
+        "description": "Rize es una app de entrenamiento de calistenia, enfocada en performance, UX moderna e integración web full stack."
+      },
+      "matchpoint": {
+        "title": "Matchpoint",
+        "description": "Matchpoint es una app para torneos de beach volley, diseñada para escalar con arquitectura modular y una experiencia clara."
+      },
+      "proshop": {
+        "title": "Proshop",
+        "description": "Proshop es un e-commerce de productos de tecnologia, con foco en experiencia de compra moderna, performance y arquitectura escalable."
+      }
+    }
   },
   "contact": {
     "title": "¿Listo para empezar?",
@@ -81,7 +99,19 @@
       "message": "Mensaje",
       "send": "Enviar Mensaje"
     },
-    "whatsapp": "Contactar por WhatsApp"
+    "whatsapp": "Contactar por WhatsApp",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "¿Prefieres chatear? Contáctanos directamente por WhatsApp",
+    "whatsappDefaultMessage": "Hola, me gustaría información sobre sus servicios",
+    "whatsappAria": "Contactar por WhatsApp",
+    "successTitle": "¡Mensaje enviado correctamente!",
+    "successDescription": "Te responderemos pronto a tu consulta.",
+    "newQuery": "Nueva consulta",
+    "emailPromptPrefix": "Escribinos un mail a",
+    "emailPromptSuffix": "con cualquier consulta que tengas",
+    "submitting": "Enviando...",
+    "submitErrorGeneric": "Error al enviar el mensaje. Por favor intenta nuevamente.",
+    "serverConnectionError": "No se pudo conectar con el servidor. Intenta nuevamente."
   },
   "footer": {
     "rights": "© 2025 MIRALAB | Desarrollado por Octavio Frangipani. Todos los derechos reservados.",
@@ -94,6 +124,11 @@
     "section1Title": "Propiedad Intelectual y Marca Comercial",
     "section1Content": "Los servicios prestados bajo el nombre MIRALAB, así como el contenido, diseño visual, código fuente y logotipos presentes en miralab.ar, son propiedad exclusiva de Octavio Patricio Frangipani.",
     "section2Content": "Se hace saber que la marca MIRALAB se encuentra actualmente en proceso de registro ante el Instituto Nacional de la Propiedad Industrial (INPI) de la República Argentina bajo la Clase 42 (Servicios de programación, software y ciberseguridad). Queda estrictamente prohibido el uso no autorizado de este signo distintivo o la reproducción de los contenidos de este sitio con fines comerciales por parte de terceros.",
+    "backHome": "Volver al inicio"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe.",
     "backHome": "Volver al inicio"
   }
 }

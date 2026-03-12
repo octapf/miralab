@@ -75,6 +75,31 @@
     gap: 1rem;
     align-items: center;
 
+    .whatsappBtn {
+      width: 42px;
+      height: 42px;
+      padding: 0.45rem;
+      border-radius: 10px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: #25d366;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s ease;
+
+      svg {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+
+      &:hover {
+        transform: translateY(-2px);
+        border-color: rgba(37, 211, 102, 0.6);
+        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.22);
+      }
+    }
+
     .langDropdown {
       position: relative;
 
@@ -368,6 +393,10 @@
     }
 
     .actions .themeBtn {
+      display: none;
+    }
+
+    .actions .whatsappBtn {
       display: none;
     }
 

@@ -4,17 +4,21 @@
     "about": "Chi Siamo",
     "services": "Servizi",
     "portfolio": "Portfolio",
-    "contact": "Contatto"
+    "contact": "Contatto",
+    "menu": "Menu"
   },
   "hero": {
     "title": "Ingegneria digitale avanzata",
     "subtitle": "",
     "description": "Sviluppo web, applicazioni mobili e consulenza tecnologica all'avanguardia",
-    "cta": "Inizia Progetto"
+    "cta": "Inizia Progetto",
+    "showcaseBadge": "Showcase",
+    "showcaseTitle": "Progetti reali costruiti da MIRALAB",
+    "showcaseCta": "Vedi su GitHub"
   },
   "about": {
-    "title": "Chi Siamo",
-    "subtitle": "Esperti in soluzioni tecnologiche innovative",
+    "title": "Ingegneria digitale avanzata",
+    "subtitle": "Sviluppo web, applicazioni mobili e consulenza tecnologica all'avanguardia",
     "description": "Siamo un team appassionato di professionisti dedicati a trasformare idee in soluzioni digitali eccezionali. Con anni di esperienza nel settore tecnologico, aiutiamo aziende di tutte le dimensioni a raggiungere i loro obiettivi attraverso l'innovazione e l'eccellenza tecnica.",
     "mission": {
       "title": "La Nostra Missione",
@@ -70,7 +74,21 @@
     "title": "Progetti In Evidenza",
     "subtitle": "Esplora i nostri lavori più recenti",
     "viewProject": "Vedi Progetto",
-    "techStack": "Tecnologie"
+    "techStack": "Tecnologie",
+    "projects": {
+      "rize": {
+        "title": "Rize",
+        "description": "Rize e un'app di allenamento calistenico, focalizzata su performance, UX moderna e integrazione web full stack."
+      },
+      "matchpoint": {
+        "title": "Matchpoint",
+        "description": "Matchpoint e un'app per tornei di beach volley, progettata per scalare con architettura modulare ed esperienza utente chiara."
+      },
+      "proshop": {
+        "title": "Proshop",
+        "description": "Proshop e un ecommerce di prodotti tecnologici, focalizzato su esperienza d'acquisto moderna, performance e architettura scalabile."
+      }
+    }
   },
   "contact": {
     "title": "Pronto per iniziare?",
@@ -81,7 +99,19 @@
       "message": "Messaggio",
       "send": "Invia Messaggio"
     },
-    "whatsapp": "Contatta via WhatsApp"
+    "whatsapp": "Contatta via WhatsApp",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "Preferisci chattare? Contattaci direttamente su WhatsApp",
+    "whatsappDefaultMessage": "Ciao, vorrei maggiori informazioni sui vostri servizi",
+    "whatsappAria": "Contatta via WhatsApp",
+    "successTitle": "Messaggio inviato correttamente!",
+    "successDescription": "Ti risponderemo presto.",
+    "newQuery": "Nuova richiesta",
+    "emailPromptPrefix": "Scrivici una mail a",
+    "emailPromptSuffix": "per qualsiasi domanda",
+    "submitting": "Invio in corso...",
+    "submitErrorGeneric": "Errore durante l'invio del messaggio. Riprova.",
+    "serverConnectionError": "Impossibile connettersi al server. Riprova."
   },
   "footer": {
     "rights": "© 2025 MIRALAB | Sviluppato da Octavio Frangipani. Tutti i diritti riservati.",
@@ -94,6 +124,11 @@
     "section1Title": "Proprietà Intellettuale e Marchio",
     "section1Content": "I servizi forniti con il nome MIRALAB, nonché il contenuto, il design visivo, il codice sorgente e i loghi presenti su miralab.ar, sono di proprietà esclusiva di Octavio Patricio Frangipani.",
     "section2Content": "Si informa che il marchio MIRALAB è attualmente in fase di registrazione presso l'Istituto Nazionale della Proprietà Industriale (INPI) della Repubblica Argentina nella Classe 42 (Servizi di programmazione, software e sicurezza informatica). È severamente vietato l'uso non autorizzato di questo segno distintivo o la riproduzione dei contenuti di questo sito per scopi commerciali da parte di terzi.",
+    "backHome": "Torna all'inizio"
+  },
+  "notFound": {
+    "title": "Pagina non trovata",
+    "description": "La pagina che stai cercando non esiste.",
     "backHome": "Torna all'inizio"
   }
 }

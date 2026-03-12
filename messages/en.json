@@ -4,11 +4,12 @@
     "about": "About",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact"
+    "contact": "Contact",
+    "menu": "Menu"
   },
   "about": {
-    "title": "About Us",
-    "subtitle": "Driving Innovation with AI & Modern Technology",
+    "title": "Advanced Digital Engineering",
+    "subtitle": "Web development, mobile apps, and cutting-edge technology consulting",
     "description": "We are a dynamic team dedicated to transforming ideas into high-impact digital products. We specialize in integrating Artificial Intelligence to empower businesses, focusing on building scalable, efficient, and user-centric solutions. Our agile approach ensures we use the latest tech stacks to give you a real competitive edge.",
     "mission": {
       "title": "Our Mission",
@@ -40,7 +41,10 @@
     "title": "Advanced Digital Engineering",
     "subtitle": "",
     "description": "Web development, mobile apps, and cutting-edge technology consulting",
-    "cta": "Start Project"
+    "cta": "Start Project",
+    "showcaseBadge": "Showcase",
+    "showcaseTitle": "Real projects built by MIRALAB",
+    "showcaseCta": "View on GitHub"
   },
   "services": {
     "title": "Our Services",
@@ -70,7 +74,21 @@
     "title": "Featured Projects",
     "subtitle": "Explore our latest work",
     "viewProject": "View Project",
-    "techStack": "Tech Stack"
+    "techStack": "Tech Stack",
+    "projects": {
+      "rize": {
+        "title": "Rize",
+        "description": "Rize is a calisthenics training app focused on performance, modern UX, and full-stack web integration."
+      },
+      "matchpoint": {
+        "title": "Matchpoint",
+        "description": "Matchpoint is a beach volleyball tournaments app designed to scale with modular architecture and a clear user experience."
+      },
+      "proshop": {
+        "title": "Proshop",
+        "description": "Proshop is a technology products ecommerce focused on modern shopping experience, performance, and scalable architecture."
+      }
+    }
   },
   "contact": {
     "title": "Ready to start?",
@@ -81,7 +99,19 @@
       "message": "Message",
       "send": "Send Message"
     },
-    "whatsapp": "Contact via WhatsApp"
+    "whatsapp": "Contact via WhatsApp",
+    "whatsappTitle": "WhatsApp",
+    "whatsappDescription": "Prefer to chat? Contact us directly on WhatsApp",
+    "whatsappDefaultMessage": "Hi, I would like more information about your services",
+    "whatsappAria": "Contact via WhatsApp",
+    "successTitle": "Message sent successfully!",
+    "successDescription": "We will get back to you soon.",
+    "newQuery": "New inquiry",
+    "emailPromptPrefix": "Send us an email at",
+    "emailPromptSuffix": "with any question you have",
+    "submitting": "Sending...",
+    "submitErrorGeneric": "Error sending message. Please try again.",
+    "serverConnectionError": "Could not connect to the server. Please try again."
   },
   "footer": {
     "rights": "© 2025 MIRALAB | Developed by Octavio Frangipani. All rights reserved.",
@@ -94,6 +124,11 @@
     "section1Title": "Intellectual Property and Trademark",
     "section1Content": "The services provided under the name MIRALAB, as well as the content, visual design, source code, and logos present on miralab.ar, are the exclusive property of Octavio Patricio Frangipani.",
     "section2Content": "Please be advised that the MIRALAB trademark is currently in the process of registration with the National Institute of Industrial Property (INPI) of the Argentine Republic under Class 42 (Programming, software, and cybersecurity services). Unauthorized use of this distinctive sign or reproduction of the contents of this site for commercial purposes by third parties is strictly prohibited.",
+    "backHome": "Back to home"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
     "backHome": "Back to home"
   }
 }

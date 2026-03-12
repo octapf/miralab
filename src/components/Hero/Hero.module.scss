@@ -1,17 +1,20 @@
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
   background: transparent;
+  display: block;
+  min-height: auto;
+  padding-top: 120px;
+  padding-bottom: 72px;
 
   .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    display: block;
   }
 
   .content {
     z-index: 2;
+    max-width: 760px;
+    margin-bottom: 2.2rem;
 
     .title {
       font-size: 3.5rem;
@@ -28,13 +31,13 @@
       font-size: 2rem;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .description {
       font-size: 1.2rem;
       color: var(--text-secondary);
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       line-height: 1.6;
     }
 
@@ -55,68 +58,232 @@
     }
   }
 
-  .illustration {
+  .fullBleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 0 1.2rem;
+  }
+
+  .carousel {
+    max-width: 1560px;
+    margin: 0 auto;
+    border-radius: 26px;
+    padding: 1.4rem 1.4rem 1rem;
     position: relative;
-    width: 100%;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(
+      130deg,
+      rgba(19, 24, 56, 0.84),
+      rgba(31, 16, 62, 0.82) 40%,
+      rgba(19, 22, 58, 0.86)
+    );
+    border: 1px solid rgba(167, 139, 250, 0.28);
+    box-shadow:
+      inset 0 0 120px rgba(99, 64, 210, 0.18),
+      0 34px 100px rgba(4, 8, 32, 0.55);
 
-    .circle1,
-    .circle2,
-    .circle3 {
+    &::before {
+      content: '';
       position: absolute;
-      border-radius: 50%;
-      opacity: 0.3;
-    }
-
-    .circle1 {
-      width: 400px;
-      height: 400px;
-      background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-      animation: float 6s ease-in-out infinite;
-    }
-
-    .circle2 {
-      width: 300px;
-      height: 300px;
-      background: linear-gradient(45deg, var(--accent-secondary), var(--accent-primary));
-      animation: float 8s ease-in-out infinite;
-      animation-delay: 1s;
-    }
-
-    .circle3 {
-      width: 200px;
-      height: 200px;
-      background: linear-gradient(225deg, var(--accent-primary), var(--accent-secondary));
-      animation: float 10s ease-in-out infinite;
-      animation-delay: 2s;
+      inset: -50% -20%;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 45%);
+      pointer-events: none;
+      filter: blur(25px);
+      opacity: 0.65;
     }
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) rotate(0deg);
+  .slide {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 1.6rem;
+    position: relative;
+    z-index: 2;
+    min-height: 520px;
+  }
+
+  .leftColumn {
+    padding: 0.6rem 0.3rem 0.6rem 0.4rem;
+  }
+
+  .projectHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .projectLogoBadge {
+    width: 62px;
+    height: 62px;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    flex-shrink: 0;
+  }
+
+  .projectName {
+    font-size: clamp(2rem, 8vw, 4.8rem);
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #fff;
+    line-height: 0.95;
+    text-wrap: balance;
+    text-shadow: 0 10px 30px rgba(139, 92, 246, 0.35);
+  }
+
+  .projectDescription {
+    margin-top: 1rem;
+    max-width: 620px;
+    color: rgba(214, 219, 245, 0.92);
+    line-height: 1.55;
+    font-size: 1rem;
+  }
+
+  .githubCta {
+    margin-top: 1.2rem;
+    padding: 0.72rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(167, 139, 250, 0.56);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.32), rgba(56, 189, 248, 0.24));
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      border-color: rgba(196, 181, 253, 0.85);
+      box-shadow: 0 12px 28px rgba(88, 55, 204, 0.35);
     }
-    50% {
-      transform: translateY(-30px) rotate(180deg);
+  }
+
+  .rightColumn {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-width: 240px;
+  }
+
+  .previewWithStores {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .projectLogo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+  }
+
+  .mobilePreview {
+    width: 220px;
+    border-radius: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    transform: translateY(6px);
+    border: none;
+  }
+
+  .previewImage {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .desktopPreview {
+    width: min(680px, 100%);
+    transform: translateY(0);
+  }
+
+  .desktopPreviewImage {
+    border-radius: 14px;
+  }
+
+  .storeBadges {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: flex-start;
+  }
+
+  .storeBadge {
+    width: 112px;
+    height: auto;
+    display: block;
+    opacity: 0.96;
+  }
+
+  .slideDots {
+    margin-top: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(203, 213, 255, 0.42);
+    transition: all 0.22s ease;
+  }
+
+  .activeDot {
+    width: 26px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+    box-shadow: 0 0 14px rgba(139, 92, 246, 0.7);
+  }
+
+  .flash {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(
+      112deg,
+      transparent 10%,
+      rgba(255, 255, 255, 0.22) 48%,
+      transparent 85%
+    );
+    transform: translateX(-120%);
+    transition: opacity 0.15s ease;
+  }
+
+  .flashOn {
+    opacity: 1;
+    animation: flashSweep 0.42s ease-out forwards;
+  }
+
+  @keyframes flashSweep {
+    from {
+      transform: translateX(-115%);
+    }
+    to {
+      transform: translateX(120%);
     }
   }
 
   @media (max-width: 768px) {
-    .container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
     .content {
+      margin-bottom: 1.5rem;
+
       .title {
         font-size: 2.5rem;
       }
 
       .subtitle {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
 
       .description {
@@ -124,23 +291,67 @@
       }
     }
 
-    .illustration {
-      height: 300px;
+    .fullBleed {
+      padding: 0 0.8rem;
+    }
 
-      .circle1 {
-        width: 250px;
-        height: 250px;
-      }
+    .carousel {
+      padding: 1rem 0.9rem 0.9rem;
+      border-radius: 18px;
+    }
 
-      .circle2 {
-        width: 180px;
-        height: 180px;
-      }
+    .slide {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      min-height: auto;
+    }
 
-      .circle3 {
-        width: 120px;
-        height: 120px;
-      }
+    .projectName {
+      font-size: clamp(2rem, 12vw, 2.9rem);
+    }
+
+    .projectHeader {
+      gap: 0.7rem;
+    }
+
+    .projectLogoBadge {
+      width: 50px;
+      height: 50px;
+    }
+
+    .projectDescription {
+      font-size: 0.92rem;
+      margin-top: 0.8rem;
+    }
+
+    .rightColumn {
+      justify-content: center;
+    }
+
+    .mobilePreview {
+      width: min(180px, 100%);
+      border-radius: 0;
+      padding: 0;
+    }
+
+    .desktopPreview {
+      width: min(320px, 100%);
+    }
+
+    .previewImage {
+      border-radius: 0;
+    }
+
+    .previewWithStores {
+      gap: 0.5rem;
+    }
+
+    .storeBadges {
+      gap: 0.35rem;
+    }
+
+    .storeBadge {
+      width: 96px;
     }
   }
 }

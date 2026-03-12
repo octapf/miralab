@@ -1,14 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { WHATSAPP_PHONE_NUMBER } from '@/lib/constants';
 import styles from './FloatingWhatsApp.module.scss';
 
 export default function FloatingWhatsApp() {
+  const t = useTranslations('contact');
+
   const handleWhatsApp = () => {
-    const message = encodeURIComponent(
-      'Hola! Me interesa conocer más sobre los servicios de MIRALAB'
-    );
+    const message = encodeURIComponent(t('whatsappDefaultMessage'));
     window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${message}`, '_blank');
   };
 
@@ -21,7 +22,7 @@ export default function FloatingWhatsApp() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-      aria-label="Contactar por WhatsApp"
+      aria-label={t('whatsappAria')}
     >
       <svg
         viewBox="0 0 24 24"

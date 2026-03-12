@@ -39,12 +39,12 @@ export default function Contact() {
         setFormData({ name: '', email: '', message: '' });
       } else {
         setSubmitErrorMessage(
-          responseData.error || 'Error al enviar el mensaje. Por favor intenta nuevamente.'
+          responseData.error || t('submitErrorGeneric')
         );
         setSubmitStatus('error');
       }
     } catch {
-      setSubmitErrorMessage('No se pudo conectar con el servidor. Intenta nuevamente.');
+      setSubmitErrorMessage(t('serverConnectionError'));
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -57,7 +57,7 @@ export default function Contact() {
   };
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent('Hola, me gustaría información sobre sus servicios');
+    const message = encodeURIComponent(t('whatsappDefaultMessage'));
     window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${message}`, '_blank');
   };
 
@@ -85,10 +85,8 @@ export default function Contact() {
           >
             <div className={styles.whatsappCard}>
               <div className={styles.whatsappIcon}>📱</div>
-              <h3 className={styles.whatsappTitle}>WhatsApp</h3>
-              <p className={styles.whatsappDescription}>
-                ¿Prefieres chatear? Contáctanos directamente por WhatsApp
-              </p>
+              <h3 className={styles.whatsappTitle}>{t('whatsappTitle')}</h3>
+              <p className={styles.whatsappDescription}>{t('whatsappDescription')}</p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -122,8 +120,8 @@ export default function Contact() {
             {submitStatus === 'success' ? (
               <div className={styles.successMessage}>
                 <div className={styles.successIcon}>✓</div>
-                <h3>¡Mensaje enviado correctamente!</h3>
-                <p>Te responderemos pronto a tu consulta.</p>
+                <h3>{t('successTitle')}</h3>
+                <p>{t('successDescription')}</p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -131,14 +129,14 @@ export default function Contact() {
                   className={styles.newQueryBtn}
                   type="button"
                 >
-                  Nueva consulta
+                  {t('newQuery')}
                 </motion.button>
               </div>
             ) : (
               <>
                 <h3 className={styles.formTitle}>
-                  Escribinos un mail a <strong className={styles.email}>{CONTACT_EMAIL}</strong> con
-                  cualquier consulta que tengas
+                  {t('emailPromptPrefix')}{' '}
+                  <strong className={styles.email}>{CONTACT_EMAIL}</strong> {t('emailPromptSuffix')}
                 </h3>
 
                 <div className={styles.formGroup}>
@@ -186,7 +184,7 @@ export default function Contact() {
                   className={styles.submitBtn}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Enviando...' : t('form.send')}
+                  {isSubmitting ? t('submitting') : t('form.send')}
                 </motion.button>
               </>
             )}

@@ -1,0 +1,13 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Rize icon</title>
+  <desc id="desc">Clean lightning bolt icon for Rize</desc>
+  <path
+    d="M150 20 L68 134 H118 L98 236 L188 110 H138 Z"
+    fill="#8B5CF6"
+    stroke="#8B5CF6"
+    stroke-width="6"
+    stroke-linejoin="miter"
+    stroke-miterlimit="10"
+    shape-rendering="geometricPrecision"
+  />
+</svg>

@@ -1,79 +1,160 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import Image from 'next/image';
+import { portfolioProjects } from '@/data/portfolio';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
   const t = useTranslations('hero');
+  const tPortfolio = useTranslations('portfolio');
+  const heroProjects = useMemo(
+    () =>
+      portfolioProjects
+        .filter(
+          (project) =>
+            project.key === 'rize' || project.key === 'matchpoint' || project.key === 'proshop'
+        )
+        .map((project) => ({
+          ...project,
+          preview:
+            project.key === 'rize'
+              ? '/images/rize-mobile-preview.svg'
+              : project.key === 'matchpoint'
+                ? '/images/matchpoint-mobile-preview.svg'
+                : '/images/proshop-mobile-preview.svg',
+          previewWidth: project.key === 'proshop' ? 920 : 390,
+          previewHeight: project.key === 'proshop' ? 560 : 844,
+        })),
+    []
+  );
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [flashActive, setFlashActive] = useState(false);
+
+  useEffect(() => {
+    if (heroProjects.length <= 1) return;
+    const interval = setInterval(() => {
+      setFlashActive(true);
+      setActiveIndex((current) => (current + 1) % heroProjects.length);
+      setTimeout(() => setFlashActive(false), 280);
+    }, 5200);
+    return () => clearInterval(interval);
+  }, [heroProjects.length]);
+
+  const activeProject = heroProjects[activeIndex];
+  const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
+  const isDesktopPreview = activeProject.key === 'proshop';
 
   return (
     <section id="home" className={styles.hero}>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className={styles.content}
-        >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className={styles.title}
-          >
-            {t('title')}
-          </motion.h1>
-          
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className={styles.subtitle}
-          >
-            {t('subtitle')}
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className={styles.description}
-          >
-            {t('description')}
-          </motion.p>
-          
-          <motion.button
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={styles.cta}
-            onClick={scrollToContact}
-          >
-            {t('cta')}
-          </motion.button>
-        </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 28 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.35 }}
+        className={styles.fullBleed}
+      >
+        <div className={styles.carousel}>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeProject.id}
+              className={styles.slide}
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -40 }}
+              transition={{ duration: 0.45, ease: 'easeOut' }}
+            >
+              <div className={styles.leftColumn}>
+                <div className={styles.projectHeader}>
+                  <div className={styles.projectLogoBadge}>
+                    <Image
+                      src={activeProject.image}
+                      alt={`Logo ${tPortfolio(`projects.${activeProject.key}.title`)}`}
+                      width={1200}
+                      height={630}
+                      className={styles.projectLogo}
+                      priority
+                    />
+                  </div>
+                  <h3 className={styles.projectName}>{tPortfolio(`projects.${activeProject.key}.title`)}</h3>
+                </div>
+                <p className={styles.projectDescription}>
+                  {tPortfolio(`projects.${activeProject.key}.description`)}
+                </p>
+                <button
+                  className={styles.githubCta}
+                  onClick={() => window.open(activeProject.link, '_blank', 'noopener,noreferrer')}
+                >
+                  {t('showcaseCta')}
+                </button>
+              </div>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className={styles.illustration}
-        >
-          <div className={styles.circle1}></div>
-          <div className={styles.circle2}></div>
-          <div className={styles.circle3}></div>
-        </motion.div>
-      </div>
+              <div className={styles.rightColumn}>
+                <div className={styles.previewWithStores}>
+                  <div
+                    className={`${styles.mobilePreview} ${isDesktopPreview ? styles.desktopPreview : ''}`}
+                  >
+                    <Image
+                      src={activeProject.preview}
+                      alt={`Mobile preview ${tPortfolio(`projects.${activeProject.key}.title`)}`}
+                      width={activeProject.previewWidth}
+                      height={activeProject.previewHeight}
+                      className={`${styles.previewImage} ${
+                        isDesktopPreview ? styles.desktopPreviewImage : ''
+                      }`}
+                      unoptimized
+                      priority
+                    />
+                  </div>
+                  {showStoreBadges ? (
+                    <div className={styles.storeBadges} aria-label="Store badges">
+                      <Image
+                        src="/images/play-store-badge.svg"
+                        alt="Google Play Store"
+                        width={180}
+                        height={54}
+                        className={styles.storeBadge}
+                        unoptimized
+                        loading="lazy"
+                      />
+                      <Image
+                        src="/images/app-store-badge.svg"
+                        alt="Apple App Store"
+                        width={180}
+                        height={54}
+                        className={styles.storeBadge}
+                        unoptimized
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          <div className={styles.slideDots}>
+            {heroProjects.map((project, index) => (
+              <button
+                key={project.id}
+                className={`${styles.dot} ${index === activeIndex ? styles.activeDot : ''}`}
+                aria-label={tPortfolio(`projects.${project.key}.title`)}
+                onClick={() => {
+                  if (index !== activeIndex) {
+                    setFlashActive(true);
+                    setActiveIndex(index);
+                    setTimeout(() => setFlashActive(false), 280);
+                  }
+                }}
+              />
+            ))}
+          </div>
+
+          <div className={`${styles.flash} ${flashActive ? styles.flashOn : ''}`} />
+        </div>
+      </motion.div>
     </section>
   );
 }
