@@ -1,13 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { WHATSAPP_PHONE_NUMBER } from '@/lib/constants';
 import styles from './FloatingWhatsApp.module.scss';
 
 export default function FloatingWhatsApp() {
   const handleWhatsApp = () => {
-    const phoneNumber = '5491139131406';
-    const message = encodeURIComponent('Hola! Me interesa conocer más sobre los servicios de MIRALAB');
-    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    const message = encodeURIComponent(
+      'Hola! Me interesa conocer más sobre los servicios de MIRALAB'
+    );
+    window.open(`https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${message}`, '_blank');
   };
 
   return (

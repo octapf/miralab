@@ -1,6 +1,14 @@
 import { NextResponse } from 'next/server';
+import { fetchWithRetry } from '@/lib/network';
+import { checkRateLimit } from '@/lib/rate-limit';
+import { getClientIp, getRequestId } from '@/lib/request';
+import { verifyMetaSignature } from '@/lib/security';
 
 const GRAPH_API_BASE = 'https://graph.facebook.com/v21.0';
+const WHATSAPP_RATE_LIMIT = {
+  limit: 30,
+  windowMs: 60_000,
+};
 
 type WhatsAppWebhook = {
   object?: string;
@@ -23,12 +31,6 @@ type WhatsAppWebhook = {
     }>;
   }>;
 };
-
-function getEnv(name: string): string {
-  const value = process.env[name];
-  if (!value) throw new Error(`Missing env var: ${name}`);
-  return value;
-}
 
 function getEnvOptional(name: string): string | undefined {
   const value = process.env[name];
@@ -97,18 +99,26 @@ async function sendWhatsAppMessage(params: {
     return;
   }
 
-  const res = await fetch(`${GRAPH_API_BASE}/${phoneNumberId}/messages`, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'Content-Type': 'application/json',
+  const res = await fetchWithRetry(
+    `${GRAPH_API_BASE}/${phoneNumberId}/messages`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        messaging_product: 'whatsapp',
+        to: params.to,
+        ...params.message,
+      }),
     },
-    body: JSON.stringify({
-      messaging_product: 'whatsapp',
-      to: params.to,
-      ...params.message,
-    }),
-  });
+    {
+      attempts: 2,
+      timeoutMs: 9_000,
+      retryDelayMs: 350,
+    }
+  );
 
   if (!res.ok) {
     const body = await res.text().catch(() => '');
@@ -142,11 +152,26 @@ export async function GET(req: Request) {
 }
 
 export async function POST(req: Request) {
+  const requestId = getRequestId(req);
+  const clientIp = getClientIp(req);
+  const rawBody = await req.text();
+
+  const skipSignatureValidation =
+    (process.env.WHATSAPP_SKIP_SIGNATURE_VALIDATION || '').trim() === '1';
+  if (!skipSignatureValidation) {
+    const appSecret = (process.env.WHATSAPP_APP_SECRET || '').trim();
+    const signatureHeader = req.headers.get('x-hub-signature-256');
+    if (!appSecret || !verifyMetaSignature({ rawBody, signatureHeader, appSecret })) {
+      console.warn('[whatsapp] invalid signature', { requestId });
+      return new NextResponse('Forbidden', { status: 403 });
+    }
+  }
+
   // Responder rápido (200) es ideal, pero también necesitamos enviar el reply.
   // Este handler está diseñado para contestar en <10s (Vercel serverless).
   let payload: WhatsAppWebhook;
   try {
-    payload = (await req.json()) as WhatsAppWebhook;
+    payload = JSON.parse(rawBody) as WhatsAppWebhook;
   } catch {
     return NextResponse.json({ ok: true }, { status: 200 });
   }
@@ -156,10 +181,30 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true }, { status: 200 });
   }
 
+  const limit = checkRateLimit({
+    key: `whatsapp:${inbound.from || clientIp}`,
+    ...WHATSAPP_RATE_LIMIT,
+  });
+  if (!limit.ok) {
+    return NextResponse.json(
+      { ok: false, error: 'rate_limited' },
+      {
+        status: 429,
+        headers: { 'Retry-After': String(limit.retryAfterSeconds) },
+      }
+    );
+  }
+
   const text = normalize(inbound.text);
 
   try {
-    if (text === 'hola' || text === 'buenas' || text === 'buenos dias' || text === 'buenas tardes' || text === 'buenas noches') {
+    if (
+      text === 'hola' ||
+      text === 'buenas' ||
+      text === 'buenos dias' ||
+      text === 'buenas tardes' ||
+      text === 'buenas noches'
+    ) {
       await sendWhatsAppMessage({
         to: inbound.from,
         message: {
@@ -197,7 +242,11 @@ export async function POST(req: Request) {
                   rows: [
                     { id: 'web', title: 'Desarrollo Web', description: 'Sitios y apps en Next.js' },
                     { id: 'ecom', title: 'E-commerce', description: 'Tiendas y pasarelas de pago' },
-                    { id: 'seo', title: 'SEO / Performance', description: 'Velocidad y posicionamiento' },
+                    {
+                      id: 'seo',
+                      title: 'SEO / Performance',
+                      description: 'Velocidad y posicionamiento',
+                    },
                   ],
                 },
               ],
@@ -214,15 +263,14 @@ export async function POST(req: Request) {
       message: {
         type: 'text',
         text: {
-          body:
-            "Te leo 🙂\n\nEscribí 'hola' para ver un menú, o contame brevemente qué necesitás y te respondo.",
+          body: "Te leo 🙂\n\nEscribí 'hola' para ver un menú, o contame brevemente qué necesitás y te respondo.",
         },
       },
     });
 
     return NextResponse.json({ ok: true }, { status: 200 });
   } catch (error) {
-    console.error('WhatsApp webhook error:', error);
+    console.error('[whatsapp] webhook error', { requestId, clientIp, error });
     // Siempre devolver 200 para que Meta no reintente en loop.
     return NextResponse.json({ ok: true }, { status: 200 });
   }

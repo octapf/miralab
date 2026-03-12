@@ -1,0 +1,10 @@
+export const DEFAULT_WHATSAPP_PHONE_NUMBER = '5491139131406';
+export const DEFAULT_CONTACT_EMAIL = 'hola@miralab.ar';
+
+export const WHATSAPP_PHONE_NUMBER =
+  process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER?.trim() || DEFAULT_WHATSAPP_PHONE_NUMBER;
+
+export const CONTACT_EMAIL =
+  process.env.CONTACT_EMAIL?.trim() ||
+  process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ||
+  DEFAULT_CONTACT_EMAIL;

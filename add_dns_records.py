@@ -16,7 +16,7 @@ if not api_key:
     print("ERROR: No se encontró OPENAI_API_KEY en .env.local")
     exit(1)
 
-print(f"API Key cargada: {api_key[:10]}...")
+print("OPENAI_API_KEY cargada correctamente")
 
 # Configurar la variable de entorno para OpenAI
 os.environ["OPENAI_API_KEY"] = api_key
@@ -25,7 +25,7 @@ os.environ["OPENAI_API_KEY"] = api_key
 browser_use_key = os.getenv("BROWSER_USE_API_KEY")
 if browser_use_key:
     os.environ["BROWSER_USE_API_KEY"] = browser_use_key
-    print(f"Browser Use API Key cargada: {browser_use_key[:10]}...")
+    print("BROWSER_USE_API_KEY cargada correctamente")
 
 # Registros DNS a agregar
 DNS_RECORDS = [

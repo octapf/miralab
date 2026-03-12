@@ -56,6 +56,14 @@
     "consulting": {
       "title": "Consulenza IT",
       "description": "Consulenza strategica in tecnologia, architettura software, ottimizzazione dei processi e trasformazione digitale per la tua azienda."
+    },
+    "digitalTrans": {
+      "title": "Trasformazione Digitale",
+      "description": "Aiutiamo le aziende tradizionali a integrare la tecnologia per ottimizzare i processi interni."
+    },
+    "aiSolutions": {
+      "title": "Soluzioni di IA",
+      "description": "Implementazione di chatbot intelligenti, automazione dei processi e analisi dei dati con modelli linguistici avanzati."
     }
   },
   "portfolio": {

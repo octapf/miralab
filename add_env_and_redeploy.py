@@ -3,8 +3,12 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv('.env.local')
+EMAIL_PASS_VALUE = os.getenv('EMAIL_PASS', '')
 
 async def main():
+    if not EMAIL_PASS_VALUE:
+        raise RuntimeError("EMAIL_PASS no está configurado en .env.local")
+
     from browser_use import Agent
     
     agent = Agent(
@@ -17,11 +21,11 @@ async def main():
             "4. Si EMAIL_PASS NO existe, agrégala:\n"
             "   - Haz clic en 'Add' o botón similar para agregar nueva variable\n"
             "   - Key: EMAIL_PASS\n"
-            "   - Value: 6bEPEVjJx3QE\n"
+            f"   - Value: {EMAIL_PASS_VALUE}\n"
             "   - Marca Production, Preview y Development (todos los checkboxes)\n"
             "   - Haz clic en Save\n"
             "5. Si EMAIL_PASS ya existe, haz clic en 'Edit' y verifica que:\n"
-            "   - El valor sea 6bEPEVjJx3QE\n"
+            f"   - El valor sea {EMAIL_PASS_VALUE}\n"
             "   - Esté marcado para Production\n"
             "6. Una vez confirmado que EMAIL_PASS existe con el valor correcto y está en Production, ve a https://vercel.com/octapf/it-portfolio\n"
             "7. Busca el deployment más reciente (el primero en la lista)\n"

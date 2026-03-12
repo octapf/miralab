@@ -24,14 +24,14 @@ export default function Navbar({ locale }: NavbarProps) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setIsVisible(false);
         setIsMobileMenuOpen(false); // Cerrar menú al hacer scroll
       } else {
         setIsVisible(true);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -57,20 +57,11 @@ export default function Navbar({ locale }: NavbarProps) {
 
   const getLanguageDisplay = (lang: string) => {
     const displays: { [key: string]: string } = {
-      'es': 'AR',
-      'en': 'EN',
-      'it': 'IT'
+      es: 'AR',
+      en: 'EN',
+      it: 'IT',
     };
     return displays[lang] || 'AR';
-  };
-
-  const getLanguageName = (lang: string) => {
-    const names: { [key: string]: string } = {
-      'es': 'Español',
-      'en': 'English',
-      'it': 'Italiano'
-    };
-    return names[lang] || 'Español';
   };
 
   return (
@@ -81,29 +72,46 @@ export default function Navbar({ locale }: NavbarProps) {
         </div>
 
         <ul className={styles.navLinks}>
-          <li><button onClick={() => scrollToSection('home')}>{t('home')}</button></li>
-          <li><button onClick={() => scrollToSection('about')}>{t('about')}</button></li>
-          <li><button onClick={() => scrollToSection('services')}>{t('services')}</button></li>
-          <li><button onClick={() => scrollToSection('contact')}>{t('contact')}</button></li>
+          <li>
+            <button onClick={() => scrollToSection('home')}>{t('home')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('about')}>{t('about')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('services')}>{t('services')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('contact')}>{t('contact')}</button>
+          </li>
         </ul>
 
         <div className={styles.actions}>
           <div className={styles.langDropdown}>
-            <button 
-              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
+            <button
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
               className={styles.langBtn}
             >
               {getLanguageDisplay(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
-                <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('es')}
+                  className={locale === 'es' ? styles.active : ''}
+                >
                   {getLanguageDisplay('es')} Español
                 </button>
-                <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('en')}
+                  className={locale === 'en' ? styles.active : ''}
+                >
                   {getLanguageDisplay('en')} English
                 </button>
-                <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('it')}
+                  className={locale === 'it' ? styles.active : ''}
+                >
                   {getLanguageDisplay('it')} Italiano
                 </button>
               </div>
@@ -112,7 +120,7 @@ export default function Navbar({ locale }: NavbarProps) {
           <button onClick={toggleTheme} className={styles.themeBtn}>
             {theme === 'dark' ? '🌙' : '☀️'}
           </button>
-          <button 
+          <button
             className={styles.hamburger}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Menu"
@@ -126,38 +134,51 @@ export default function Navbar({ locale }: NavbarProps) {
 
       {/* Overlay */}
       {isMobileMenuOpen && (
-        <div 
-          className={styles.overlay} 
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
+        <div className={styles.overlay} onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
       {/* Mobile Menu */}
       <div className={`${styles.mobileMenu} ${isMobileMenuOpen ? styles.open : ''}`}>
         <ul className={styles.mobileNavLinks}>
-          <li><button onClick={() => scrollToSection('home')}>{t('home')}</button></li>
-          <li><button onClick={() => scrollToSection('about')}>{t('about')}</button></li>
-          <li><button onClick={() => scrollToSection('services')}>{t('services')}</button></li>
-          <li><button onClick={() => scrollToSection('portfolio')}>{t('portfolio')}</button></li>
-          <li><button onClick={() => scrollToSection('contact')}>{t('contact')}</button></li>
+          <li>
+            <button onClick={() => scrollToSection('home')}>{t('home')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('about')}>{t('about')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('services')}>{t('services')}</button>
+          </li>
+          <li>
+            <button onClick={() => scrollToSection('contact')}>{t('contact')}</button>
+          </li>
         </ul>
         <div className={styles.mobileActions}>
           <div className={styles.langDropdown}>
-            <button 
-              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)} 
+            <button
+              onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
               className={styles.langBtn}
             >
               {getLanguageDisplay(locale)}
             </button>
             {isLangDropdownOpen && (
               <div className={styles.langDropdownMenu}>
-                <button onClick={() => changeLocale('es')} className={locale === 'es' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('es')}
+                  className={locale === 'es' ? styles.active : ''}
+                >
                   {getLanguageDisplay('es')} Español
                 </button>
-                <button onClick={() => changeLocale('en')} className={locale === 'en' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('en')}
+                  className={locale === 'en' ? styles.active : ''}
+                >
                   {getLanguageDisplay('en')} English
                 </button>
-                <button onClick={() => changeLocale('it')} className={locale === 'it' ? styles.active : ''}>
+                <button
+                  onClick={() => changeLocale('it')}
+                  className={locale === 'it' ? styles.active : ''}
+                >
                   {getLanguageDisplay('it')} Italiano
                 </button>
               </div>
