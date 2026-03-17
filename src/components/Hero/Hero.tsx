@@ -47,6 +47,8 @@ export default function Hero() {
   }, [heroProjects.length]);
 
   const activeProject = heroProjects[activeIndex];
+  const activeProjectLogo =
+    activeProject.key === 'matchpoint' ? '/images/matchpoint-icon-512.png' : activeProject.image;
   const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
   const isDesktopPreview = activeProject.key === 'proshop';
   const isLandingSlide =
@@ -97,7 +99,7 @@ export default function Hero() {
                 <div className={styles.projectHeader}>
                   <div className={styles.projectLogoBadge}>
                     <Image
-                      src={activeProject.image}
+                      src={activeProjectLogo}
                       alt={`Logo ${tPortfolio(`projects.${activeProject.key}.title`)}`}
                       width={1200}
                       height={630}

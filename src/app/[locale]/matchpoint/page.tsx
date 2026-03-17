@@ -46,7 +46,7 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
 
           <div className={styles.logoRow}>
             <Image
-              src="/images/matchpoint-logo.svg"
+              src="/images/matchpoint-icon-512.png"
               alt="Matchpoint logo"
               width={72}
               height={72}
