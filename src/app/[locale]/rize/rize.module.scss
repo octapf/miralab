@@ -1,0 +1,182 @@
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.4rem 1.2rem 1.2rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.textColumn {
+  color: var(--text-primary);
+}
+
+.brandLink {
+  display: inline-block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.7rem;
+  text-decoration: none;
+}
+
+.brandLogo {
+  width: min(190px, 100%);
+  height: auto;
+  display: block;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.logo {
+  width: 54px;
+  height: auto;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+}
+
+.subtitle {
+  margin: 0.8rem 0 0.5rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+  max-width: 62ch;
+}
+
+.copyCarousel {
+  margin-top: 0.35rem;
+  max-width: 62ch;
+  min-height: 128px;
+}
+
+.copyCarouselTitle {
+  margin: 0;
+  font-size: 1.22rem;
+  color: var(--text-primary);
+}
+
+.copyCarouselBody {
+  margin: 0.45rem 0 0;
+  color: var(--text-secondary);
+}
+
+.copyCarouselDots {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.45rem;
+}
+
+.copyCarouselDot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(203, 213, 255, 0.45);
+  transition: all 0.2s ease;
+}
+
+.activeDot {
+  width: 24px;
+  background: var(--accent-primary);
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.primaryCta,
+.secondaryCta {
+  border-radius: 999px;
+  padding: 0.62rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.primaryCta {
+  background: var(--accent-primary);
+  color: #0b0b0b;
+}
+
+.secondaryCta {
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.previewColumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.preview {
+  width: min(220px, 100%);
+  height: auto;
+}
+
+.storeBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.storeBadge {
+  width: 110px;
+  height: auto;
+}
+
+@media (min-width: 901px) {
+  .page {
+    min-height: 100dvh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .previewColumn {
+    justify-content: flex-start;
+  }
+
+  .page {
+    padding-bottom: 2rem;
+  }
+
+  .copyCarousel {
+    min-height: 0;
+  }
+}

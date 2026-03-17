@@ -49,10 +49,11 @@ export default function Hero() {
   const activeProject = heroProjects[activeIndex];
   const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
   const isDesktopPreview = activeProject.key === 'proshop';
-  const isMatchpointSlide = activeProject.key === 'matchpoint';
+  const isLandingSlide = activeProject.key === 'matchpoint' || activeProject.key === 'rize';
+  const landingPath = activeProject.key === 'rize' ? '/rize' : activeProject.key === 'matchpoint' ? '/matchpoint' : '';
   const handleSlideClick = () => {
-    if (isMatchpointSlide) {
-      router.push('/matchpoint');
+    if (isLandingSlide) {
+      router.push(landingPath);
     }
   };
 
@@ -68,21 +69,21 @@ export default function Hero() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProject.id}
-              className={`${styles.slide} ${isMatchpointSlide ? styles.clickableSlide : ''}`}
+              className={`${styles.slide} ${isLandingSlide ? styles.clickableSlide : ''}`}
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
               onClick={handleSlideClick}
               onKeyDown={(event) => {
-                if (!isMatchpointSlide) return;
+                if (!isLandingSlide) return;
                 if (event.key === 'Enter' || event.key === ' ') {
                   event.preventDefault();
-                  router.push('/matchpoint');
+                  router.push(landingPath);
                 }
               }}
-              role={isMatchpointSlide ? 'button' : undefined}
-              tabIndex={isMatchpointSlide ? 0 : -1}
+              role={isLandingSlide ? 'button' : undefined}
+              tabIndex={isLandingSlide ? 0 : -1}
             >
               <div className={styles.leftColumn}>
                 <div className={styles.projectHeader}>
