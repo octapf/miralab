@@ -49,8 +49,16 @@ export default function Hero() {
   const activeProject = heroProjects[activeIndex];
   const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
   const isDesktopPreview = activeProject.key === 'proshop';
-  const isLandingSlide = activeProject.key === 'matchpoint' || activeProject.key === 'rize';
-  const landingPath = activeProject.key === 'rize' ? '/rize' : activeProject.key === 'matchpoint' ? '/matchpoint' : '';
+  const isLandingSlide =
+    activeProject.key === 'matchpoint' || activeProject.key === 'rize' || activeProject.key === 'proshop';
+  const landingPath =
+    activeProject.key === 'rize'
+      ? '/rize'
+      : activeProject.key === 'matchpoint'
+        ? '/matchpoint'
+        : activeProject.key === 'proshop'
+          ? '/proshop'
+          : '';
   const handleSlideClick = () => {
     if (isLandingSlide) {
       router.push(landingPath);
