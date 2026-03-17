@@ -52,7 +52,7 @@ export default async function MatchpointPrivacyPage({ params }: PrivacyPageProps
 
   return (
     <main style={sectionStyle}>
-      <Link href="/" style={backButtonStyle}>
+      <Link href={`/${locale}/matchpoint`} style={backButtonStyle}>
         {t('backButton')}
       </Link>
 
@@ -124,7 +124,7 @@ export default async function MatchpointPrivacyPage({ params }: PrivacyPageProps
         {t('contactEmailLabel')} {t('contactEmail')}
       </p>
 
-      <Link href="/" style={backButtonStyle}>
+      <Link href={`/${locale}/matchpoint`} style={backButtonStyle}>
         {t('backButton')}
       </Link>
     </main>

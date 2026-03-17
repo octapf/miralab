@@ -107,7 +107,7 @@ export default async function MatchpointDeleteAccountPage({ params }: DeleteAcco
 
   return (
     <main style={sectionStyle}>
-      <Link href="/" style={buttonStyle}>
+      <Link href={`/${locale}/matchpoint`} style={buttonStyle}>
         {t('backButton')}
       </Link>
 
@@ -163,7 +163,7 @@ export default async function MatchpointDeleteAccountPage({ params }: DeleteAcco
         {t('contactEmailLabel')} {t('contactEmail')}
       </p>
 
-      <Link href="/" style={buttonStyle}>
+      <Link href={`/${locale}/matchpoint`} style={buttonStyle}>
         {t('backButton')}
       </Link>
     </main>

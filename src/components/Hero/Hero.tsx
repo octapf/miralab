@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
@@ -10,6 +11,7 @@ import styles from './Hero.module.scss';
 export default function Hero() {
   const t = useTranslations('hero');
   const tPortfolio = useTranslations('portfolio');
+  const router = useRouter();
   const heroProjects = useMemo(
     () =>
       portfolioProjects
@@ -47,6 +49,12 @@ export default function Hero() {
   const activeProject = heroProjects[activeIndex];
   const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
   const isDesktopPreview = activeProject.key === 'proshop';
+  const isMatchpointSlide = activeProject.key === 'matchpoint';
+  const handleSlideClick = () => {
+    if (isMatchpointSlide) {
+      router.push('/matchpoint');
+    }
+  };
 
   return (
     <section id="home" className={styles.hero}>
@@ -60,11 +68,21 @@ export default function Hero() {
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProject.id}
-              className={styles.slide}
+              className={`${styles.slide} ${isMatchpointSlide ? styles.clickableSlide : ''}`}
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
+              onClick={handleSlideClick}
+              onKeyDown={(event) => {
+                if (!isMatchpointSlide) return;
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  router.push('/matchpoint');
+                }
+              }}
+              role={isMatchpointSlide ? 'button' : undefined}
+              tabIndex={isMatchpointSlide ? 0 : -1}
             >
               <div className={styles.leftColumn}>
                 <div className={styles.projectHeader}>
@@ -85,7 +103,10 @@ export default function Hero() {
                 </p>
                 <button
                   className={styles.githubCta}
-                  onClick={() => window.open(activeProject.link, '_blank', 'noopener,noreferrer')}
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    window.open(activeProject.link, '_blank', 'noopener,noreferrer');
+                  }}
                 >
                   {t('showcaseCta')}
                 </button>

@@ -75,7 +75,7 @@ export default function Navbar({ locale }: NavbarProps) {
     <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Logo theme={theme} width={130} height={35} />
+          <Logo theme={theme} width={170} height={42} />
         </div>
 
         <ul className={styles.navLinks}>

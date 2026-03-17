@@ -6,5 +6,5 @@ export default createMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!api|_next|_vercel|matchpoint/privacy|delete-account|matchpoint/delete-account|.*\\..*).*)']
+  matcher: ['/((?!api|_next|_vercel|matchpoint(?:/.*)?|delete-account|.*\\..*).*)']
 };

@@ -172,7 +172,7 @@
     "contactWebsite": "https://miralab.ar",
     "contactEmailLabel": "Email:",
     "contactEmail": "hola@miralab.ar",
-    "backButton": "< Volver"
+    "backButton": "Volver"
   },
   "matchpointDeleteAccount": {
     "metaTitle": "Matchpoint - Eliminacion de cuenta",
@@ -205,7 +205,25 @@
     "contactWebsite": "https://miralab.ar",
     "contactEmailLabel": "Email:",
     "contactEmail": "hola@miralab.ar",
-    "backButton": "< Volver"
+    "backButton": "Volver"
+  },
+  "matchpointLanding": {
+    "metaTitle": "Matchpoint - Torneos de beach volley",
+    "metaDescription": "Landing oficial de Matchpoint con informacion del producto y accesos a privacidad y eliminacion de cuenta.",
+    "title": "Matchpoint",
+    "subtitle": "App para torneos de beach volley",
+    "slidePitchTitle": "Experiencia Matchpoint",
+    "description": "Organiza torneos, arma equipos y gestiona inscripciones desde una experiencia movil clara, rapida y moderna.",
+    "privacyCta": "Politica de privacidad",
+    "deleteAccountCta": "Eliminar cuenta",
+    "previewAlt": "Vista previa mobile de Matchpoint",
+    "section1Title": "Gestion de torneos",
+    "section1Body": "Crea torneos por etapas, invita participantes y administra la competencia desde un solo lugar.",
+    "section2Title": "Equipos e inscripciones",
+    "section2Body": "Controla equipos, cupos e inscripciones con flujos simples para organizadores y jugadores.",
+    "section3Title": "Privacidad y control",
+    "section3Body": "Accede facilmente a la politica de privacidad y al proceso de eliminacion de cuenta y datos.",
+    "backButton": "Volver"
   },
   "notFound": {
     "title": "Página no encontrada",
