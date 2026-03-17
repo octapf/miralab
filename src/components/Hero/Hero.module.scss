@@ -113,7 +113,7 @@
 
   .projectHeader {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 0.9rem;
   }
 
@@ -124,6 +124,16 @@
     background: transparent;
     box-shadow: none;
     flex-shrink: 0;
+  }
+
+  .projectLogoBadgeLarge {
+    width: auto;
+    height: clamp(1.4rem, 5.6vw, 3.36rem);
+
+    .projectLogo {
+      width: auto;
+      height: 100%;
+    }
   }
 
   .projectName {

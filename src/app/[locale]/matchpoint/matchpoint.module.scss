@@ -36,13 +36,13 @@
 
 .logoRow {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   gap: 0.9rem;
 }
 
 .logo {
-  width: 54px;
-  height: auto;
+  width: auto;
+  height: clamp(1.4rem, 5.6vw, 3.36rem);
 }
 
 .title {

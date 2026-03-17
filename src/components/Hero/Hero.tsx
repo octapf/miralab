@@ -97,12 +97,12 @@ export default function Hero() {
             >
               <div className={styles.leftColumn}>
                 <div className={styles.projectHeader}>
-                  <div className={styles.projectLogoBadge}>
+                  <div className={`${styles.projectLogoBadge} ${activeProject.key === 'matchpoint' ? styles.projectLogoBadgeLarge : ''}`}>
                     <Image
                       src={activeProjectLogo}
                       alt={`Logo ${tPortfolio(`projects.${activeProject.key}.title`)}`}
-                      width={1200}
-                      height={630}
+                      width={activeProject.key === 'matchpoint' ? 368 : 1200}
+                      height={activeProject.key === 'matchpoint' ? 182 : 630}
                       className={styles.projectLogo}
                       priority
                     />

@@ -48,8 +48,8 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
             <Image
               src="/images/matchpoint-icon-512.png"
               alt="Matchpoint logo"
-              width={72}
-              height={72}
+              width={368}
+              height={182}
               className={styles.logo}
               priority
             />
