@@ -6,8 +6,8 @@ import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'MIRALAB - Innovación Digital & Desarrollo Web',
-  description: 'Transformamos tus ideas en realidad digital. Desarrollo web, aplicaciones móviles y consultoría IT de vanguardia.',
+  title: 'MIRALAB: Estudio de Innovación Digital y Desarrollo Web',
+  description: 'Transformamos tus ideas en software de calidad. Desarrollo web, aplicaciones móviles y consultoría IT desde Argentina.',
   keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, MIRALAB',
   authors: [{ name: 'MIRALAB' }],
   icons: {
@@ -22,9 +22,25 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico?v=20251228',
   },
   openGraph: {
-    title: 'MIRALAB - Innovación Digital',
-    description: 'Transformamos tus ideas en realidad digital',
+    title: 'MIRALAB: Estudio de Innovación Digital y Desarrollo Web',
+    description: 'Transformamos tus ideas en software de calidad. Desarrollo web, aplicaciones móviles y consultoría IT desde Argentina.',
+    url: 'https://miralab.ar',
+    siteName: 'MIRALAB',
+    images: [
+      {
+        url: 'https://miralab.ar/images/miralab-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'MIRALAB — Innovación Digital & Desarrollo de Software',
+      },
+    ],
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'MIRALAB: Estudio de Innovación Digital y Desarrollo Web',
+    description: 'Transformamos tus ideas en software de calidad. Desarrollo web, aplicaciones móviles y consultoría IT desde Argentina.',
+    images: ['https://miralab.ar/images/miralab-og.jpg'],
   },
 };
 
