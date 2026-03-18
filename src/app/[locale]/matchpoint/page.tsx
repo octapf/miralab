@@ -21,12 +21,21 @@ export async function generateMetadata({ params }: MatchpointPageProps): Promise
       description: t('metaDescription'),
       url: `https://miralab.ar/${locale}/matchpoint`,
       siteName: 'MIRALAB',
+      images: [
+        {
+          url: 'https://miralab.ar/images/matchpoint-og.jpg',
+          width: 1200,
+          height: 630,
+          alt: t('metaTitle'),
+        },
+      ],
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title: t('metaTitle'),
       description: t('metaDescription'),
+      images: ['https://miralab.ar/images/matchpoint-og.jpg'],
     },
   };
 }
