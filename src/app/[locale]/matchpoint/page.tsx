@@ -16,6 +16,27 @@ export async function generateMetadata({ params }: MatchpointPageProps): Promise
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    openGraph: {
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      url: `https://miralab.ar/${locale}/matchpoint`,
+      siteName: 'MIRALAB',
+      images: [
+        {
+          url: 'https://miralab.ar/images/matchpoint-og.png',
+          width: 1200,
+          height: 630,
+          alt: t('metaTitle'),
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      images: ['https://miralab.ar/images/matchpoint-og.png'],
+    },
   };
 }
 
@@ -79,22 +100,21 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
             priority
           />
           <div className={styles.storeBadges}>
-            <Image
-              src="/images/play-store-badge.svg"
-              alt="Google Play"
-              width={180}
-              height={54}
-              className={styles.storeBadge}
-              unoptimized
-            />
-            <Image
-              src="/images/app-store-badge.svg"
-              alt="App Store"
-              width={180}
-              height={54}
-              className={styles.storeBadge}
-              unoptimized
-            />
+            <a
+              href="https://play.google.com/store/apps/details?id=ar.miralab.matchpoint"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Descargar en Google Play"
+            >
+              <Image
+                src="/images/play-store-badge.svg"
+                alt="Google Play"
+                width={180}
+                height={54}
+                className={styles.storeBadge}
+                unoptimized
+              />
+            </a>
           </div>
         </div>
       </section>

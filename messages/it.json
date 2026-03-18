@@ -114,9 +114,10 @@
     "serverConnectionError": "Impossibile connettersi al server. Riprova."
   },
   "footer": {
-    "rights": "© 2025 MIRALAB | Sviluppato da Octavio Frangipani. Tutti i diritti riservati.",
+    "rights": "© 2026 MIRALAB | Sviluppato da Octavio Frangipani. Tutti i diritti riservati.",
     "trademark": "Marchio in fase di registrazione presso l'INPI.",
-    "terms": "Termini e Condizioni"
+    "terms": "Termini e Condizioni",
+    "privacy": "Informativa sulla privacy"
   },
   "terms": {
     "title": "Termini e Condizioni",
@@ -422,6 +423,39 @@
     "section3Title": "Privacy e controllo",
     "section3Body": "Accedi rapidamente all'informativa privacy e al processo di eliminazione account e dati.",
     "backButton": "Indietro"
+  },
+  "miralabPrivacy": {
+    "metaTitle": "Informativa sulla privacy - MIRALAB",
+    "metaDescription": "Informativa sulla privacy di MIRALAB, studio di sviluppo software e app mobile.",
+    "title": "Informativa sulla privacy - MIRALAB",
+    "lastUpdated": "Ultimo aggiornamento: 17/03/2026",
+    "intro": "MIRALAB e uno studio di sviluppo software responsabile delle app Matchpoint, Rize e Proshop. Questa informativa descrive come trattiamo i dati degli utenti che interagiscono con i nostri prodotti e con questo sito web.",
+    "controllerTitle": "1. Titolare del trattamento",
+    "controllerBody": "Titolare del trattamento: MIRALAB (Octavio Frangipani). Sito web: https://miralab.ar. Email: hola@miralab.ar.",
+    "appsTitle": "2. App sviluppate da MIRALAB",
+    "appsBody": "MIRALAB sviluppa e mantiene le seguenti app: Matchpoint (tornei di beach volley), Rize (allenamento di calistenia) e Proshop (ecommerce tecnologico). Ogni app dispone di una propria informativa sulla privacy accessibile dalla relativa landing page.",
+    "dataCollectedTitle": "3. Dati raccolti",
+    "dataCollectedBody": "Questo sito (miralab.ar) non raccoglie dati personali in modo attivo al di fuori di quelli forniti volontariamente tramite il modulo di contatto (nome, email e messaggio). Per i dati raccolti nelle singole app, fare riferimento all'informativa di ciascun prodotto.",
+    "dataUseTitle": "4. Utilizzo dei dati",
+    "dataUseBody": "I dati del modulo di contatto sono utilizzati esclusivamente per rispondere alle richieste. Non vengono utilizzati per marketing, ne venduti o ceduti a terzi.",
+    "sharingTitle": "5. Condivisione dei dati",
+    "sharingBody": "Non vendiamo ne cediamo dati personali. Possiamo avvalerci di fornitori di infrastruttura (hosting, email) soggetti a obblighi di riservatezza.",
+    "retentionTitle": "6. Conservazione",
+    "retentionBody": "I dati del modulo di contatto vengono conservati per il tempo necessario a gestire la richiesta. Puoi richiederne l'eliminazione in qualsiasi momento.",
+    "rightsTitle": "7. I tuoi diritti",
+    "rightsBody": "Puoi richiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a hola@miralab.ar.",
+    "securityTitle": "8. Sicurezza",
+    "securityBody": "Applichiamo misure tecniche e organizzative ragionevoli per proteggere le informazioni trattate su questo sito.",
+    "changesTitle": "9. Modifiche alla presente informativa",
+    "changesBody": "Potremmo aggiornare questa informativa. La versione aggiornata sara sempre disponibile all'indirizzo:",
+    "policyUrl": "https://miralab.ar/privacy",
+    "contactTitle": "10. Contatto",
+    "contactName": "MIRALAB",
+    "contactWebsiteLabel": "Sito web:",
+    "contactWebsite": "https://miralab.ar",
+    "contactEmailLabel": "Email:",
+    "contactEmail": "hola@miralab.ar",
+    "backButton": "Torna alla home"
   },
   "notFound": {
     "title": "Pagina non trovata",

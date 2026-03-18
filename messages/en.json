@@ -114,9 +114,10 @@
     "serverConnectionError": "Could not connect to the server. Please try again."
   },
   "footer": {
-    "rights": "© 2025 MIRALAB | Developed by Octavio Frangipani. All rights reserved.",
+    "rights": "© 2026 MIRALAB | Developed by Octavio Frangipani. All rights reserved.",
     "trademark": "Trademark registration in progress with INPI.",
-    "terms": "Terms and Conditions"
+    "terms": "Terms and Conditions",
+    "privacy": "Privacy policy"
   },
   "terms": {
     "title": "Terms and Conditions",
@@ -422,6 +423,39 @@
     "section3Title": "Privacy and control",
     "section3Body": "Get direct access to your privacy policy and account/data deletion process.",
     "backButton": "Back"
+  },
+  "miralabPrivacy": {
+    "metaTitle": "Privacy policy - MIRALAB",
+    "metaDescription": "Privacy policy of MIRALAB, a software and mobile app development studio.",
+    "title": "Privacy policy - MIRALAB",
+    "lastUpdated": "Last updated: 03/17/2026",
+    "intro": "MIRALAB is a software development studio responsible for the apps Matchpoint, Rize, and Proshop. This policy describes how we handle data from users who interact with our products and this website.",
+    "controllerTitle": "1. Data controller",
+    "controllerBody": "Data controller: MIRALAB (Octavio Frangipani). Website: https://miralab.ar. Email: hola@miralab.ar.",
+    "appsTitle": "2. Apps developed by MIRALAB",
+    "appsBody": "MIRALAB develops and maintains the following apps: Matchpoint (beach volleyball tournaments), Rize (calisthenics training), and Proshop (technology ecommerce). Each app has its own specific privacy policy accessible from its respective landing page.",
+    "dataCollectedTitle": "3. Data collected",
+    "dataCollectedBody": "This website (miralab.ar) does not actively collect personal data beyond what is voluntarily provided through the contact form (name, email, and message). For data collected in individual apps, please refer to each product's own privacy policy.",
+    "dataUseTitle": "4. Use of data",
+    "dataUseBody": "Contact form data is used solely to respond to inquiries. It is not used for marketing purposes, and is not sold or shared with third parties.",
+    "sharingTitle": "5. Data sharing",
+    "sharingBody": "We do not sell or share personal data. We may use infrastructure providers (hosting, email) under confidentiality obligations.",
+    "retentionTitle": "6. Retention",
+    "retentionBody": "Contact form data is retained only as long as needed to handle the inquiry. You can request deletion at any time.",
+    "rightsTitle": "7. Your rights",
+    "rightsBody": "You may request access, correction, or deletion of your data by writing to hola@miralab.ar.",
+    "securityTitle": "8. Security",
+    "securityBody": "We apply reasonable technical and organizational measures to protect information processed on this site.",
+    "changesTitle": "9. Policy changes",
+    "changesBody": "We may update this policy. The current version will always be available at:",
+    "policyUrl": "https://miralab.ar/privacy",
+    "contactTitle": "10. Contact",
+    "contactName": "MIRALAB",
+    "contactWebsiteLabel": "Website:",
+    "contactWebsite": "https://miralab.ar",
+    "contactEmailLabel": "Email:",
+    "contactEmail": "hola@miralab.ar",
+    "backButton": "Back to home"
   },
   "notFound": {
     "title": "Page not found",

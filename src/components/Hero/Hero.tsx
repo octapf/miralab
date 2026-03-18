@@ -142,24 +142,23 @@ export default function Hero() {
                   </div>
                   {showStoreBadges ? (
                     <div className={styles.storeBadges} aria-label="Store badges">
-                      <Image
-                        src="/images/play-store-badge.svg"
-                        alt="Google Play Store"
-                        width={180}
-                        height={54}
-                        className={styles.storeBadge}
-                        unoptimized
-                        loading="lazy"
-                      />
-                      <Image
-                        src="/images/app-store-badge.svg"
-                        alt="Apple App Store"
-                        width={180}
-                        height={54}
-                        className={styles.storeBadge}
-                        unoptimized
-                        loading="lazy"
-                      />
+                      <a
+                        href={activeProject.storeUrl ?? '#'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Google Play Store"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Image
+                          src="/images/play-store-badge.svg"
+                          alt="Google Play Store"
+                          width={180}
+                          height={54}
+                          className={styles.storeBadge}
+                          unoptimized
+                          loading="lazy"
+                        />
+                      </a>
                     </div>
                   ) : null}
                 </div>

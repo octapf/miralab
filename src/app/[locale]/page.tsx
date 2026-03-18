@@ -37,18 +37,21 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         }}
       >
         <p>{t('rights')}</p>
-        <Link
-          href={`/${locale}/terminos`}
-          style={{
-            color: 'var(--accent-primary)',
-            textDecoration: 'underline',
-            fontSize: '0.9rem',
-            marginTop: '0.5rem',
-            display: 'inline-block',
-          }}
-        >
-          {t('terms')}
-        </Link>
+        <p style={{ fontSize: '0.82rem', marginTop: '0.25rem', opacity: 0.7 }}>{t('trademark')}</p>
+        <div style={{ marginTop: '0.5rem', display: 'flex', gap: '1.25rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Link
+            href={`/${locale}/terminos`}
+            style={{ color: 'var(--accent-primary)', textDecoration: 'underline', fontSize: '0.9rem' }}
+          >
+            {t('terms')}
+          </Link>
+          <Link
+            href={`/${locale}/privacy`}
+            style={{ color: 'var(--accent-primary)', textDecoration: 'underline', fontSize: '0.9rem' }}
+          >
+            {t('privacy')}
+          </Link>
+        </div>
       </footer>
     </main>
   );
