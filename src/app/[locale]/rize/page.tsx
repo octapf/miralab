@@ -66,6 +66,12 @@ export default async function RizeLandingPage({ params }: RizePageProps) {
               {t('deleteAccountCta')}
             </Link>
           </div>
+
+          <p className={styles.legalFooter}>
+            <Link href={`/${locale}/privacy`}>{t('miralabPrivacyLink')}</Link>
+            {' · '}
+            <span>© 2026 MIRALAB</span>
+          </p>
         </div>
 
         <div className={styles.previewColumn}>
@@ -82,14 +88,6 @@ export default async function RizeLandingPage({ params }: RizePageProps) {
             <Image
               src="/images/play-store-badge.svg"
               alt="Google Play"
-              width={180}
-              height={54}
-              className={styles.storeBadge}
-              unoptimized
-            />
-            <Image
-              src="/images/app-store-badge.svg"
-              alt="App Store"
               width={180}
               height={54}
               className={styles.storeBadge}

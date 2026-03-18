@@ -66,6 +66,12 @@ export default async function ProshopLandingPage({ params }: ProshopPageProps) {
               {t('deleteAccountCta')}
             </Link>
           </div>
+
+          <p className={styles.legalFooter}>
+            <Link href={`/${locale}/privacy`}>{t('miralabPrivacyLink')}</Link>
+            {' · '}
+            <span>© 2026 MIRALAB</span>
+          </p>
         </div>
 
         <div className={styles.previewColumn}>

@@ -79,6 +79,15 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
           <p className={styles.subtitle}>{t('subtitle')}</p>
           <MatchpointCopyCarousel slides={copySlides} />
 
+          <a
+            href="https://play.google.com/store/apps/details?id=com.miralab.matchpoint"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.downloadCta}
+          >
+            {t('downloadCta')}
+          </a>
+
           <div className={styles.ctaRow}>
             <Link href={`/${locale}/matchpoint/privacy`} className={styles.primaryCta}>
               {t('privacyCta')}
@@ -87,6 +96,12 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
               {t('deleteAccountCta')}
             </Link>
           </div>
+
+          <p className={styles.legalFooter}>
+            <Link href={`/${locale}/privacy`}>{t('miralabPrivacyLink')}</Link>
+            {' · '}
+            <span>© 2026 MIRALAB</span>
+          </p>
         </div>
 
         <div className={styles.previewColumn}>
