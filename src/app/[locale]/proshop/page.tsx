@@ -16,6 +16,27 @@ export async function generateMetadata({ params }: ProshopPageProps): Promise<Me
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    openGraph: {
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      url: `https://miralab.ar/${locale}/proshop`,
+      siteName: 'MIRALAB',
+      images: [
+        {
+          url: 'https://miralab.ar/images/proshop-og.jpg',
+          width: 1200,
+          height: 630,
+          alt: t('metaTitle'),
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      images: ['https://miralab.ar/images/proshop-og.jpg'],
+    },
   };
 }
 
