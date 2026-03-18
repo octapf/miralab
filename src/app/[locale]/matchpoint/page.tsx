@@ -101,7 +101,7 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
           />
           <div className={styles.storeBadges}>
             <a
-              href="https://play.google.com/store/apps/details?id=ar.miralab.matchpoint"
+              href="https://play.google.com/store/apps/details?id=com.miralab.matchpoint"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Descargar en Google Play"

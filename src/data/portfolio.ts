@@ -21,8 +21,7 @@ export const portfolioProjects: PortfolioProject[] = [
     image: '/images/matchpoint-logo.svg',
     techStack: ['React', 'TypeScript', 'API Integrations'],
     link: 'https://github.com/octapf/matchpoint',
-    // TODO: replace with real Play Store URL when published
-    storeUrl: 'https://play.google.com/store/apps/details?id=ar.miralab.matchpoint',
+    storeUrl: 'https://play.google.com/store/apps/details?id=com.miralab.matchpoint',
   },
   {
     id: 3,
