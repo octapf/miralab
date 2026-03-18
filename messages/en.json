@@ -128,8 +128,8 @@
     "backHome": "Back to home"
   },
   "matchpointPrivacy": {
-    "metaTitle": "Matchpoint - Privacy Policy",
-    "metaDescription": "Privacy policy for the Matchpoint app.",
+    "metaTitle": "Matchpoint Privacy Policy | Beach Volleyball Tournament App",
+    "metaDescription": "Read the Matchpoint privacy policy: what data we collect, how we use it, and how we protect your personal information.",
     "title": "Privacy Policy - Matchpoint",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "Matchpoint (\"the App\") respects your privacy and processes personal data under principles of lawfulness, transparency, minimization, and security. This policy explains what data we collect, why we use it, how long we keep it, and which rights you can exercise.",
@@ -176,8 +176,8 @@
     "backButton": "Back"
   },
   "matchpointDeleteAccount": {
-    "metaTitle": "Matchpoint - Account deletion",
-    "metaDescription": "Request account deletion and associated data removal for Matchpoint.",
+    "metaTitle": "Delete Your Matchpoint Account | Manage Personal Data",
+    "metaDescription": "Request the deletion of your Matchpoint account and personal data. Learn what gets deleted and how long it takes.",
     "title": "Account deletion - Matchpoint",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "This page explains how to request deletion of your Matchpoint account and associated data.",
@@ -209,8 +209,8 @@
     "backButton": "Back"
   },
   "matchpointLanding": {
-    "metaTitle": "Matchpoint - Beach volleyball tournaments",
-    "metaDescription": "Official Matchpoint landing page with product details and links to privacy policy and account deletion.",
+    "metaTitle": "Matchpoint: Beach Volleyball Tournament App | MIRALAB",
+    "metaDescription": "Create beach volleyball tournaments, build teams, and manage registrations with Matchpoint. Download it free on Google Play.",
     "title": "Matchpoint",
     "subtitle": "Beach volleyball tournaments app",
     "slidePitchTitle": "Matchpoint experience",
@@ -229,8 +229,8 @@
     "backButton": "Back"
   },
   "rizePrivacy": {
-    "metaTitle": "Rize - Privacy policy",
-    "metaDescription": "Official privacy policy for Rize, the calisthenics training app developed by Miralab.",
+    "metaTitle": "Rize Privacy Policy | Calisthenics Training App by MIRALAB",
+    "metaDescription": "Read the Rize privacy policy: what data we collect, how we use it, and how we protect your personal information.",
     "title": "Privacy policy - Rize",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "This Privacy Policy explains how Rize, a calisthenics training app by Miralab, collects, uses, stores, and protects personal data.",
@@ -277,8 +277,8 @@
     "backButton": "Back"
   },
   "rizeDeleteAccount": {
-    "metaTitle": "Rize - Account deletion",
-    "metaDescription": "Request account deletion and associated data removal for Rize.",
+    "metaTitle": "Delete Your Rize Account | Manage Your Personal Data",
+    "metaDescription": "Request the deletion of your Rize account and personal data. Learn what gets deleted and how long it takes.",
     "title": "Account deletion - Rize",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "This page explains how to request deletion of your Rize account and associated data.",
@@ -310,8 +310,8 @@
     "backButton": "Back"
   },
   "rizeLanding": {
-    "metaTitle": "Rize - Calisthenics training app",
-    "metaDescription": "Official Rize landing page with product details and links to privacy policy and account deletion.",
+    "metaTitle": "Rize: Calisthenics Training App for Android | MIRALAB",
+    "metaDescription": "Train calisthenics with Rize, track your progress, and reach your fitness goals. Download it free on Google Play.",
     "title": "Rize",
     "subtitle": "Calisthenics training app",
     "slidePitchTitle": "Rize experience",
@@ -329,8 +329,8 @@
     "backButton": "Back"
   },
   "proshopPrivacy": {
-    "metaTitle": "Proshop - Privacy policy",
-    "metaDescription": "Official privacy policy for Proshop, the ecommerce platform for technology products by Miralab.",
+    "metaTitle": "Proshop Privacy Policy | Online Tech Products Store",
+    "metaDescription": "Read the Proshop privacy policy: what data we collect, how we use it, and how we protect your personal information.",
     "title": "Privacy policy - Proshop",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "This Privacy Policy explains how Proshop, an ecommerce platform for technology products by Miralab, collects, uses, stores, and protects personal data.",
@@ -377,8 +377,8 @@
     "backButton": "Back"
   },
   "proshopDeleteAccount": {
-    "metaTitle": "Proshop - Account deletion",
-    "metaDescription": "Request account deletion and associated data removal for Proshop.",
+    "metaTitle": "Delete Your Proshop Account | Manage Your Personal Data",
+    "metaDescription": "Request the deletion of your Proshop account and personal data. Learn what gets deleted and how long it takes.",
     "title": "Account deletion - Proshop",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "This page explains how to request deletion of your Proshop account and associated data.",
@@ -410,8 +410,8 @@
     "backButton": "Back"
   },
   "proshopLanding": {
-    "metaTitle": "Proshop - Technology ecommerce platform",
-    "metaDescription": "Official Proshop landing page with product details and links to privacy policy and account deletion.",
+    "metaTitle": "Proshop: Your Online Tech Products Store | MIRALAB",
+    "metaDescription": "Shop the latest tech products at Proshop. Fast shipping, secure payments, and the best selection of technology products online.",
     "title": "Proshop",
     "subtitle": "Technology ecommerce platform",
     "slidePitchTitle": "Proshop experience",
@@ -429,8 +429,8 @@
     "backButton": "Back"
   },
   "miralabPrivacy": {
-    "metaTitle": "Privacy policy - MIRALAB",
-    "metaDescription": "Privacy policy of MIRALAB, a software and mobile app development studio.",
+    "metaTitle": "Privacy Policy — MIRALAB | Software Development Studio",
+    "metaDescription": "Learn how MIRALAB handles your personal data. Privacy policy of the mobile app development studio behind Matchpoint and Rize.",
     "title": "Privacy policy - MIRALAB",
     "lastUpdated": "Last updated: 03/17/2026",
     "intro": "MIRALAB is a software development studio responsible for the apps Matchpoint, Rize, and Proshop. This policy describes how we handle data from users who interact with our products and this website.",
