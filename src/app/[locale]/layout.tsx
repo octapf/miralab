@@ -6,6 +6,7 @@ import '@/styles/globals.scss';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://miralab.ar'),
   title: 'MIRALAB: Estudio de Innovación Digital y Desarrollo Web',
   description: 'Transformamos tus ideas en software de calidad. Desarrollo web, aplicaciones móviles y consultoría IT desde Argentina.',
   keywords: 'desarrollo web, aplicaciones móviles, consultoría IT, transformación digital, MIRALAB',
