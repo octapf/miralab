@@ -16,6 +16,27 @@ export async function generateMetadata({ params }: RizePageProps): Promise<Metad
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    openGraph: {
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      url: `https://miralab.ar/${locale}/rize`,
+      siteName: 'MIRALAB',
+      images: [
+        {
+          url: 'https://miralab.ar/images/rize-og.jpg',
+          width: 1200,
+          height: 630,
+          alt: t('metaTitle'),
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t('metaTitle'),
+      description: t('metaDescription'),
+      images: ['https://miralab.ar/images/rize-og.jpg'],
+    },
   };
 }
 
