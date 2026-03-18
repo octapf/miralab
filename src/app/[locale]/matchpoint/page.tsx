@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: MatchpointPageProps): Promise
       siteName: 'MIRALAB',
       images: [
         {
-          url: 'https://miralab.ar/images/matchpoint-og.jpg',
+          url: 'https://miralab.ar/images/matchpoint-og-v2.jpg',
           width: 1200,
           height: 630,
           alt: t('metaTitle'),
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: MatchpointPageProps): Promise
       card: 'summary_large_image',
       title: t('metaTitle'),
       description: t('metaDescription'),
-      images: ['https://miralab.ar/images/matchpoint-og.jpg'],
+      images: ['https://miralab.ar/images/matchpoint-og-v2.jpg'],
     },
   };
 }

@@ -67,7 +67,7 @@ sharp('public/images/matchpoint-icon-512.png')
         { input: logoBuffer, top: 108, left: 80 },
       ])
       .jpeg({ quality: 88 })
-      .toFile('public/images/matchpoint-og.jpg');
+      .toFile('public/images/matchpoint-og-v2.jpg');
   })
   .then(info => console.log(`Done: ${info.width}x${info.height} — ${info.size} bytes`))
   .catch(err => console.error(err));
