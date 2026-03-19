@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { useTheme } from '@/contexts/ThemeContext';
 import { WHATSAPP_PHONE_NUMBER } from '@/lib/constants';
 import Logo from '@/components/Logo/Logo';
@@ -75,7 +76,9 @@ export default function Navbar({ locale }: NavbarProps) {
     <nav className={`${styles.navbar} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <Logo theme={theme} width={170} height={42} />
+          <Link href={`/${locale}`} className={styles.logoLink} aria-label="MIRALAB — Inicio">
+            <Logo theme={theme} width={220} height={42} />
+          </Link>
         </div>
 
         <ul className={styles.navLinks}>

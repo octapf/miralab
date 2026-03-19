@@ -50,4 +50,8 @@ next-env.d.ts
 # temporary files
 tmp-*.png
 
+# Fuente pesada local para scripts de logo (no versionar)
+public/images/logo_miralab.png
+scripts/logo-on-dark-preview.jpg
+
 .vercel

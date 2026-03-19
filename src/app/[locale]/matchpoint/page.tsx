@@ -56,10 +56,10 @@ export default async function MatchpointLandingPage({ params }: MatchpointPagePr
         <div className={styles.textColumn}>
           <Link href="/" className={styles.brandLink} aria-label="MIRALAB home">
             <Image
-              src="/images/miralab-logo.svg"
+              src="/images/miralab-logo-transparent.png"
               alt="MIRALAB"
               width={360}
-              height={88}
+              height={82}
               className={styles.brandLogo}
               priority
             />

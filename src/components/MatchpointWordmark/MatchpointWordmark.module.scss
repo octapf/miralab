@@ -1,0 +1,41 @@
+/**
+ * Alineado con Matchpoint app/index.tsx + sign-in wordmarkRow / wordmarkMatch / wordmarkPoint
+ * Colors: constants/Colors.ts → yellow #fbbf24, violet #8b5cf6
+ */
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  line-height: 1;
+}
+
+.match {
+  color: #fbbf24;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+.point {
+  color: #8b5cf6;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+
+/* Hero: más grande que el splash RN (48) para impacto en carrusel */
+.hero {
+  .match,
+  .point {
+    font-size: clamp(2.75rem, 9vw, 4.75rem);
+    letter-spacing: -2px;
+  }
+}
+
+.portfolio {
+  .match,
+  .point {
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
+    letter-spacing: -1.5px;
+  }
+}

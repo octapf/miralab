@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { portfolioProjects } from '@/data/portfolio';
+import MatchpointWordmark from '@/components/MatchpointWordmark/MatchpointWordmark';
 import styles from './Hero.module.scss';
 
 export default function Hero() {
@@ -47,8 +48,8 @@ export default function Hero() {
   }, [heroProjects.length]);
 
   const activeProject = heroProjects[activeIndex];
-  const activeProjectLogo =
-    activeProject.key === 'matchpoint' ? '/images/matchpoint-icon-512.png' : activeProject.image;
+  const logoW = activeProject.logoIntrinsicWidth ?? 1200;
+  const logoH = activeProject.logoIntrinsicHeight ?? 630;
   const showStoreBadges = activeProject.key === 'rize' || activeProject.key === 'matchpoint';
   const isDesktopPreview = activeProject.key === 'proshop';
   const isLandingSlide =
@@ -97,17 +98,27 @@ export default function Hero() {
             >
               <div className={styles.leftColumn}>
                 <div className={styles.projectHeader}>
-                  <div className={`${styles.projectLogoBadge} ${activeProject.key === 'matchpoint' ? styles.projectLogoBadgeLarge : ''}`}>
-                    <Image
-                      src={activeProjectLogo}
-                      alt={`Logo ${tPortfolio(`projects.${activeProject.key}.title`)}`}
-                      width={activeProject.key === 'matchpoint' ? 368 : 1200}
-                      height={activeProject.key === 'matchpoint' ? 182 : 630}
-                      className={styles.projectLogo}
-                      priority
-                    />
-                  </div>
-                  <h3 className={styles.projectName}>{tPortfolio(`projects.${activeProject.key}.title`)}</h3>
+                  {activeProject.heroUsesWordmark ? (
+                    <div className={styles.matchpointWordmarkWrap}>
+                      <MatchpointWordmark variant="hero" />
+                    </div>
+                  ) : (
+                    <>
+                      <div className={styles.projectLogoBadge}>
+                        <Image
+                          src={activeProject.image}
+                          alt={`Logo ${tPortfolio(`projects.${activeProject.key}.title`)}`}
+                          width={logoW}
+                          height={logoH}
+                          className={styles.projectLogo}
+                          priority
+                        />
+                      </div>
+                      <h3 className={styles.projectName}>
+                        {tPortfolio(`projects.${activeProject.key}.title`)}
+                      </h3>
+                    </>
+                  )}
                 </div>
                 <p className={styles.projectDescription}>
                   {tPortfolio(`projects.${activeProject.key}.description`)}

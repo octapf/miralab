@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { portfolioProjects } from '@/data/portfolio';
+import MatchpointWordmark from '@/components/MatchpointWordmark/MatchpointWordmark';
 import styles from './Portfolio.module.scss';
 
 import 'swiper/css';
@@ -36,14 +37,20 @@ export default function Portfolio() {
       }}
     >
       <div className={styles.imageContainer}>
-        <Image
-          src={project.image}
-          alt={`Logo de ${t(`projects.${project.key}.title`)}`}
-          className={styles.projectImage}
-          width={1200}
-          height={630}
-          loading="lazy"
-        />
+        {project.heroUsesWordmark ? (
+          <div className={styles.wordmarkInCard}>
+            <MatchpointWordmark variant="portfolio" />
+          </div>
+        ) : (
+          <Image
+            src={project.image}
+            alt={`Logo de ${t(`projects.${project.key}.title`)}`}
+            className={styles.projectImage}
+            width={project.logoIntrinsicWidth ?? 1200}
+            height={project.logoIntrinsicHeight ?? 630}
+            loading="lazy"
+          />
+        )}
       </div>
 
       <div className={styles.content}>

@@ -2,6 +2,11 @@ export interface PortfolioProject {
   id: number;
   key: 'rize' | 'matchpoint' | 'proshop';
   image: string;
+  /** Ancho/alto del logo en next/image (SVG u otros) */
+  logoIntrinsicWidth?: number;
+  logoIntrinsicHeight?: number;
+  /** Matchpoint: wordmark en texto (app/index.tsx), sin imagen */
+  heroUsesWordmark?: boolean;
   techStack: string[];
   link: string;
   storeUrl?: string;
@@ -19,6 +24,7 @@ export const portfolioProjects: PortfolioProject[] = [
     id: 2,
     key: 'matchpoint',
     image: '/images/matchpoint-logo.svg',
+    heroUsesWordmark: true,
     techStack: ['React', 'TypeScript', 'API Integrations'],
     link: 'https://github.com/octapf/matchpoint',
     storeUrl: 'https://play.google.com/store/apps/details?id=com.miralab.matchpoint',

@@ -115,6 +115,12 @@
     display: flex;
     align-items: baseline;
     gap: 0.9rem;
+    flex-wrap: wrap;
+  }
+
+  .matchpointWordmarkWrap {
+    width: 100%;
+    max-width: min(720px, 100%);
   }
 
   .projectLogoBadge {
