@@ -5,7 +5,7 @@ import type {
   CvPdfPayload,
   CvPdfRole,
 } from './cvPdfTypes';
-import { CV_PDF_BOLD, CV_PDF_BOLD_ITALIC, CV_PDF_REGULAR } from './cvPdfConstants';
+import { CV_PDF_BOLD, CV_PDF_BOLD_ITALIC, CV_PDF_ITALIC, CV_PDF_REGULAR } from './cvPdfConstants';
 
 const palette = {
   bgPage: '#030014',
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     marginBottom: 0,
   },
   featuredProjectCell: {
-    width: '48.5%',
+    width: '31.5%',
     paddingHorizontal: 2,
   },
   featuredProject: {
@@ -281,6 +281,9 @@ const styles = StyleSheet.create({
     borderColor: '#35354a',
     borderRadius: 5,
     overflow: 'hidden',
+  },
+  featuredImageSlotWordmark: {
+    height: 72,
   },
   featuredImagePdfInnerDefault: {
     flexGrow: 1,
@@ -353,6 +356,19 @@ const styles = StyleSheet.create({
     fontSize: 17,
     letterSpacing: -0.95,
     color: '#8b5cf6',
+  },
+  featuredWordmarkBadge: {
+    fontFamily: CV_PDF_ITALIC,
+    fontSize: 7.8,
+    letterSpacing: 0.25,
+    color: '#ffffff',
+    marginTop: 2,
+    textAlign: 'center',
+  },
+  featuredWordmarkStack: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -630,15 +646,32 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
     ? styles.featuredImagePdfPaddedInner
     : styles.featuredImagePdfInnerDefault;
 
+  const wordmarkBadge =
+    project.matchpointWordmarkVariant === 'mobile'
+      ? 'MOBILE'
+      : project.matchpointWordmarkVariant === 'web'
+        ? 'WEB'
+        : null;
+
   return (
     <View style={styles.featuredProject}>
       {project.matchpointWordmark ? (
-        <View style={styles.featuredImageSlot}>
+        <View
+          style={[
+            styles.featuredImageSlot,
+            wordmarkBadge ? styles.featuredImageSlotWordmark : {},
+          ]}
+        >
           <View style={innerSlot}>
             <Link src={project.repoUrl}>
-              <View style={styles.featuredWordmarkRow}>
-                <Text style={styles.featuredWordmarkMatch}>MATCH</Text>
-                <Text style={styles.featuredWordmarkPoint}>POINT</Text>
+              <View style={styles.featuredWordmarkStack}>
+                <View style={styles.featuredWordmarkRow}>
+                  <Text style={styles.featuredWordmarkMatch}>MATCH</Text>
+                  <Text style={styles.featuredWordmarkPoint}>POINT</Text>
+                </View>
+                {wordmarkBadge ? (
+                  <Text style={styles.featuredWordmarkBadge}>{wordmarkBadge}</Text>
+                ) : null}
               </View>
             </Link>
           </View>
@@ -652,7 +685,9 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
           </View>
         </View>
       ) : null}
-      <Text style={styles.featuredDesc}>{project.description}</Text>
+      <Text style={styles.featuredDesc}>
+        {project.description.replaceAll('|PS|', '')}
+      </Text>
       {project.stack.trim() ? (
         <Text style={styles.featuredStack}>
           <Text style={styles.featuredStackLabel}>{project.stackLabel}: </Text>
@@ -732,23 +767,13 @@ export default function CvPdfDocument({ data }: CvPdfDocumentProps) {
         <View style={styles.sectionCard}>
           <Text style={styles.sectionTitle}>{data.sectionFeaturedProjects}</Text>
           <View style={styles.featuredProjectsGrid}>
-            {Array.from({ length: Math.ceil(data.featuredProjects.length / 2) }, (_, row) => {
-              const pair = data.featuredProjects.slice(row * 2, row * 2 + 2);
-              const rowCount = Math.ceil(data.featuredProjects.length / 2);
-              const isLast = row === rowCount - 1;
-              return (
-                <View
-                  key={`fp-row-${row}`}
-                  style={[styles.featuredProjectsRow, isLast ? styles.featuredProjectsRowLast : {}]}
-                >
-                  {pair.map((project, i) => (
-                    <View key={`fp-${row}-${i}`} style={styles.featuredProjectCell}>
-                      <FeaturedProjectPdf project={project} />
-                    </View>
-                  ))}
+            <View style={[styles.featuredProjectsRow, styles.featuredProjectsRowLast]}>
+              {data.featuredProjects.map((project) => (
+                <View key={project.repoUrl} style={styles.featuredProjectCell}>
+                  <FeaturedProjectPdf project={project} />
                 </View>
-              );
-            })}
+              ))}
+            </View>
           </View>
         </View>
       </Page>

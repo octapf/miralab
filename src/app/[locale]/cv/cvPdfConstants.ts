@@ -8,4 +8,5 @@
  */
 export const CV_PDF_REGULAR = 'Helvetica';
 export const CV_PDF_BOLD = 'Helvetica-Bold';
+export const CV_PDF_ITALIC = 'Helvetica-Oblique';
 export const CV_PDF_BOLD_ITALIC = 'Helvetica-BoldOblique';

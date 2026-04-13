@@ -32,6 +32,8 @@ export type CvPdfFeaturedProject = {
   imageSlightScale?: boolean;
   /** Wordmark Matchpoint en PDF como texto (colores web), sin PNG */
   matchpointWordmark?: boolean;
+  /** Etiqueta bajo el wordmark: app móvil vs sitio web */
+  matchpointWordmarkVariant?: 'mobile' | 'web';
 };
 
 export type CvPdfPayload = {

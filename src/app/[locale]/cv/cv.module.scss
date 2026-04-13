@@ -414,8 +414,8 @@ $cv-card-radius: 16px;
 
 .featuredProjectsList {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   align-items: stretch;
 }
 
@@ -427,12 +427,12 @@ $cv-card-radius: 16px;
   background: rgba(15, 15, 18, 0.12);
 }
 
-/* Ambos proyectos: mismo marco (ratio 1024×500) y mismo padding del enlace */
+/* Misma medida para los tres proyectos (logo Miralab y wordmarks Matchpoint) */
 .featuredProjectImageWrap {
   margin: 0 auto;
   width: 100%;
-  max-width: 280px;
-  aspect-ratio: 1024 / 500;
+  max-width: 100%;
+  aspect-ratio: 1024 / 610;
   box-sizing: border-box;
   padding: 0;
   border-radius: 10px;
@@ -478,6 +478,14 @@ $cv-card-radius: 16px;
   left: 1.25rem;
 }
 
+/* Wordmarks: un poco menos de padding para que el logo ocupe más el marco */
+.featuredProjectImageLinkWordmarkPadded {
+  top: 0.55rem;
+  right: 0.65rem;
+  bottom: 0.55rem;
+  left: 0.65rem;
+}
+
 .featuredProjectImage {
   object-fit: contain;
 }
@@ -502,6 +510,20 @@ $cv-card-radius: 16px;
   color: var(--text-secondary);
   line-height: 1.65;
   font-size: 1.02rem;
+}
+
+.playStoreInline {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-inline-start: 0.12em;
+}
+
+.playStoreGlyph {
+  flex-shrink: 0;
+  width: 1.05em;
+  height: 1.05em;
 }
 
 .featuredProjectStack {
@@ -533,6 +555,10 @@ $cv-card-radius: 16px;
 
   .featuredProjectsList {
     grid-template-columns: 1fr;
+  }
+
+  .featuredProjectImageWrap {
+    max-width: 280px;
   }
 
   .topBar {

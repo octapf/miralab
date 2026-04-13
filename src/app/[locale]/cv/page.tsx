@@ -4,8 +4,12 @@ import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
 import CvPageActions from './CvPageActions';
 import CvMatchpointWordmarkSvg from './CvMatchpointWordmarkSvg';
+import PlayStoreGlyph from './PlayStoreGlyph';
 import type { CvPdfEducationLine, CvPdfPayload } from './cvPdfTypes';
 import styles from './cv.module.scss';
+
+/** Marcador en `matchpointDescription` (solo icono en web); en PDF se omite. */
+const PLAYSTORE_PLACEHOLDER = '|PS|';
 
 type CvPageProps = {
   params: Promise<{ locale: string }>;
@@ -24,8 +28,25 @@ const whatsappChatHref = `https://wa.me/${CV_WHATSAPP_E164}`;
 const EDUCATION_TITLE_SEP = ' · ';
 
 const MATCHPOINT_REPO_URL = 'https://github.com/octapf/matchpoint';
+const MATCHPOINT_WEB_REPO_URL = 'https://github.com/octapf/matchpoint-web';
 const MIRALAB_SITE_URL = 'https://miralab.ar';
 const MIRALAB_LOGO_IMAGE = '/images/miralab-logo-transparent.png';
+
+function FeaturedProjectBody({ text }: { text: string }) {
+  if (!text.includes(PLAYSTORE_PLACEHOLDER)) {
+    return <>{text}</>;
+  }
+  const [before, after] = text.split(PLAYSTORE_PLACEHOLDER);
+  return (
+    <>
+      {before}
+      <span className={styles.playStoreInline} aria-label="Google Play" title="Google Play">
+        <PlayStoreGlyph className={styles.playStoreGlyph} />
+      </span>
+      {after}
+    </>
+  );
+}
 
 const EXPERIENCE_ROLES = [
   { title: 'roleMinsaitTitle', meta: 'roleMinsaitMeta', company: 'roleMinsaitCompany', bullets: 'roleMinsaitBullets' },
@@ -121,6 +142,21 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
         imageHeight: 586,
         imageComfortPadding: true,
         matchpointWordmark: true,
+        matchpointWordmarkVariant: 'mobile',
+      },
+      {
+        title: t('matchpointWebTitle'),
+        description: t('matchpointWebDescription'),
+        stackLabel: t('matchpointStackLabel'),
+        stack: t('matchpointWebStack'),
+        repoUrl: MATCHPOINT_WEB_REPO_URL,
+        imageAlt: t('matchpointWebImageAlt'),
+        imageLinkAria: t('matchpointWebImageLinkAria'),
+        imageWidth: 1200,
+        imageHeight: 586,
+        imageComfortPadding: true,
+        matchpointWordmark: true,
+        matchpointWordmarkVariant: 'web',
       },
       {
         title: t('miralabTitle'),
@@ -419,14 +455,19 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={
-                    fp.imageComfortPadding
-                      ? `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkPadded}`
-                      : `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkFull}`
+                    fp.matchpointWordmark && fp.imageComfortPadding
+                      ? `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkWordmarkPadded}`
+                      : fp.imageComfortPadding
+                        ? `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkPadded}`
+                        : `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkFull}`
                   }
                   aria-label={fp.imageLinkAria}
                 >
                   {fp.matchpointWordmark ? (
-                    <CvMatchpointWordmarkSvg className={styles.featuredProjectWordmarkSvg} />
+                    <CvMatchpointWordmarkSvg
+                      variant={fp.matchpointWordmarkVariant}
+                      className={styles.featuredProjectWordmarkSvg}
+                    />
                   ) : (
                     <Image
                       src={fp.imageSrc ?? ''}
@@ -442,7 +483,9 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
                   )}
                 </Link>
               </div>
-              <p className={styles.featuredProjectBody}>{fp.description}</p>
+              <p className={styles.featuredProjectBody}>
+                <FeaturedProjectBody text={fp.description} />
+              </p>
               {fp.stack.trim() ? (
                 <p className={styles.featuredProjectStack}>
                   <span className={styles.featuredProjectStackLabel}>{fp.stackLabel}: </span>
