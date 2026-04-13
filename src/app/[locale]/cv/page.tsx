@@ -193,7 +193,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           <a
             href={whatsappChatHref}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className={styles.metaLinkWithIcon}
             aria-label={t('whatsappAria')}
           >
@@ -205,7 +205,12 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           <span className={styles.metaDot} aria-hidden="true">
             ·
           </span>
-          <a href="mailto:frangipani.octavio@gmail.com" className={styles.metaLinkWithIcon}>
+          <a
+            href="mailto:frangipani.octavio@gmail.com"
+            className={styles.metaLinkWithIcon}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <svg
               className={styles.metaIcon}
               viewBox="0 0 24 24"
@@ -228,7 +233,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           <a
             href={linkedinProfileUrl}
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className={styles.metaLinkWithIcon}
           >
             <svg className={styles.metaIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -242,7 +247,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           <a
             href="https://github.com/octapf"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className={styles.metaLinkWithIcon}
           >
             <svg className={styles.metaIcon} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -260,7 +265,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           <a
             href="https://miralab.ar"
             target="_blank"
-            rel="noreferrer noopener"
+            rel="noopener noreferrer"
             className={styles.metaLinkWithIcon}
           >
             <svg
@@ -412,7 +417,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
                 <Link
                   href={fp.repoUrl}
                   target="_blank"
-                  rel="noreferrer noopener"
+                  rel="noopener noreferrer"
                   className={
                     fp.imageComfortPadding
                       ? `${styles.featuredProjectImageLink} ${styles.featuredProjectImageLinkPadded}`
