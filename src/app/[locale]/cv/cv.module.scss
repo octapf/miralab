@@ -1,0 +1,548 @@
+/* Card padding = reference `.header` (same “air” on every CV card) */
+$cv-card-pad-top: 1.35rem;
+$cv-card-pad-x: clamp(1.35rem, 5vw, 2.25rem);
+$cv-card-pad-bottom: 1.25rem;
+$cv-card-radius: 16px;
+
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1.35rem $cv-card-pad-x 2.75rem;
+  color: var(--text-primary);
+
+  /* Reset global `section` rules (100vh flex centering). Do NOT zero padding here:
+     `.page section` beats `.section` module class and was stripping all inner padding. */
+  section {
+    min-height: 0;
+    display: block;
+    align-items: unset;
+    justify-content: unset;
+  }
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.topBarActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.pdfButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  /* Solid mix (no color-mix): html2canvas used by PDF export cannot parse modern color() serialization */
+  border: 1px solid rgba(139, 92, 246, 0.55);
+  background: var(--accent-primary);
+  color: #0b0b0b;
+  font-weight: 800;
+  font-size: 0.82rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.15s ease, opacity 0.15s ease, filter 0.15s ease;
+  white-space: nowrap;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+  }
+
+  &:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+}
+
+.langSwitch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.langSwitchLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.25rem 0.45rem;
+  border-radius: 6px;
+  transition: color 0.15s ease, background 0.15s ease;
+
+  &:hover {
+    color: var(--text-primary);
+    background: rgba(203, 213, 255, 0.08);
+  }
+}
+
+.langFlag {
+  height: 0.75rem;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 2px;
+  display: block;
+  overflow: hidden;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+:global(html[data-theme='light']) .langFlag {
+  box-shadow: 0 0 0 1px rgba(229, 229, 229, 0.85);
+}
+
+.langSwitchLinkActive {
+  color: var(--accent-primary);
+  pointer-events: none;
+}
+
+.langSwitchSep {
+  opacity: 0.55;
+  user-select: none;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+}
+
+.pdfContent {
+  display: block;
+}
+
+.header {
+  margin-top: 1rem;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  border-radius: $cv-card-radius;
+  border: 1px solid var(--border-color);
+  background: rgba(30, 30, 60, 0.46);
+}
+
+:global(html[data-theme='light']) .header {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.name {
+  margin: 0;
+  font-size: clamp(1.85rem, 3.8vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.headline {
+  margin: 0.55rem 0 0;
+  color: var(--accent-primary);
+  font-weight: 650;
+  font-size: 1.08rem;
+  line-height: 1.45;
+}
+
+.meta {
+  margin: 0.85rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.meta a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+}
+
+.metaLinkWithIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+
+  &:hover {
+    color: var(--text-primary);
+
+    .metaLinkLabel {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+.metaIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.metaLinkWithIcon:hover .metaIcon {
+  color: var(--text-primary);
+}
+
+.metaLocation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.metaDot {
+  opacity: 0.6;
+}
+
+.langs {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.55rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.langIcon {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.langSep {
+  opacity: 0.6;
+}
+
+.section {
+  margin-top: 1.15rem;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  border-radius: $cv-card-radius;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: rgba(30, 30, 60, 0.44);
+}
+
+:global(html[data-theme='light']) .section {
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.sectionTitle {
+  margin: 0 0 0.85rem;
+  padding: 0;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  text-align: center;
+  width: 100%;
+}
+
+.summary {
+  margin: 0;
+  padding: 0;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 1.04rem;
+}
+
+.summaryEm {
+  color: var(--text-primary);
+  font-weight: inherit;
+}
+
+.skillsGrid {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.skillCard {
+  border: 1px solid var(--border-color);
+  border-radius: $cv-card-radius;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  background: rgba(15, 15, 18, 0.12);
+  text-align: center;
+}
+
+.skillTitle {
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.08rem;
+  line-height: 1.25;
+  color: var(--text-primary);
+}
+
+.skillBody {
+  margin: 0.4rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.experienceList {
+  margin: 0;
+  display: grid;
+  gap: 0.95rem;
+}
+
+.role {
+  border: 1px solid var(--border-color);
+  border-radius: $cv-card-radius;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  background: rgba(15, 15, 18, 0.12);
+}
+
+.roleTop {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.8rem;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.roleTitle {
+  margin: 0;
+  font-weight: 900;
+  font-size: 1.08rem;
+  line-height: 1.25;
+}
+
+.roleMeta {
+  color: var(--text-secondary);
+  font-weight: 650;
+  font-size: 0.95rem;
+}
+
+.roleCompany {
+  margin: 0.35rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+}
+
+.bullets {
+  margin: 0.55rem 0 0;
+  padding-left: 1.45rem;
+  padding-right: 0;
+  list-style-type: disc;
+  list-style-position: outside;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-size: 0.95rem;
+
+  li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.2rem;
+
+    &::marker {
+      color: var(--accent-primary);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.bulletAccent {
+  color: var(--accent-primary);
+  font-weight: 650;
+}
+
+.educationCard {
+  border: 1px solid var(--border-color);
+  border-radius: $cv-card-radius;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  background: rgba(15, 15, 18, 0.12);
+}
+
+.educationBullets {
+  margin: 0;
+  padding-left: 1.45rem;
+  padding-right: 0;
+  list-style-type: disc;
+  list-style-position: outside;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  font-size: 1.02rem;
+
+  li {
+    margin-bottom: 0.4rem;
+    padding-left: 0.2rem;
+
+    &::marker {
+      color: var(--accent-primary);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.featuredProjectsList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.featuredProject {
+  margin: 0;
+  padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+  border-radius: $cv-card-radius;
+  border: 1px solid var(--border-color);
+  background: rgba(15, 15, 18, 0.12);
+}
+
+/* Ambos proyectos: mismo marco (ratio 1024×500) y mismo padding del enlace */
+.featuredProjectImageWrap {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1024 / 500;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  line-height: 0;
+  border: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.2);
+  display: block;
+  position: relative;
+}
+
+/*
+ * Hijo absolute + inset:0 ignora el padding del padre (se posiciona al padding edge).
+ * Miralab: top/right/bottom/left explícitos = margen interior real.
+ */
+.featuredProjectImageLink {
+  display: block;
+  position: absolute;
+  line-height: 0;
+  text-decoration: none;
+  color: inherit;
+  border-radius: inherit;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    opacity: 0.92;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+  }
+}
+
+.featuredProjectImageLinkFull {
+  inset: 0;
+}
+
+.featuredProjectImageLinkPadded {
+  top: 1.075rem;
+  right: 1.25rem;
+  bottom: 1.075rem;
+  left: 1.25rem;
+}
+
+.featuredProjectImage {
+  object-fit: contain;
+}
+
+/* Wordmark Matchpoint: SVG inline en React (sin petición a /public) */
+.featuredProjectWordmarkSvg {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.featuredProjectImageScaleUp {
+  transform: scale(1.075);
+  transform-origin: center center;
+}
+
+.featuredProjectBody {
+  margin: 0.65rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+.featuredProjectStack {
+  margin: 0.55rem 0 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+.featuredProjectStackLabel {
+  color: var(--text-primary);
+  font-weight: 750;
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 1.15rem $cv-card-pad-x 2.5rem;
+  }
+
+  .section {
+    /* Same card padding as header (tokens) */
+    padding: $cv-card-pad-top $cv-card-pad-x $cv-card-pad-bottom;
+    margin-top: 1rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredProjectsList {
+    grid-template-columns: 1fr;
+  }
+
+  .topBar {
+    align-items: flex-start;
+  }
+
+  .topBarActions {
+    width: 100%;
+    margin-left: 0;
+    justify-content: flex-end;
+  }
+}
+

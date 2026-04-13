@@ -32,6 +32,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localizedRoutes('/proshop/privacy', 0.6, 'yearly'),
     ...localizedRoutes('/proshop/delete-account', 0.5, 'yearly'),
 
+    // CV
+    ...localizedRoutes('/cv', 0.85, 'monthly'),
+
     // Global
     ...localizedRoutes('/privacy', 0.7, 'yearly'),
     ...localizedRoutes('/terminos', 0.6, 'yearly'),

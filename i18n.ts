@@ -14,8 +14,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale = 'es';
   }
 
+  const baseMessages = (await import(`./messages/${locale}.json`)).default;
+  const cvPackLocale = locale === 'es' ? 'es' : locale === 'it' ? 'it' : 'en';
+  const cvPack = (await import(`./messages/cvOctavio.${cvPackLocale}.json`)).default;
+
   return {
     locale,
-    messages: (await import(`./messages/${locale}.json`)).default,
+    messages: {
+      ...baseMessages,
+      cvOctavio: cvPack.cvOctavio,
+    },
   };
 });

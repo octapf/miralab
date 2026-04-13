@@ -1,11 +1,55 @@
-<svg width="360" height="88" viewBox="0 0 360 88" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MIRALAB">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292 76" role="img" aria-labelledby="ml-title">
+  <title id="ml-title">MIRALAB</title>
+  <!-- Marca: petróleo #165370 (M + MIRA), cian #45b1c5 (L + LAB). Monograma: L detrás, M delante. -->
   <defs>
-    <linearGradient id="mlabGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#8B5CF6" />
-      <stop offset="100%" stop-color="#22D3EE" />
-    </linearGradient>
+    <style>
+      .ml-teal { fill: #165370; }
+      .ml-cyan { fill: #45b1c5; }
+    </style>
   </defs>
-  <rect x="4" y="4" width="80" height="80" rx="18" fill="#111827" stroke="url(#mlabGrad)" stroke-width="4" />
-  <path d="M24 60 V28 L44 50 L64 28 V60" fill="none" stroke="url(#mlabGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-  <text x="100" y="58" fill="#F4F4F5" font-size="42" font-family="Inter, Arial, sans-serif" font-weight="800" letter-spacing="1.4">MIRALAB</text>
+
+  <g id="monogram" transform="translate(0, 2)">
+    <path
+      class="ml-cyan"
+      d="M 52 64 L 52 22 L 64 22 L 64 56 L 86 56 L 86 64 Z"
+    />
+    <path
+      class="ml-teal"
+      d="M 8 64 L 8 10 L 22 10 L 40 48 L 58 10 L 76 10 L 76 36 L 64 36 L 64 18 L 40 52 L 22 18 L 22 64 Z"
+    />
+  </g>
+
+  <g id="wordmark">
+    <!-- M -->
+    <path
+      class="ml-teal"
+      d="M 94 62 L 94 36 L 102 36 L 110 48 L 118 36 L 126 36 L 126 54 L 119 54 L 119 42 L 110 52 L 101 42 L 101 62 Z"
+    />
+    <!-- I -->
+    <path class="ml-teal" d="M 132 36 L 139 36 L 139 62 L 132 62 Z" />
+    <!-- R: tallo + caja superior + pata (todo petróleo) -->
+    <path
+      class="ml-teal"
+      d="M 144 62 L 144 36 L 156 36 L 162 36 L 162 47 L 156 50 L 151 50 L 151 62 Z"
+    />
+    <path class="ml-teal" d="M 156 50 L 168 62 L 159 62 L 151 50 Z" />
+    <!-- A (MIRA) -->
+    <path
+      class="ml-teal"
+      d="M 170 62 L 177 36 L 184 62 L 180 62 L 179 56 L 175 56 L 174 62 Z"
+    />
+    <path class="ml-teal" d="M 174 53 L 180 53 L 180 56 L 174 56 Z" />
+    <!-- L -->
+    <path class="ml-cyan" d="M 190 36 L 197 36 L 197 55 L 210 55 L 210 62 L 190 62 Z" />
+    <!-- A (LAB) -->
+    <path
+      class="ml-cyan"
+      d="M 216 62 L 223 36 L 230 62 L 226 62 L 225 56 L 221 56 L 220 62 Z"
+    />
+    <path class="ml-cyan" d="M 220 53 L 226 53 L 226 56 L 220 56 Z" />
+    <!-- B: pilar + dos cajas (esquinas vivas, sin curvas) -->
+    <path class="ml-cyan" d="M 236 36 L 243 36 L 243 62 L 236 62 Z" />
+    <path class="ml-cyan" d="M 243 36 L 258 36 L 258 46 L 243 46 Z" />
+    <path class="ml-cyan" d="M 243 49 L 258 49 L 258 62 L 243 62 Z" />
+  </g>
 </svg>

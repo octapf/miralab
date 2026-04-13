@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 88" role="img" aria-labelledby="mpwm-title">
+  <title id="mpwm-title">Matchpoint</title>
+  <!-- Tipografía y colores alineados con MatchpointWordmark + app RN: MATCH #fbbf24, POINT #8b5cf6, 900 italic, letter-spacing ~ -2 -->
+  <text
+    x="0"
+    y="68"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    font-size="56"
+    font-weight="900"
+    font-style="italic"
+    letter-spacing="-2"
+  >
+    <tspan fill="#fbbf24">MATCH</tspan><tspan fill="#8b5cf6">POINT</tspan>
+  </text>
+</svg>
