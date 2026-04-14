@@ -37,6 +37,47 @@ $cv-card-radius: 16px;
   margin-left: auto;
 }
 
+.bottomActions {
+  margin-top: 1.65rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.bottomActions :global(.topBarActions) {
+  margin-left: 0;
+  justify-content: center;
+}
+
+.bottomBackLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.82rem;
+  transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    border-color: rgba(139, 92, 246, 0.6);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+  }
+}
+
 .pdfButton {
   display: inline-flex;
   align-items: center;
@@ -511,6 +552,71 @@ $cv-card-radius: 16px;
   line-height: 1.65;
   font-size: 1.02rem;
 }
+
+.featuredProjectQuickLinks {
+  margin-top: 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.featuredProjectQuickLinksSingle {
+  grid-template-columns: 1fr;
+}
+
+.featuredProjectQuickLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.9rem;
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.32rem 0.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.18);
+  color: var(--text-primary);
+  text-decoration: none;
+  line-height: 1;
+  transition: transform 0.15s ease, opacity 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    opacity: 0.95;
+    transform: translateY(-1px);
+    border-color: rgba(139, 92, 246, 0.6);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
+  }
+}
+
+.featuredProjectQuickLinkIcon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.featuredProjectQuickLinkLabel {
+  min-width: 0;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  line-height: 1.15;
+  text-align: center;
+}
+
 
 .playStoreInline {
   display: inline-flex;

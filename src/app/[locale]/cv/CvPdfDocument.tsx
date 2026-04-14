@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
   /** Mismo “thumbnail” para ambos proyectos (Miralab transparente + Matchpoint con arte oscuro) */
   featuredImageSlot: {
     width: '100%',
-    height: 66,
+    height: 72,
     marginBottom: 5,
     backgroundColor: '#16161f',
     borderWidth: 1,
@@ -369,6 +369,39 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+
+  featuredLinksRow: {
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: 6,
+    marginTop: 5,
+    marginBottom: 5,
+  },
+  featuredLinksRowSingle: {
+    justifyContent: 'center',
+  },
+  featuredLinkBtn: {
+    flexGrow: 1,
+    borderWidth: 1,
+    borderColor: '#35354a',
+    backgroundColor: '#0b0b14',
+    borderRadius: 6,
+    paddingVertical: 4,
+    paddingHorizontal: 6,
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  featuredLinkBtnSingle: {
+    maxWidth: 150,
+  },
+  featuredLinkLabel: {
+    fontFamily: CV_PDF_BOLD,
+    fontSize: 8.6,
+    color: palette.text,
+    textAlign: 'center',
   },
 });
 
@@ -653,15 +686,17 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
         ? 'WEB'
         : null;
 
+  const needsWebLinks = project.matchpointWordmarkVariant === 'web';
+  const needsMobileGitHub = project.matchpointWordmarkVariant === 'mobile';
+  const needsMiralabWeb = project.repoUrl === 'https://miralab.ar';
+
+  const websiteUrl = 'https://matchpoint.miralab.ar/';
+  const githubUrl = project.repoUrl;
+
   return (
     <View style={styles.featuredProject}>
       {project.matchpointWordmark ? (
-        <View
-          style={[
-            styles.featuredImageSlot,
-            wordmarkBadge ? styles.featuredImageSlotWordmark : {},
-          ]}
-        >
+        <View style={styles.featuredImageSlot}>
           <View style={innerSlot}>
             <Link src={project.repoUrl}>
               <View style={styles.featuredWordmarkStack}>
@@ -685,6 +720,33 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
           </View>
         </View>
       ) : null}
+
+      {needsWebLinks ? (
+        <View style={styles.featuredLinksRow}>
+          <Link src={websiteUrl} style={styles.featuredLinkBtn}>
+            <Text style={styles.featuredLinkLabel}>Web</Text>
+          </Link>
+          <Link src={githubUrl} style={styles.featuredLinkBtn}>
+            <Text style={styles.featuredLinkLabel}>GitHub</Text>
+          </Link>
+        </View>
+      ) : needsMobileGitHub ? (
+        <View style={[styles.featuredLinksRow, styles.featuredLinksRowSingle]}>
+          <Link src={githubUrl} style={[styles.featuredLinkBtn, styles.featuredLinkBtnSingle]}>
+            <Text style={styles.featuredLinkLabel}>GitHub</Text>
+          </Link>
+        </View>
+      ) : needsMiralabWeb ? (
+        <View style={[styles.featuredLinksRow, styles.featuredLinksRowSingle]}>
+          <Link
+            src="https://miralab.ar"
+            style={[styles.featuredLinkBtn, styles.featuredLinkBtnSingle]}
+          >
+            <Text style={styles.featuredLinkLabel}>Web</Text>
+          </Link>
+        </View>
+      ) : null}
+
       <Text style={styles.featuredDesc}>
         {project.description.replaceAll('|PS|', '')}
       </Text>

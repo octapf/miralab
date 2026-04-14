@@ -10,7 +10,7 @@
     "pdfDownload": "Descargar CV en PDF",
     "pdfGenerating": "Generando…",
     "pdfAria": "Descargar el CV en PDF",
-    "pdfFilename": "Octavio-Frangipani-CV-ES.pdf",
+    "pdfFilename": "cv-octavio-frangipani-react-engineer-ES.pdf",
     "headline": "Senior React Frontend Engineer | TypeScript | Redux | Next.js | Jest | Microfrontend",
     "metaContactAria": "Contacto y enlaces",
     "location": "Barcelona, Spain",
@@ -39,7 +39,6 @@
     "roleMinsaitBullets": [
       "Diseñé el Microfrontend system (Webpack Module Federation) para Zara/Inditex — una de las mayores marcas retail del mundo.",
       "Desarrollé dashboards en Next.js para análisis de KPI de stock con state management avanzado; construí y mantuve component libraries / Modular UI library vía NPM para uso entre equipos.",
-      "Optimicé el flujo de datos con GraphQL y REST APIs asegurados con JWT; documentación con Swagger.",
       "Perfil 'Low Risk' mediante TDD, pruebas Cypress end-to-end y validaciones CRUD.",
       "Apliqué principios de Software Design; CI/CD con Jenkins; traduje wireframes de Figma a interfaces WCAG y Responsive Design.",
       "Colaboré con equipos de UX design; lideré code reviews y team collaboration cross-funcional en sprints con Jira / Confluence / Slack."
