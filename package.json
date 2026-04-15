@@ -12,7 +12,8 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "test:watch": "node --import tsx --test --watch tests/*.test.ts",
     "test:coverage": "c8 --check-coverage --lines 60 --functions 60 --branches 50 --statements 60 --reporter=text --reporter=lcov node --import tsx --test tests/*.test.ts",
-    "check:i18n": "node ./scripts/check-i18n.mjs"
+    "check:i18n": "node ./scripts/check-i18n.mjs",
+    "favicon:generate": "node ./scripts/generate-favicon.mjs"
   },
   "dependencies": {
     "@react-pdf/renderer": "^4.4.1",
@@ -36,7 +37,9 @@
     "c8": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.0",
+    "png-to-ico": "^3.0.1",
     "prettier": "^3.8.1",
+    "sharp": "^0.34.5",
     "tsx": "^4.21.0",
     "typescript": "^5"
   }
