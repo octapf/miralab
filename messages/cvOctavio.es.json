@@ -5,6 +5,7 @@
     "langSwitchAria": "Idioma de la página",
     "langEs": "ES",
     "langEn": "EN",
+    "langIt": "IT",
     "backAria": "Volver al inicio",
     "back": "Volver",
     "pdfDownload": "Descargar CV en PDF",
@@ -38,7 +39,7 @@
     "roleMinsaitCompany": "Minsait · Barcelona (Remote)",
     "roleMinsaitBullets": [
       "Diseñé el Microfrontend system (Webpack Module Federation) para Zara/Inditex — una de las mayores marcas retail del mundo.",
-      "Desarrollé dashboards en Next.js para análisis de KPI de stock con state management avanzado; construí y mantuve component libraries / Modular UI library vía NPM para uso entre equipos.",
+      "Desarrollé dashboards en Next.js para análisis de KPI de stock con state management avanzado (Redux) y flujos de datos predecibles; construí y mantuve component libraries / Modular UI library vía NPM para uso entre equipos.",
       "Perfil 'Low Risk' mediante TDD, pruebas Cypress end-to-end y validaciones CRUD.",
       "Apliqué principios de Software Design; CI/CD con Jenkins; traduje wireframes de Figma a interfaces WCAG y Responsive Design.",
       "Colaboré con equipos de UX design; lideré code reviews y team collaboration cross-funcional en sprints con Jira / Confluence / Slack."
@@ -48,7 +49,7 @@
     "roleUrbanyCompany": "Urbany Hostels · Barcelona (Hybrid)",
     "roleUrbanyBullets": [
       "Construí productos SaaS e integraciones MVP con APIs de Stripe y PayPal, mejorando la conversión de reservas.",
-      "Arquitectura de servicios backend con flujos basados en JSON; hooks de React con ES6.",
+      "Arquitectura de servicios backend con flujos basados en JSON; en el cliente, hooks de React con ES6 y estado global con Redux en flujos de reserva y administración.",
       "Calidad con pruebas unitarias Jest y pipelines de testing automatizado."
     ],
     "roleWorksutTitle": "Full Stack Developer",
@@ -63,7 +64,7 @@
     "roleLetiziaMeta": "Feb 2021 – Jan 2022",
     "roleLetiziaCompany": "Letizia · Buenos Aires (Remote - Freelance)",
     "roleLetiziaBullets": [
-      "Procesamiento de pagos con PayPal y Mercado Pago integrados en frontends React; autenticación OTP.",
+      "Procesamiento de pagos con PayPal y Mercado Pago integrados en frontends React con Redux para checkout y estado de sesión; autenticación OTP.",
       "Desarrollé REST APIs con Node.js y gestioné bases de datos NoSQL para transacciones y usuarios."
     ],
     "roleSodimacTitle": "Head of Photography",
@@ -74,6 +75,15 @@
     ],
     "sectionEducation": "Educación",
     "sectionFeaturedProjects": "Proyectos destacados",
+    "featuredQuickLinksMatchpointWebGroupAria": "Enlaces rápidos de Matchpoint Web",
+    "featuredQuickLinksMatchpointMobileGroupAria": "Enlaces rápidos de Matchpoint Mobile",
+    "featuredQuickLinksMiralabGroupAria": "Enlaces rápidos de Miralab",
+    "featuredOpenMatchpointWebSiteAria": "Abrir Matchpoint Web",
+    "featuredOpenGithubRepoAria": "Abrir repositorio en GitHub",
+    "featuredOpenMiralabSiteAria": "Abrir Miralab",
+    "featuredQuickLinkWeb": "Web",
+    "featuredQuickLinkGithub": "GitHub",
+    "googlePlayAria": "Google Play",
     "matchpointImageAlt": "Wordmark Matchpoint",
     "matchpointImageLinkAria": "Abrir el repositorio Matchpoint en GitHub",
     "matchpointTitle": "Matchpoint Mobile",

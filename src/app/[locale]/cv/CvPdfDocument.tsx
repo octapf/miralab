@@ -669,7 +669,15 @@ function CvPdfHeader({ data }: { data: CvPdfPayload }) {
   );
 }
 
-function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
+function FeaturedProjectPdf({
+  project,
+  quickLinkWeb,
+  quickLinkGithub,
+}: {
+  project: CvPdfFeaturedProject;
+  quickLinkWeb: string;
+  quickLinkGithub: string;
+}) {
   const imgSrc = resolvePdfImageSrc(project.imageSrc);
   const imageStyle = [
     styles.featuredImage,
@@ -724,16 +732,16 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
       {needsWebLinks ? (
         <View style={styles.featuredLinksRow}>
           <Link src={websiteUrl} style={styles.featuredLinkBtn}>
-            <Text style={styles.featuredLinkLabel}>Web</Text>
+            <Text style={styles.featuredLinkLabel}>{quickLinkWeb}</Text>
           </Link>
           <Link src={githubUrl} style={styles.featuredLinkBtn}>
-            <Text style={styles.featuredLinkLabel}>GitHub</Text>
+            <Text style={styles.featuredLinkLabel}>{quickLinkGithub}</Text>
           </Link>
         </View>
       ) : needsMobileGitHub ? (
         <View style={[styles.featuredLinksRow, styles.featuredLinksRowSingle]}>
           <Link src={githubUrl} style={[styles.featuredLinkBtn, styles.featuredLinkBtnSingle]}>
-            <Text style={styles.featuredLinkLabel}>GitHub</Text>
+            <Text style={styles.featuredLinkLabel}>{quickLinkGithub}</Text>
           </Link>
         </View>
       ) : needsMiralabWeb ? (
@@ -742,7 +750,7 @@ function FeaturedProjectPdf({ project }: { project: CvPdfFeaturedProject }) {
             src="https://miralab.ar"
             style={[styles.featuredLinkBtn, styles.featuredLinkBtnSingle]}
           >
-            <Text style={styles.featuredLinkLabel}>Web</Text>
+            <Text style={styles.featuredLinkLabel}>{quickLinkWeb}</Text>
           </Link>
         </View>
       ) : null}
@@ -832,7 +840,11 @@ export default function CvPdfDocument({ data }: CvPdfDocumentProps) {
             <View style={[styles.featuredProjectsRow, styles.featuredProjectsRowLast]}>
               {data.featuredProjects.map((project) => (
                 <View key={project.repoUrl} style={styles.featuredProjectCell}>
-                  <FeaturedProjectPdf project={project} />
+                  <FeaturedProjectPdf
+                    project={project}
+                    quickLinkWeb={data.featuredQuickLinkWeb}
+                    quickLinkGithub={data.featuredQuickLinkGithub}
+                  />
                 </View>
               ))}
             </View>

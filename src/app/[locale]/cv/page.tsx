@@ -33,7 +33,7 @@ const MATCHPOINT_WEB_SITE_URL = 'https://matchpoint.miralab.ar/';
 const MIRALAB_SITE_URL = 'https://miralab.ar';
 const MIRALAB_LOGO_IMAGE = '/images/miralab-logo-transparent.png';
 
-function FeaturedProjectBody({ text }: { text: string }) {
+function FeaturedProjectBody({ text, googlePlayAria }: { text: string; googlePlayAria: string }) {
   if (!text.includes(PLAYSTORE_PLACEHOLDER)) {
     return <>{text}</>;
   }
@@ -41,7 +41,7 @@ function FeaturedProjectBody({ text }: { text: string }) {
   return (
     <>
       {before}
-      <span className={styles.playStoreInline} aria-label="Google Play" title="Google Play">
+      <span className={styles.playStoreInline} aria-label={googlePlayAria} title={googlePlayAria}>
         <PlayStoreGlyph className={styles.playStoreGlyph} />
       </span>
       {after}
@@ -130,6 +130,8 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
     sectionEducation: t('sectionEducation'),
     education: educationPdf,
     sectionFeaturedProjects: t('sectionFeaturedProjects'),
+    featuredQuickLinkWeb: t('featuredQuickLinkWeb'),
+    featuredQuickLinkGithub: t('featuredQuickLinkGithub'),
     featuredProjects: [
       {
         title: t('matchpointTitle'),
@@ -188,6 +190,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           langSwitchAria={t('langSwitchAria')}
           langEs={t('langEs')}
           langEn={t('langEn')}
+          langIt={t('langIt')}
           pdfLabel={t('pdfDownload')}
           pdfGenerating={t('pdfGenerating')}
           pdfAria={t('pdfAria')}
@@ -485,59 +488,62 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
                 </Link>
               </div>
               {fp.repoUrl === MATCHPOINT_WEB_REPO_URL ? (
-                <div className={styles.featuredProjectQuickLinks} aria-label="Matchpoint Web links">
+                <div
+                  className={styles.featuredProjectQuickLinks}
+                  aria-label={t('featuredQuickLinksMatchpointWebGroupAria')}
+                >
                   <Link
                     href={MATCHPOINT_WEB_SITE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.featuredProjectQuickLink}
-                    aria-label="Abrir Matchpoint Web"
+                    aria-label={t('featuredOpenMatchpointWebSiteAria')}
                   >
-                    <span className={styles.featuredProjectQuickLinkLabel}>Web</span>
+                    <span className={styles.featuredProjectQuickLinkLabel}>{t('featuredQuickLinkWeb')}</span>
                   </Link>
                   <Link
                     href={MATCHPOINT_WEB_REPO_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.featuredProjectQuickLink}
-                    aria-label="Abrir repositorio en GitHub"
+                    aria-label={t('featuredOpenGithubRepoAria')}
                   >
-                    <span className={styles.featuredProjectQuickLinkLabel}>GitHub</span>
+                    <span className={styles.featuredProjectQuickLinkLabel}>{t('featuredQuickLinkGithub')}</span>
                   </Link>
                 </div>
               ) : fp.repoUrl === MATCHPOINT_REPO_URL ? (
                 <div
                   className={`${styles.featuredProjectQuickLinks} ${styles.featuredProjectQuickLinksSingle}`}
-                  aria-label="Matchpoint Mobile links"
+                  aria-label={t('featuredQuickLinksMatchpointMobileGroupAria')}
                 >
                   <Link
                     href={MATCHPOINT_REPO_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.featuredProjectQuickLink}
-                    aria-label="Abrir repositorio en GitHub"
+                    aria-label={t('featuredOpenGithubRepoAria')}
                   >
-                    <span className={styles.featuredProjectQuickLinkLabel}>GitHub</span>
+                    <span className={styles.featuredProjectQuickLinkLabel}>{t('featuredQuickLinkGithub')}</span>
                   </Link>
                 </div>
               ) : fp.repoUrl === MIRALAB_SITE_URL ? (
                 <div
                   className={`${styles.featuredProjectQuickLinks} ${styles.featuredProjectQuickLinksSingle}`}
-                  aria-label="Miralab links"
+                  aria-label={t('featuredQuickLinksMiralabGroupAria')}
                 >
                   <Link
                     href={MIRALAB_SITE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.featuredProjectQuickLink}
-                    aria-label="Abrir Miralab"
+                    aria-label={t('featuredOpenMiralabSiteAria')}
                   >
-                    <span className={styles.featuredProjectQuickLinkLabel}>Web</span>
+                    <span className={styles.featuredProjectQuickLinkLabel}>{t('featuredQuickLinkWeb')}</span>
                   </Link>
                 </div>
               ) : null}
               <p className={styles.featuredProjectBody}>
-                <FeaturedProjectBody text={fp.description} />
+                <FeaturedProjectBody text={fp.description} googlePlayAria={t('googlePlayAria')} />
               </p>
               {fp.stack.trim() ? (
                 <p className={styles.featuredProjectStack}>
@@ -562,6 +568,7 @@ export default async function CvOctavioFrangipaniPage({ params }: CvPageProps) {
           langSwitchAria={t('langSwitchAria')}
           langEs={t('langEs')}
           langEn={t('langEn')}
+          langIt={t('langIt')}
           pdfLabel={t('pdfDownload')}
           pdfGenerating={t('pdfGenerating')}
           pdfAria={t('pdfAria')}

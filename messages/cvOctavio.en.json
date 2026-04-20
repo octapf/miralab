@@ -5,6 +5,7 @@
     "langSwitchAria": "Page language",
     "langEs": "ES",
     "langEn": "EN",
+    "langIt": "IT",
     "backAria": "Back to home",
     "back": "Back",
     "pdfDownload": "Download CV PDF",
@@ -38,7 +39,7 @@
     "roleMinsaitCompany": "Minsait · Barcelona (Remote)",
     "roleMinsaitBullets": [
       "Architected Microfrontend system (Webpack Module Federation) for Zara/Inditex — one of the world's largest retail brands.",
-      "Engineered Next.js dashboards for stock KPI analysis with advanced state management; built and managed component libraries / Modular UI library via NPM for cross-team sharing.",
+      "Engineered Next.js dashboards for stock KPI analysis with advanced state management (Redux) and predictable data flows; built and managed component libraries / Modular UI library via NPM for cross-team sharing.",
       "Ensured 'Low Risk' profile via TDD, end-to-end Cypress testing, and CRUD validations.",
       "Applied Software Design principles; managed CI/CD via Jenkins; translated Figma wireframes to WCAG-compliant, Responsive Design interfaces.",
       "Collaborated with UX design teams; led code reviews and cross-functional team collaboration in Jira / Confluence / Slack sprints."
@@ -48,7 +49,7 @@
     "roleUrbanyCompany": "Urbany Hostels · Barcelona (Hybrid)",
     "roleUrbanyBullets": [
       "Built SaaS products and MVP integrations with Stripe & PayPal APIs, boosting booking conversion.",
-      "Architected backend services with JSON-based data workflows; custom React hooks with ES6.",
+      "Architected backend services with JSON-based data workflows; on the client, custom React hooks with ES6 and global state with Redux for booking and admin flows.",
       "Maintained quality via Jest unit testing and automated testing pipelines."
     ],
     "roleWorksutTitle": "Full Stack Developer",
@@ -63,7 +64,7 @@
     "roleLetiziaMeta": "Feb 2021 – Jan 2022",
     "roleLetiziaCompany": "Letizia · Buenos Aires (Remote - Freelance)",
     "roleLetiziaBullets": [
-      "Payment processing with PayPal & Mercado Pago integrated with React frontends; OTP authentication.",
+      "Payment processing with PayPal & Mercado Pago integrated with React frontends using Redux for checkout and session state; OTP authentication.",
       "Developed REST APIs with Node.js and managed NoSQL databases for transaction and user management."
     ],
     "roleSodimacTitle": "Head of Photography",
@@ -74,6 +75,15 @@
     ],
     "sectionEducation": "Education",
     "sectionFeaturedProjects": "Featured projects",
+    "featuredQuickLinksMatchpointWebGroupAria": "Matchpoint Web quick links",
+    "featuredQuickLinksMatchpointMobileGroupAria": "Matchpoint Mobile quick links",
+    "featuredQuickLinksMiralabGroupAria": "Miralab quick links",
+    "featuredOpenMatchpointWebSiteAria": "Open Matchpoint Web",
+    "featuredOpenGithubRepoAria": "Open repository on GitHub",
+    "featuredOpenMiralabSiteAria": "Open Miralab",
+    "featuredQuickLinkWeb": "Web",
+    "featuredQuickLinkGithub": "GitHub",
+    "googlePlayAria": "Google Play",
     "matchpointImageAlt": "Matchpoint wordmark",
     "matchpointImageLinkAria": "Open the Matchpoint repository on GitHub",
     "matchpointTitle": "Matchpoint Mobile",

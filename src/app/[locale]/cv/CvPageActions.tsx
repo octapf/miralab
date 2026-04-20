@@ -26,11 +26,22 @@ function FlagGb({ className }: { className?: string }) {
   );
 }
 
+function FlagIt({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 3 2" aria-hidden>
+      <rect width="1" height="2" fill="#009246" />
+      <rect x="1" width="1" height="2" fill="#fff" />
+      <rect x="2" width="1" height="2" fill="#ce2b37" />
+    </svg>
+  );
+}
+
 type CvPageActionsProps = {
   locale: string;
   langSwitchAria: string;
   langEs: string;
   langEn: string;
+  langIt: string;
   pdfLabel: string;
   pdfGenerating: string;
   pdfAria: string;
@@ -43,6 +54,7 @@ export default function CvPageActions({
   langSwitchAria,
   langEs,
   langEn,
+  langIt,
   pdfLabel,
   pdfGenerating,
   pdfAria,
@@ -86,11 +98,22 @@ export default function CvPageActions({
         </span>
         <Link
           href="/en/cv"
-          className={`${styles.langSwitchLink} ${locale === 'en' || locale === 'it' ? styles.langSwitchLinkActive : ''}`}
-          aria-current={locale === 'en' || locale === 'it' ? 'true' : undefined}
+          className={`${styles.langSwitchLink} ${locale === 'en' ? styles.langSwitchLinkActive : ''}`}
+          aria-current={locale === 'en' ? 'true' : undefined}
         >
           <FlagGb className={styles.langFlag} />
           <span>{langEn}</span>
+        </Link>
+        <span className={styles.langSwitchSep} aria-hidden="true">
+          ·
+        </span>
+        <Link
+          href="/it/cv"
+          className={`${styles.langSwitchLink} ${locale === 'it' ? styles.langSwitchLinkActive : ''}`}
+          aria-current={locale === 'it' ? 'true' : undefined}
+        >
+          <FlagIt className={styles.langFlag} />
+          <span>{langIt}</span>
         </Link>
       </nav>
       <button

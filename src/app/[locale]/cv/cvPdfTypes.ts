@@ -63,4 +63,7 @@ export type CvPdfPayload = {
   education: CvPdfEducationLine[];
   sectionFeaturedProjects: string;
   featuredProjects: CvPdfFeaturedProject[];
+  /** Etiquetas de enlaces rápidos en bloques de proyectos (PDF, mismo locale que la página) */
+  featuredQuickLinkWeb: string;
+  featuredQuickLinkGithub: string;
 };

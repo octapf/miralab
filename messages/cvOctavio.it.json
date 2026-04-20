@@ -5,12 +5,13 @@
     "langSwitchAria": "Lingua della pagina",
     "langEs": "ES",
     "langEn": "EN",
+    "langIt": "IT",
     "backAria": "Torna alla home",
     "back": "Indietro",
     "pdfDownload": "Scarica CV in PDF",
     "pdfGenerating": "Generazione…",
     "pdfAria": "Scarica il CV in PDF",
-    "pdfFilename": "cv-octavio-frangipani-react-engineer-EN.pdf",
+    "pdfFilename": "cv-octavio-frangipani-react-engineer-IT.pdf",
     "headline": "Senior React Frontend Engineer | TypeScript | Redux | Next.js | Jest | Microfrontend",
     "metaContactAria": "Contatti e link",
     "location": "Barcellona, Spagna",
@@ -38,7 +39,7 @@
     "roleMinsaitCompany": "Minsait · Barcellona (Remoto)",
     "roleMinsaitBullets": [
       "Architettura del Microfrontend system (Webpack Module Federation) per Zara/Inditex — uno dei più grandi retailer al mondo.",
-      "Dashboard Next.js per analisi KPI di stock con state management avanzato; component library / Modular UI library via NPM per più team.",
+      "Dashboard Next.js per analisi KPI di stock con state management avanzato (Redux) e flussi di dati prevedibili; component library / Modular UI library via NPM per più team.",
       "Profilo 'Low Risk' con TDD, test Cypress end-to-end e validazioni CRUD.",
       "Principi di Software Design; CI/CD con Jenkins; wireframes Figma in interfacce WCAG e Responsive Design.",
       "Collaborazione con UX; code review e collaborazione cross-funzionale in sprint Jira / Confluence / Slack."
@@ -48,7 +49,7 @@
     "roleUrbanyCompany": "Urbany Hostels · Barcellona (Ibrido)",
     "roleUrbanyBullets": [
       "Prodotti SaaS e integrazioni MVP con API Stripe e PayPal, migliorando la conversione delle prenotazioni.",
-      "Architettura backend con flussi basati su JSON; hook React con ES6.",
+      "Architettura backend con flussi basati su JSON; sul client, hook React con ES6 e stato globale con Redux per prenotazioni e amministrazione.",
       "Qualità con test unitari Jest e pipeline di test automatizzate."
     ],
     "roleWorksutTitle": "Full Stack Developer",
@@ -63,7 +64,7 @@
     "roleLetiziaMeta": "Feb 2021 – Gen 2022",
     "roleLetiziaCompany": "Letizia · Buenos Aires (Remoto - Freelance)",
     "roleLetiziaBullets": [
-      "Pagamenti con PayPal e Mercado Pago integrati in frontend React; autenticazione OTP.",
+      "Pagamenti con PayPal e Mercado Pago integrati in frontend React con Redux per checkout e stato di sessione; autenticazione OTP.",
       "REST API con Node.js e database NoSQL per transazioni e utenti."
     ],
     "roleSodimacTitle": "Head of Photography",
@@ -74,6 +75,15 @@
     ],
     "sectionEducation": "Formazione",
     "sectionFeaturedProjects": "Progetti in evidenza",
+    "featuredQuickLinksMatchpointWebGroupAria": "Collegamenti rapidi Matchpoint Web",
+    "featuredQuickLinksMatchpointMobileGroupAria": "Collegamenti rapidi Matchpoint Mobile",
+    "featuredQuickLinksMiralabGroupAria": "Collegamenti rapidi Miralab",
+    "featuredOpenMatchpointWebSiteAria": "Apri Matchpoint Web",
+    "featuredOpenGithubRepoAria": "Apri il repository su GitHub",
+    "featuredOpenMiralabSiteAria": "Apri Miralab",
+    "featuredQuickLinkWeb": "Web",
+    "featuredQuickLinkGithub": "GitHub",
+    "googlePlayAria": "Google Play",
     "matchpointImageAlt": "Wordmark Matchpoint",
     "matchpointImageLinkAria": "Apri il repository Matchpoint su GitHub",
     "matchpointTitle": "Matchpoint Mobile",
